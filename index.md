@@ -4,22 +4,58 @@ layout: home
 
 hero:
   name: "Platform Specification"
-  text: "Platform Specification Official Website"
-  tagline: My great project tagline
+  text: "Standards for Defining Your Cloud Platform"
+  tagline: Capture Every Component and Configuration of Your Cloud Platform in One Unified Standard
+  image:
+    src: ./images/logo.svg
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Specification
+      link: /spec
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Examples
+      link: /examples
+    - theme: alt
+      text: Get Involved!
+      link: /community
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Unified Platform Definition
+    details: A single `platform.yaml` file to encapsulate all essential components, configurations, and policies of your cloud platform.
+  - title: Community-Driven Standards
+    details: Built on a standardized, community-driven approach to defining cloud platforms.
+  - title: Cross-Environment Consistency
+    details: Supports consistent platform deployment across multiple cloud providers and environments.
+  - title: Extensible and Modular Design
+    details: The Platform Specification is designed to be extensible and modular, allowing for easy integration of new components and configurations.
+  - title: Streamlined Collaboration
+    details: Facilitates collaboration among platform engineers, developers, and operations teams through a shared, transparent configuration file.
+  - title: Accelerated Time to Value
+    details: Provides a clear, structured approach to platform engineering, reducing the learning curve for new team members and accelerating platform deployment.
 ---
 
+<style>
+:root {
+  /* --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff); */
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #3451b2 30%, #8596d0);
+
+  /*--vp-home-hero-image-background-image: linear-gradient(-45deg, #3451b2 50%, #3451b2 50%);*/
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #7085c9 50%, #8596d0 50%);
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+</style>

@@ -3,12 +3,16 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Platform Specification",
-  description: "Platform Specification Official Website",
+  description: "Standards for Defining Your Cloud Platform",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/images/logo.svg',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'About', link: '/about' },
+      { text: 'Specification', link: '/spec' },
+      { text: 'Examples', link: '/examples' },
+      { text: 'Community', link: '/community' }
     ],
 
     sidebar: [
@@ -22,7 +26,11 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/platformspec' }
+    ],
+
+    footer: {
+      copyright: 'Copyright © 2024 FoundationIO'
+    }
   }
 })
