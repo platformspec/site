@@ -43,7 +43,7 @@ features:
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #3451b2 30%, #8596d0);
 
   /*--vp-home-hero-image-background-image: linear-gradient(-45deg, #3451b2 50%, #3451b2 50%);*/
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #7085c9 50%, #8596d0 50%);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #99a8d8 50%, #99a8d8 50%);
   --vp-home-hero-image-filter: blur(44px);
 }
 
