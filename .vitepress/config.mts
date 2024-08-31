@@ -2,11 +2,14 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Platform Specification",
+  title: "The Platform Specification",
   description: "Standards for Defining Your Cloud Platform",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/images/logo.svg',
+    logo: {
+      'light': '/images/logo.svg',
+      'dark': '/images/logo-white.svg'
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about' },
@@ -15,15 +18,17 @@ export default defineConfig({
       { text: 'Community', link: '/community' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/spec/': [
+        {
+          text: 'Examples',
+          items: [
+            { text: 'Markdown Examples', link: '/markdown-examples' },
+            { text: 'Runtime API Examples', link: '/api-examples' }
+          ]
+        }
+      ]
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/platformspec' }

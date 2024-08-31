@@ -7,7 +7,8 @@ hero:
   text: "Standards for Defining Your Cloud Platform"
   tagline: Capture Every Component and Configuration of Your Cloud Platform in One Unified Standard
   image:
-    src: ./images/logo.svg
+    light: ./images/logo.svg
+    dark: ./images/logo-grey.svg
   actions:
     - theme: brand
       text: Specification
@@ -59,3 +60,9 @@ features:
   }
 }
 </style>
+<p>&nbsp;</p>
+
+The Platform Specification project introduces a comprehensive and structured YAML-based approach to defining, deploying, and managing cloud platforms across diverse environments. By encapsulating every essential component, configuration, and policy within a single `platform.yaml` (or `platform.json`) document, it ensures consistent, streamlined, and scalable infrastructure management. Whether you're operating across multiple clouds or fine-tuning a single environment, the Platform Specification simplifies the complexity, empowering your team to focus on innovation rather than infrastructure.
+
+<p>&nbsp;</p>
+
