@@ -20,10 +20,12 @@ export default defineConfig({
     sidebar: {
       '/spec/': [
         {
-          text: 'Overview',
+          text: 'Background',
           items: [
             { text: 'Introduction', link: '/spec/' },
-            { text: 'Platform Enginering', link: '/spec/platform-engineering' },
+            { text: 'What is a Cloud Platform?', link: '/spec/cloud-platforms' },
+            { text: 'What is Platform Enginering', link: '/spec/platform-engineering' },
+            { text: 'How Are They Related?', link: '/spec/cloud-platform-platform-engineering-relationship' },
             { text: 'How It\'s Used', link: '/spec/how-its-used' },
             { text: 'Use Cases', link: '/spec/use-cases' },
             { text: 'FAQ', link: '/spec/faq' }
