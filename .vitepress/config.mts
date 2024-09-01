@@ -7,13 +7,12 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: {
-      'light': '/images/logo.svg',
+      'light': '/images/logo-black.svg',
       'dark': '/images/logo-white.svg'
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'About', link: '/about' },
-      { text: 'Specification', link: '/spec' },
+      { text: 'Specification', link: '/spec/' },
       { text: 'Examples', link: '/examples' },
       { text: 'Community', link: '/community' }
     ],
@@ -21,10 +20,27 @@ export default defineConfig({
     sidebar: {
       '/spec/': [
         {
-          text: 'Examples',
+          text: 'Overview',
           items: [
-            { text: 'Markdown Examples', link: '/markdown-examples' },
-            { text: 'Runtime API Examples', link: '/api-examples' }
+            { text: 'Introduction', link: '/spec/' },
+            { text: 'How It\'s Used', link: '/spec/how-its-used' },
+            { text: 'Use Cases', link: '/spec/use-cases' },
+            { text: 'FAQ', link: '/spec/faq' }
+          ]
+        },
+        {
+          text: 'Getting Started',
+          items: [
+            { text: 'First Steps', link: '/spec/first-steps' },
+            { text: 'Examples', link: '/spec/examples' },
+            { text: 'SDKs', link: '/spec/sdks' }
+          ]
+        },
+        {
+          text: 'Reference',
+          items: [
+            { text: 'Components', link: '/spec/ref-components' },
+            { text: 'Validation', link: '/spec/ref-validation' }
           ]
         }
       ]

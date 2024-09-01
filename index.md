@@ -7,15 +7,15 @@ hero:
   text: "Standards for Defining Your Cloud Platform"
   tagline: Capture Every Component and Configuration of Your Cloud Platform in One Unified Standard
   image:
-    light: ./images/logo.svg
-    dark: ./images/logo-grey.svg
+    light: ./images/logo-black-pressedsteel.svg
+    dark: ./images/logo-grey-paint-shadow.svg
   actions:
     - theme: brand
       text: Specification
-      link: /spec
+      link: /spec/
     - theme: alt
       text: Examples
-      link: /examples
+      link: /spec/examples
     - theme: alt
       text: Get Involved!
       link: /community
