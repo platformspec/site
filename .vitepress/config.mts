@@ -24,6 +24,7 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/spec/' },
             { text: 'How It\'s Used', link: '/spec/how-its-used' },
+            { text: 'Platform Enginering', link: '/spec/platform-engineering' },
             { text: 'Use Cases', link: '/spec/use-cases' },
             { text: 'FAQ', link: '/spec/faq' }
           ]
