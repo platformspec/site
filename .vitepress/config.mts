@@ -23,8 +23,8 @@ export default defineConfig({
           text: 'Overview',
           items: [
             { text: 'Introduction', link: '/spec/' },
-            { text: 'How It\'s Used', link: '/spec/how-its-used' },
             { text: 'Platform Enginering', link: '/spec/platform-engineering' },
+            { text: 'How It\'s Used', link: '/spec/how-its-used' },
             { text: 'Use Cases', link: '/spec/use-cases' },
             { text: 'FAQ', link: '/spec/faq' }
           ]
@@ -53,7 +53,7 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the Apache 2.0 License.',
-      copyright: 'Copyright © 2024 FoundationIO'
+      copyright: 'Copyright © 2024 <a href="https://www.foundation.io" target="_blank">FoundationIO</a>'
     }
   }
 })
