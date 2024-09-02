@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Platform Specification"
   text: "Standards for Defining Your Cloud Platform"
-  tagline: Capture Every Component and Configuration of Your Cloud Platform in One Unified Standard
+  tagline: Capture Every Component and Configuration of Your Cloud Platform and Infrastructure in One Unified Standard
   image:
     light: ./images/logo-black-pressedsteel.svg
     dark: ./images/logo-grey-paint-shadow.svg
