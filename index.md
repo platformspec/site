@@ -66,3 +66,33 @@ The Platform Specification project introduces a comprehensive and structured YAM
 
 <p>&nbsp;</p>
 
+```yaml
+apiVersion: base.platformspec.io/v1alpha1
+kind: Platform
+metadata:
+  name: example
+spec:
+  platform:
+    organization: Example Demo Company
+    description: "A comprehensive example of a multicloud Kubernetes platform."
+    contactEmail: engineering@platformspec.io
+  credentials: []
+  providers:
+    iaas: []
+    dns: []
+    identity: []
+    registry: []
+    backup: []
+    secrets: []
+    logging: []
+    ...
+  environments: []
+  images:
+    containers: []
+    machines: []
+  clusters: []
+  servers: []
+  software: []
+  policies: []
+  ...
+```

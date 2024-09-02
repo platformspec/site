@@ -8,20 +8,21 @@ A "Cloud Platform" is essentially the backbone of modern digital infrastructure,
 Quickly and often "Cloud Platforms" become quite intricate and complicated as the organization expands its software based services.
 
 
-## Key Components of a Cloud Platform
+## Key Component Groups of a Cloud Platform
 A cloud platform can be broken down into six distinct component groups.  The below sections capture the six key components groups of a cloud platform:
 
 &nbsp;
 &nbsp;
 
-![An image](../images/key-components.svg)
+![Key Components (light)](../images/key-components.svg){.light-only}
+![Key Components (dark)](../images/key-components-white.svg){.dark-only}
 
 ### 1. **Infrastructure**
 Foundational elements of the cloud platform, detailing how different environments and resources are configured and managed.
 
 - **Providers:** Specifies the cloud providers (e.g., AWS, Azure, GCP) and their associated configurations, such as regions, availability zones, and resource quotas.
 - **Environments:** Describes the different environments (e.g., development, staging, production) and their specific configurations, ensuring consistency across multiple environments.
-   - **Credentials:** Manages the authentication and access credentials for interacting with cloud providers and services, emphasizing secure storage and rotation policies.
+- **Credentials:** Manages the authentication and access credentials for interacting with cloud providers and services, emphasizing secure storage and rotation policies.
 
 ### **2. Compute and Networks**
 Resources that provide the computational power and networking capabilities required by applications and services.
@@ -67,88 +68,84 @@ For ensuring that the cloud platform and the applications running on it are obse
 - **Service Level Objectives (SLOs):** Specifies the service level objectives for critical platform services, including uptime, latency, and response times, and the mechanisms for monitoring and achieving these objectives.
 - **Cost Management and Optimization:** Ttools to monitor and optimize resource usage, ensuring that infrastructure and applications are cost-efficient and sustainable. Delivers insights into cloud spending, helping executives manage budgets, forecast expenses, and make informed financial decisions.
 
-## Types of Cloud Platforms
-- **Infrastructure as a Service (IaaS)**: Provides fundamental compute, storage, and networking resources on a pay-as-you-go basis. Examples include AWS EC2, Microsoft Azure VMs, and Google Compute Engine.
-  
-- **Platform as a Service (PaaS)**: Offers a higher level of abstraction, providing a platform for developers to build and deploy applications without worrying about managing the underlying infrastructure. Examples include AWS Elastic Beanstalk, Google App Engine, and Microsoft Azure App Service.
-  
-- **Software as a Service (SaaS)**: Delivers fully managed software applications over the internet, typically on a subscription basis. While not a "platform" in the traditional sense, it often relies on underlying cloud platforms to operate. Examples include Salesforce, Office 365, and Google Workspace.
 
-## Purpose and Benefits of a Cloud Platform
-- **Scalability**: Cloud platforms allow businesses to scale resources up or down based on demand, ensuring they only pay for what they use.
-- **Flexibility**: They support a wide range of programming languages, frameworks, and tools, enabling developers to choose the best fit for their needs.
-- **Reliability**: Cloud platforms offer high availability and redundancy, often with built-in disaster recovery and backup solutions.
-- **Cost Efficiency**: By eliminating the need for physical hardware and maintenance, cloud platforms reduce capital expenses and operational overhead.
-- **Innovation**: Cloud platforms often come with built-in AI, machine learning, and data analytics tools, enabling businesses to innovate faster and leverage cutting-edge technologies.
 
-## **Stakeholder Groups of a Cloud Platform**
+## **Types of Cloud Platforms:**
 
-Cloud platforms serve multiple stakeholder groups within an organization, each with its own unique priorities, concerns, and responsibilities. Understanding these groups and their roles is essential for designing and managing a cloud platform that meets the needs of the entire organization. Here’s a detailed description of the four primary stakeholder groups:
+Cloud platforms can be categorized based on several factors, including their origin (custom-built vs. off-the-shelf), their deployment model (self-hosted vs. managed/hosted), and their specific use cases. The type of cloud platform an organization chooses depends on its specific needs, resources, and strategic goals. Custom, internal platforms offer unparalleled flexibility and control but come with higher development costs. Off-the-shelf solutions provide ease of use and quick deployment at the cost of customization. Hosted platforms offer convenience and scalability but limit control, while self-hosted platforms give full control at the expense of increased complexity and resource requirements. Understanding these types and their trade-offs is crucial for making informed decisions about cloud platform strategy.
 
-### **1. Systems Engineers (DevOps, SRE, Platform/Infrastructure/Cloud Engineers)**
+Below are the different types of cloud platforms, along with a description and explanation of each:
 
-**Role and Responsibilities:**
-Systems Engineers are responsible for the design, deployment, operation, and maintenance of the cloud platform’s underlying infrastructure. This group includes DevOps Engineers, Site Reliability Engineers (SREs), Platform Engineers, Infrastructure Engineers, and Cloud Engineers. Their primary focus is on ensuring that the cloud platform is robust, scalable, and efficient, providing a solid foundation for applications and services.
+### **1. Custom, Internal, and Homegrown Cloud Platforms**
 
-**Key Priorities:**
-- **Automation and Efficiency:** Systems Engineers prioritize automating infrastructure provisioning and management to reduce manual tasks, minimize errors, and increase operational efficiency.
-- **Reliability and Scalability:** They ensure that the platform is reliable, with high availability and the ability to scale as needed to handle varying workloads.
-- **Performance Monitoring:** Continuous monitoring of system performance and the ability to quickly identify and resolve issues are crucial for maintaining service levels.
-- **Infrastructure as Code (IaC):** They leverage IaC tools to codify and automate the deployment of infrastructure, enabling consistency and repeatability across environments.
+#### **Definition:**
+Custom, internal, and homegrown cloud platforms are built and maintained entirely by an organization’s internal teams. These platforms are tailored specifically to the unique needs and requirements of the organization, often integrating tightly with existing systems, workflows, and processes.
 
-**Concerns:**
-- **Downtime and Failures:** Minimizing downtime and preventing infrastructure failures are critical concerns, as they directly impact the organization’s operations.
-- **Complexity Management:** Managing the complexity of cloud environments, especially in multi-cloud or hybrid scenarios, is a significant challenge.
-- **Resource Optimization:** Ensuring that resources are used efficiently to avoid waste and control costs is a constant concern.
+#### **Description:**
+- **Customization:** These platforms are highly customized, often built from the ground up to address specific business requirements or technical challenges that off-the-shelf solutions may not adequately cover.
+- **Control:** Organizations have full control over every aspect of the platform, from infrastructure management to feature development, allowing for deep integration with internal tools and services.
+- **Flexibility:** Custom platforms offer significant flexibility, enabling organizations to implement unique features and optimizations that provide a competitive advantage.
 
-### **2. Developers**
+#### **Use Cases:**
+- Organizations with specialized needs that cannot be met by commercial solutions.
+- Enterprises looking to leverage proprietary technology or data in a way that requires complete control over the platform.
 
-**Role and Responsibilities:**
-Developers are responsible for building, testing, and deploying applications that run on the cloud platform. Their primary focus is on writing code, developing features, and delivering software that meets user needs. Developers rely on the cloud platform to provide the tools, environments, and services they need to be productive and to deploy their applications quickly and reliably.
+#### **Challenges:**
+- **Development and Maintenance Costs:** Building and maintaining a custom platform requires significant investment in time, resources, and expertise.
+- **Scalability:** Custom platforms may face challenges in scaling efficiently as the organization grows, particularly if they were not designed with scalability in mind from the outset.
 
-**Key Priorities:**
-- **Ease of Use:** Developers prioritize having easy access to development tools, environments, and resources that allow them to focus on coding without being bogged down by infrastructure concerns.
-- **Speed of Deployment:** They value fast, automated deployment processes that enable them to quickly release new features and updates.
-- **Self-Service Capabilities:** Developers benefit from self-service portals that allow them to provision resources, access APIs, and deploy applications independently, without waiting for IT support.
-- **Integration with CI/CD Pipelines:** Seamless integration with continuous integration and continuous delivery (CI/CD) pipelines is crucial for maintaining efficient development workflows.
+### **2. Off-the-Shelf Commercial Cloud Platforms**
 
-**Concerns:**
-- **Development Bottlenecks:** Any obstacles that slow down the development process, such as waiting for resources or dealing with complex configurations, are major concerns for developers.
-- **Environment Consistency:** Ensuring that development, staging, and production environments are consistent is important for preventing issues during deployment.
-- **Application Performance:** Developers need to ensure that their applications perform well and are optimized for the cloud platform.
+#### **Definition:**
+Off-the-shelf commercial cloud platforms are pre-built solutions provided by third-party vendors. These platforms are designed to be widely applicable across different industries and use cases, offering a standardized set of features and capabilities.
 
-### **3. Security and Compliance**
+#### **Description:**
+- **Simplicity:** These platforms are ready to use out of the box, with pre-configured features and services that can be quickly deployed without the need for extensive customization.
+- **Support and Upgrades:** Vendors typically provide ongoing support, regular updates, and new features, reducing the operational burden on the organization.
+- **Integration:** Many off-the-shelf platforms come with a wide range of integrations with popular third-party tools and services, making it easier to adopt and extend the platform.
 
-**Role and Responsibilities:**
-The Security and Compliance team is responsible for ensuring that the cloud platform and the applications running on it adhere to organizational security policies and industry regulations. This group focuses on protecting the platform from security threats, managing access controls, and ensuring that the organization remains compliant with relevant laws and standards.
+#### **Use Cases:**
+- Organizations looking for a quick, reliable, and cost-effective solution to deploy cloud infrastructure or applications.
+- Businesses that do not have the resources or expertise to build and maintain a custom cloud platform.
 
-**Key Priorities:**
-- **Access Control:** Security and Compliance teams prioritize implementing and managing strict access controls to ensure that only authorized users can access sensitive data and resources.
-- **Data Protection:** They ensure that data is securely stored and transmitted, using encryption and other security measures to protect against breaches and data loss.
-- **Compliance Adherence:** Maintaining compliance with industry regulations (e.g., GDPR, HIPAA) is a top priority, requiring ongoing monitoring, auditing, and documentation.
-- **Vulnerability Management:** Regularly scanning for and addressing vulnerabilities in the platform and applications is essential for minimizing security risks.
+#### **Challenges:**
+- **Limited Customization:** While these platforms offer many features, they may not be easily customizable to fit very specific needs.
+- **Vendor Lock-In:** Relying on a commercial platform can lead to vendor lock-in, where the organization becomes dependent on a single provider, making it difficult to switch platforms or providers in the future.
 
-**Concerns:**
-- **Security Breaches:** Preventing unauthorized access, data breaches, and other security incidents is a constant concern for this group.
-- **Compliance Violations:** Failing to meet compliance requirements can result in legal penalties, fines, and reputational damage, making this a significant concern.
-- **Audit Readiness:** Ensuring that the platform is always audit-ready, with comprehensive logs and documentation, is critical for maintaining compliance.
+### **3. Hosted (Managed) Cloud Platforms**
 
-### **4. Leadership and Executives**
+#### **Definition:**
+Hosted or managed cloud platforms are solutions where the infrastructure and platform services are fully managed by a third-party provider. These platforms relieve organizations from the responsibility of maintaining the underlying infrastructure, allowing them to focus on their core business.
 
-**Role and Responsibilities:**
-Leadership and Executives are responsible for setting the strategic direction of the organization and ensuring that the cloud platform aligns with business goals. They focus on high-level outcomes, such as driving innovation, optimizing costs, and ensuring that the platform supports the organization’s growth and competitive advantage.
+#### **Description:**
+- **Ease of Use:** Managed platforms are designed for ease of use, with the provider handling all aspects of infrastructure management, including setup, scaling, security, and maintenance.
+- **Scalability:** Providers typically offer scalable solutions that can grow with the organization’s needs, without requiring significant input from the organization itself.
+- **Cost-Effectiveness:** While managed platforms may have a higher upfront cost, they can be cost-effective in the long run by reducing the need for in-house IT staff and infrastructure investments.
 
-**Key Priorities:**
-- **Business Alignment:** Executives prioritize ensuring that the cloud platform supports the organization’s strategic objectives, enabling innovation and agility.
-- **Cost Management:** Controlling and optimizing cloud costs is a major priority, as it directly impacts the organization’s bottom line.
-- **Risk Management:** Leadership is concerned with mitigating risks related to security, compliance, and operational continuity to protect the organization’s reputation and assets.
-- **Performance Metrics:** Executives focus on key performance indicators (KPIs) that measure the effectiveness and efficiency of the cloud platform, such as uptime, deployment frequency, and cost efficiency.
+#### **Use Cases:**
+- Organizations that want to focus on application development and business growth rather than infrastructure management.
+- Startups and small businesses that need a robust platform without the overhead of managing it themselves.
 
-**Concerns:**
-- **Return on Investment (ROI):** Ensuring that investments in the cloud platform deliver tangible business value and a strong ROI is a primary concern.
-- **Scalability and Growth:** The ability of the cloud platform to scale with the organization’s growth and support new initiatives is crucial for long-term success.
-- **Regulatory and Market Changes:** Keeping the platform adaptable to changing regulatory requirements and market conditions is a constant concern for leadership.
+#### **Challenges:**
+- **Less Control:** Organizations have limited control over the underlying infrastructure and must rely on the provider’s capabilities and policies.
+- **Data Security:** While managed platforms often have strong security measures, organizations may have concerns about data privacy and compliance, especially in highly regulated industries.
 
-### **Summary**
+### **4. Self-Hosted Cloud Platforms**
 
-These four stakeholder groups each play a critical role in the success of a cloud platform. Understanding their distinct priorities and concerns is essential for designing, implementing, and managing a cloud platform that meets the needs of the entire organization, drives innovation, and ensures operational excellence.
+#### **Definition:**
+Self-hosted cloud platforms are solutions where the organization is responsible for deploying, managing, and maintaining the platform on its own infrastructure or on cloud infrastructure that they control.
+
+#### **Description:**
+- **Full Control:** Organizations have complete control over the platform, including the ability to customize, configure, and optimize it according to their specific needs.
+- **Security:** Self-hosted platforms allow organizations to implement their own security measures, ensuring that they meet internal policies and regulatory requirements.
+- **Cost:** While self-hosting can be more expensive upfront, it can offer long-term savings by avoiding the recurring costs associated with managed services.
+
+#### **Use Cases:**
+- Organizations with specific security, compliance, or performance requirements that necessitate full control over the platform.
+- Enterprises with the resources and expertise to manage complex infrastructure environments.
+
+#### **Challenges:**
+- **Resource Intensive:** Self-hosting requires significant investment in infrastructure, personnel, and expertise to manage and maintain the platform effectively.
+- **Complexity:** Managing a self-hosted platform can be complex, particularly in environments that require high availability, redundancy, and scalability.
+
+

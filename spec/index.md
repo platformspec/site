@@ -61,10 +61,10 @@ The Platform Specification is built on the principle that a standardized, transp
 
 4. **Innovation:** By reducing the need for custom solutions, the Platform Specification frees up resources that can be redirected towards innovation and strategic initiatives, rather than platform maintenance.
 
-## **Towards a Unified Future in Platform Engineering**
+## **Towards a Unified Future in Cloud Platform Engineering**
 
-The Platform Specification project represents a significant advancement in the field of platform engineering. By providing a standardized, community-driven framework for defining cloud platforms, the specification addresses the inefficiencies and challenges associated with the current state of platform management.
+The Platform Specification project represents a significant advancement in the field of cloud platform engineering. By providing a standardized, community-driven framework for defining cloud platforms, the specification addresses the inefficiencies and challenges associated with the current state of platform management.
 
 As cloud environments continue to grow in complexity, the need for a consistent, transparent, and extensible approach to platform engineering will become increasingly critical. The Platform Specification is designed to meet this need, empowering organizations to build, manage, and scale their platforms with confidence, efficiency, and security.
 
-In the future, as more organizations adopt the Platform Specification, we envision a world where platform engineering is no longer an isolated, repetitive task, but a collaborative, standardized practice that drives innovation and operational excellence across the industry. By building on the common patterns established through the IaC revolution, the Platform Specification aims to create a unified foundation that simplifies platform engineering and accelerates the adoption of best practices across the technology landscape.
+In the future, as more organizations adopt the Platform Specification, we envision a world where cloud platform engineering is no longer an isolated, repetitive task, but a collaborative, standardized practice that drives innovation and operational excellence across the industry. By building on the common patterns established through the IaC revolution, the Platform Specification aims to create a unified foundation that simplifies cloud platform engineering and accelerates the adoption of best practices across the technology landscape.

@@ -24,26 +24,32 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/spec/' },
             { text: 'What is a Cloud Platform?', link: '/spec/cloud-platforms' },
+            { text: 'Purpose of Cloud Platforms', link: '/spec/purpose-and-benefits' },
+            { text: 'Stakeholders', link: '/spec/stakeholders' },
+            { text: 'How Cloud Platforms are Used', link: '/spec/how-its-used' },
             { text: 'What is Platform Enginering', link: '/spec/platform-engineering' },
             { text: 'How Are They Related?', link: '/spec/cloud-platform-platform-engineering-relationship' },
-            { text: 'How It\'s Used', link: '/spec/how-its-used' },
-            { text: 'Use Cases', link: '/spec/use-cases' },
             { text: 'FAQ', link: '/spec/faq' }
           ]
         },
         {
-          text: 'Getting Started',
+          text: 'Specification',
           items: [
-            { text: 'First Steps', link: '/spec/first-steps' },
+            { text: 'Introduction', link: '/spec/introduction' },
+            { text: 'Getting Started', link: '/spec/getting-started' },
+            { text: 'Usage', link: '/spec/usage' },
+            { text: 'Components', link: '/spec/ref-components' },
+            { text: 'Validation', link: '/spec/ref-validation' },
             { text: 'Examples', link: '/spec/examples' },
-            { text: 'SDKs', link: '/spec/sdks' }
+            { text: 'SDKs', link: '/spec/sdks' },
+            { text: 'License', link: '/spec/license' }
           ]
         },
         {
-          text: 'Reference',
+          text: 'Community',
           items: [
-            { text: 'Components', link: '/spec/ref-components' },
-            { text: 'Validation', link: '/spec/ref-validation' }
+            { text: 'Involvement', link: '/spec/involvement' },
+            { text: 'Resources', link: '/spec/resources' }
           ]
         }
       ]
