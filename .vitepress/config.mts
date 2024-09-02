@@ -40,9 +40,14 @@ export default defineConfig({
             { text: 'Usage', link: '/spec/usage' },
             { text: 'Components', link: '/spec/ref-components' },
             { text: 'Validation', link: '/spec/ref-validation' },
-            { text: 'Examples', link: '/spec/examples' },
             { text: 'SDKs', link: '/spec/sdks' },
             { text: 'License', link: '/spec/license' }
+          ]
+        },
+        {
+          text: 'Examples',
+          items: [
+            { text: 'Basic AWS Platform', link: '/spec/example-basic-aws' }
           ]
         },
         {

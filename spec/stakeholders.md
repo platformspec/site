@@ -38,7 +38,7 @@ Developers are responsible for building, testing, and deploying applications tha
 - **Environment Consistency:** Ensuring that development, staging, and production environments are consistent is important for preventing issues during deployment.
 - **Application Performance:** Developers need to ensure that their applications perform well and are optimized for the cloud platform.
 
-### **3. Security and Compliance**
+## **3. Security and Compliance**
 
 > *The people who preserve the value of your organization, such as Security and Legal departments*
 
