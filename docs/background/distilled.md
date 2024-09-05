@@ -4,8 +4,8 @@ A cloud platform can be broken down into six distinct component groups.  The bel
 &nbsp;
 &nbsp;
 
-![Key Components (light)](../images/key-components.svg){.light-only}
-![Key Components (dark)](../images/key-components-white.svg){.dark-only}
+![Key Components (light)](./key-components-light.svg){.light-only}
+![Key Components (dark)](./key-components-dark.svg){.dark-only}
 
 ### 1. **Infrastructure**
 Foundational elements of the cloud platform, detailing how different environments and resources are configured and managed.

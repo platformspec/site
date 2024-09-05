@@ -12,50 +12,50 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Specification', link: '/spec/' },
-      { text: 'Examples', link: '/examples' },
+      { text: 'Specification', link: '/docs/background/' },
+      { text: 'Examples', link: '/docs/examples' },
       { text: 'Community', link: '/community' }
     ],
 
     sidebar: {
-      '/spec/': [
+      '/docs/': [
         {
           text: 'Background',
           items: [
-            { text: 'Introduction', link: '/spec/' },
-            { text: 'What is a Cloud Platform?', link: '/spec/cloud-platforms' },
-            { text: 'Cloud Platforms Distilled', link: '/spec/distilled' },
-            { text: 'Benefits and Purpose', link: '/spec/purpose-and-benefits' },
-            { text: 'Stakeholders', link: '/spec/stakeholders' },
-            { text: 'How Cloud Platforms are Used', link: '/spec/how-its-used' },
-            { text: 'What is Platform Enginering', link: '/spec/platform-engineering' },
-            { text: 'How Are They Related?', link: '/spec/cloud-platform-platform-engineering-relationship' },
-            { text: 'FAQ', link: '/spec/faq' }
+            { text: 'Introduction', link: '/docs/background/' },
+            { text: 'What is a Cloud Platform?', link: '/docs/background/cloud-platforms' },
+            { text: 'Cloud Platforms Distilled', link: '/docs/background/distilled' },
+            { text: 'Benefits and Purpose', link: '/docs/background/purpose-and-benefits' },
+            { text: 'Stakeholders', link: '/docs/background/stakeholders' },
+            { text: 'How Cloud Platforms are Used', link: '/docs/background/how-its-used' },
+            { text: 'What is Platform Enginering', link: '/docs/background/platform-engineering' },
+            { text: 'How Are They Related?', link: '/docs/background/cloud-platform-platform-engineering-relationship' },
+            { text: 'FAQ', link: '/docs/background/faq' }
           ]
         },
         {
           text: 'Specification',
           items: [
-            { text: 'Introduction', link: '/spec/introduction' },
-            { text: 'Getting Started', link: '/spec/getting-started' },
-            { text: 'Usage', link: '/spec/usage' },
-            { text: 'Components', link: '/spec/ref-components' },
-            { text: 'Validation', link: '/spec/ref-validation' },
-            { text: 'SDKs', link: '/spec/sdks' },
-            { text: 'License', link: '/spec/license' }
+            { text: 'Introduction', link: '/docs/spec/introduction' },
+            { text: 'Getting Started', link: '/docs/spec/getting-started' },
+            { text: 'Usage', link: '/docs/spec/usage' },
+            { text: 'Components', link: '/docs/spec/ref-components' },
+            { text: 'Validation', link: '/docs/spec/ref-validation' },
+            { text: 'SDKs', link: '/docs/spec/sdks' },
+            { text: 'License', link: '/docs/spec/license' }
           ]
         },
         {
           text: 'Examples',
           items: [
-            { text: 'Basic AWS Platform', link: '/spec/example-basic-aws' }
+            { text: 'Basic AWS Platform', link: '/docs/examples/example-basic-aws' }
           ]
         },
         {
           text: 'Community',
           items: [
-            { text: 'Involvement', link: '/spec/involvement' },
-            { text: 'Resources', link: '/spec/resources' }
+            { text: 'Involvement', link: '/docs/community/involvement' },
+            { text: 'Resources', link: '/docs/community/resources' }
           ]
         }
       ]

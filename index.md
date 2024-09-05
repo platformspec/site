@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Specification
-      link: /spec/
+      link: /spec/background/
     - theme: alt
       text: Examples
       link: /spec/examples

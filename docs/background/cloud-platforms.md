@@ -8,3 +8,7 @@ A "Cloud Platform" is essentially the backbone of modern digital infrastructure,
 Quickly and often "Cloud Platforms" become quite intricate and complicated as the organization expands its software based services.
 
 
+![Cloud Platform Layers (light)](./CloudPlatformLayers-light.drawio.svg){.light-only}
+![Cloud Platform Layers (dark)](./CloudPlatformLayers-dark.drawio.svg){.dark-only}
+
+sdfsdf
