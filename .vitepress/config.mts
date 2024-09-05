@@ -24,7 +24,8 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/spec/' },
             { text: 'What is a Cloud Platform?', link: '/spec/cloud-platforms' },
-            { text: 'Purpose of Cloud Platforms', link: '/spec/purpose-and-benefits' },
+            { text: 'Cloud Platforms Distilled', link: '/spec/distilled' },
+            { text: 'Benefits and Purpose', link: '/spec/purpose-and-benefits' },
             { text: 'Stakeholders', link: '/spec/stakeholders' },
             { text: 'How Cloud Platforms are Used', link: '/spec/how-its-used' },
             { text: 'What is Platform Enginering', link: '/spec/platform-engineering' },
@@ -65,7 +66,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the Apache 2.0 License.',
+      message: 'Released under the [INSERT LICENSE HERE] License.',
       copyright: 'Copyright © 2024 <a href="https://www.foundation.io" target="_blank">FoundationIO</a>'
     }
   }
