@@ -1,4 +1,4 @@
-# Cloud Platforms
+# What is a Cloud Platform?
 
 ## Definition
 A "Cloud Platform" refers to a comprehensive set of cloud-based services, tools, and infrastructure that allows organizations to develop, deploy, manage, and scale applications and services in the cloud. It provides a foundational environment that abstracts much of the complexity of managing physical hardware, networking, and data centers, enabling users to focus on building and running their applications.
@@ -105,3 +105,7 @@ Layering cloud platforms into these four distinct groups—**Infrastructure Serv
 
 By defining and structuring these four layers, the **Platform Specification** provides a roadmap for creating robust, scalable, and developer-friendly cloud platforms that address the full spectrum of an organization’s needs.
 
+## Is that all?
+But wait... there's more...
+
+Cloud Platforms are not just about the layers of services and software components.  What about the policies regarding interaction between the specified services?  How about the experience provided to developers?  And we cannot forget about security!  These elements are equally as important to the definition of a cloud platform as the services/software providers themselves.  So let's get into that...
