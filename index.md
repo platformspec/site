@@ -12,10 +12,10 @@ hero:
   actions:
     - theme: brand
       text: Specification
-      link: /spec/background/
+      link: /docs/background/
     - theme: alt
-      text: Examples
-      link: /spec/examples
+      text: Blueprints
+      link: /blueprints
     - theme: alt
       text: Get Involved!
       link: /community

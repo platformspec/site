@@ -13,7 +13,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Specification', link: '/docs/background/' },
-      { text: 'Examples', link: '/docs/examples' },
+      { text: 'Blueprints', link: '/blueprints' },
       { text: 'Community', link: '/community' }
     ],
 
@@ -23,11 +23,11 @@ export default defineConfig({
           text: 'Background',
           items: [
             { text: 'Introduction', link: '/docs/background/' },
-            { text: 'What is a Cloud Platform?', link: '/docs/background/cloud-platforms' },
-            { text: 'Cloud Platforms Distilled', link: '/docs/background/distilled' },
-            { text: 'Benefits and Purpose', link: '/docs/background/purpose-and-benefits' },
+            { text: 'What is a Cloud Platform?', link: '/docs/background/what-is-a-cloud-platform' },
+            { text: 'Who needs a Cloud Platform?', link: '/docs/background/who-needs-a-cloud-platform' },
+            { text: 'The Four Layers', link: '/docs/background/the-four-layers' },
+            { text: 'The Six Key Pillars', link: '/docs/background/key-pillars' },
             { text: 'Stakeholders', link: '/docs/background/stakeholders' },
-            { text: 'How Cloud Platforms are Used', link: '/docs/background/how-its-used' },
             { text: 'What is Platform Enginering', link: '/docs/background/platform-engineering' },
             { text: 'How Are They Related?', link: '/docs/background/cloud-platform-platform-engineering-relationship' },
             { text: 'FAQ', link: '/docs/background/faq' }
