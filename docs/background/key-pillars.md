@@ -60,5 +60,5 @@ For ensuring that the cloud platform and the applications running on it are obse
 - **Telemetry:** Defines what telemetry data is collected from the platform and applications, including metrics, logs, and traces.
 - **Performance Tuning:** Outlines strategies and tools for tuning the performance of applications and infrastructure, including load testing and optimization techniques.
 - **Service Level Objectives (SLOs):** Specifies the service level objectives for critical platform services, including uptime, latency, and response times, and the mechanisms for monitoring and achieving these objectives.
-- **Cost Management and Optimization:** Ttools to monitor and optimize resource usage, ensuring that infrastructure and applications are cost-efficient and sustainable. Delivers insights into cloud spending, helping executives manage budgets, forecast expenses, and make informed financial decisions.
+- **Cost Management and Optimization:** Tools to monitor and optimize resource usage, ensuring that infrastructure and applications are cost-efficient and sustainable. Delivers insights into cloud spending, helping executives manage budgets, forecast expenses, and make informed financial decisions.
 

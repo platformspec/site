@@ -1,5 +1,8 @@
 # Who needs a Cloud Platform?
 
+![Journey (Light)](./journey-light.svg){.light-only}
+![Journey (Dark)](./journey-dark.svg){.dark-only}
+
 ## When an Organization Requires Its Own Cloud Platform
 
 Many organizations start their cloud journey by leveraging **Platform-as-a-Service (PaaS)** providers, **no-code solutions**, or selectively using services from an **Infrastructure-as-a-Service (IaaS)** provider. These approaches are often sufficient for small-scale applications, limited workloads, or companies looking for a simplified entry into cloud computing. However, as an organization’s operational needs evolve, they may reach a point where the limitations of these approaches no longer align with their growing complexity, scalability requirements, or strategic goals. At this stage, the organization may require its own **Cloud Platform** to meet its unique demands.
