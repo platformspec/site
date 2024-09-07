@@ -12,7 +12,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Specification', link: '/docs/background/' },
+      { text: 'Documentation', link: '/docs/background/' },
       { text: 'Blueprints', link: '/blueprints' },
       { text: 'Community', link: '/community' }
     ],

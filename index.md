@@ -11,7 +11,7 @@ hero:
     dark: ./images/logo-grey-paint-shadow.svg
   actions:
     - theme: brand
-      text: Specification
+      text: Documentation
       link: /docs/background/
     - theme: alt
       text: Blueprints
