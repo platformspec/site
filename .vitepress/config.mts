@@ -36,7 +36,7 @@ export default defineConfig({
         {
           text: 'Specification',
           items: [
-            { text: 'Introduction', link: '/docs/spec/introduction' },
+            { text: 'Overview', link: '/docs/spec/overview' },
             { text: 'Getting Started', link: '/docs/spec/getting-started' },
             { text: 'Usage', link: '/docs/spec/usage' },
             { text: 'Components', link: '/docs/spec/ref-components' },

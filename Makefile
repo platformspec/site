@@ -25,4 +25,6 @@ build:
 run: build
 	$(CONTAINER_RUNTIME) run --rm -v `pwd`:/app -p 5173:$(VITEPRESS_PORT) $(CONTAINER_IMAGE):$(CONTAINER_TAG)
 
+clean:
+	rm .vitepress/cache -rf
 
