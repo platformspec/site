@@ -29,7 +29,7 @@ features:
   - title: Streamlined Collaboration
     details: Facilitates collaboration among platform engineers, developers, and operations teams through a shared, transparent configuration file.
   - title: Accelerated Time to Value
-    details: Provides a clear, structured approach to platform engineering, reducing the learning curve for new team members and accelerating platform deployment.
+    details: Provides a clear, structured approach to cloud platform engineering, reducing the learning curve for new team members and accelerating platform deployment.
 ---
 
 <style>
