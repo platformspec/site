@@ -7,15 +7,12 @@ hero:
   text: "Standards for Defining Your Cloud Platform"
   tagline: Capture Every Component and Configuration of Your Cloud Platform and Infrastructure in One Unified Standard
   image:
-    light: ./images/logo-black-pressedsteel.svg
-    dark: ./images/logo-grey-paint-shadow.svg
+    light: ./images/logo-pressedsteel-light.svg
+    dark: ./images/logo-pressedsteel-dark.svg
   actions:
     - theme: brand
       text: Documentation
       link: /docs/background/
-    - theme: alt
-      text: Blueprints
-      link: /blueprints
     - theme: alt
       text: Get Involved!
       link: /community
@@ -62,4 +59,8 @@ features:
 </style>
 <p>&nbsp;</p>
 
-The Platform Specification project introduces a comprehensive and structured YAML-based approach to defining, deploying, and managing cloud platforms across diverse environments. By encapsulating every essential component, configuration, and policy within a single `platform.yaml` (or `platform.json`) document, it ensures consistent, streamlined, and scalable infrastructure management. Whether you're operating across multiple clouds or fine-tuning a single environment, the Platform Specification simplifies the complexity, empowering your team to focus on innovation rather than infrastructure.
+[![Workflow](./images/workflow-light.svg){style="display: block; margin: 0 auto"}{.light-only}](./docs/spec/workflow)
+[![Workflow](./images/workflow-dark.svg){style="display: block; margin: 0 auto"}{.dark-only}](./docs/spec/workflow)
+
+The Platform Specification project introduces a comprehensive and structured YAML-based approach to defining, deploying, and managing cloud platforms across diverse environments. By encapsulating every essential component, configuration, and policy within a single document, it ensures consistent, streamlined, and scalable infrastructure management. Whether you're operating across multiple clouds or fine-tuning a single environment, the Platform Specification simplifies the complexity, empowering your team to focus on innovation rather than infrastructure.
+

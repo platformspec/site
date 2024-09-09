@@ -13,7 +13,6 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentation', link: '/docs/background/' },
-      { text: 'Blueprints', link: '/blueprints' },
       { text: 'Community', link: '/community' }
     ],
 
@@ -66,7 +65,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the [INSERT LICENSE HERE] License.',
+      message: '<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://platformspec.io">Platform Specification</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.foundation.io">FoundationIO</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0</a></p>',
       copyright: 'Copyright © 2024 <a href="https://www.foundation.io" target="_blank">FoundationIO</a>'
     }
   }
