@@ -29,25 +29,17 @@ export default defineConfig({
             { text: 'Stakeholders', link: '/docs/background/stakeholders' },
             { text: 'What is Platform Enginering', link: '/docs/background/platform-engineering' },
             { text: 'How Are They Related?', link: '/docs/background/cloud-platform-platform-engineering-relationship' },
-            { text: 'FAQ', link: '/docs/background/faq' }
           ]
         },
         {
           text: 'Specification',
           items: [
+            { text: 'Preface', link: '/docs/spec/preface' },
             { text: 'Overview', link: '/docs/spec/overview' },
             { text: 'Getting Started', link: '/docs/spec/getting-started' },
-            { text: 'Usage', link: '/docs/spec/usage' },
-            { text: 'Components', link: '/docs/spec/ref-components' },
-            { text: 'Validation', link: '/docs/spec/ref-validation' },
+            { text: 'Workflow & Usage', link: '/docs/spec/workflow-and-usage' },
             { text: 'SDKs', link: '/docs/spec/sdks' },
             { text: 'License', link: '/docs/spec/license' }
-          ]
-        },
-        {
-          text: 'Examples',
-          items: [
-            { text: 'Basic AWS Platform', link: '/docs/examples/example-basic-aws' }
           ]
         },
         {
