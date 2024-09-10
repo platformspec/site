@@ -1,6 +1,6 @@
 ![Banner](./images/banner-black.svg)
 
-Welcome to the Platform Specification project! This repository contains the source code for the entire Platform Specification website as well as the official specificatgion files themselves.
+Welcome to the Platform Specification project! This repository contains the source code for the entire Platform Specification website as well as the official specification files themselves.
 
 Please see https://platformspec.io for the full project details.
 
