@@ -10,6 +10,7 @@ export default defineConfig({
       'light': '/images/logo-black.svg',
       'dark': '/images/logo-white.svg'
     },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentation', link: '/docs/background/' },
@@ -37,6 +38,7 @@ export default defineConfig({
             { text: 'Preface', link: '/docs/spec/preface' },
             { text: 'Overview', link: '/docs/spec/overview' },
             { text: 'Getting Started', link: '/docs/spec/getting-started' },
+            { text: 'Example', link: '/docs/spec/example' },
             { text: 'Workflow & Usage', link: '/docs/spec/workflow-and-usage' },
             { text: 'SDKs', link: '/docs/spec/sdks' },
             { text: 'License', link: '/docs/spec/license' }
