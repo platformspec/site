@@ -1,4 +1,6 @@
-# Platform Specification
+# The Platform Specification
+
+![Banner](./images/banner-black.svg)
 
 Welcome to the Platform Specification project! This repository contains the source code for the entire Platform Specification website as well as the official specificatgion files themselves.
 
