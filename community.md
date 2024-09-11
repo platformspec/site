@@ -36,4 +36,4 @@ The Platform Specification is just getting started, and we’re currently at **v
 
 Whether you’re an experienced engineer or just getting started, your contribution matters. Join us in shaping a powerful, standardized approach to cloud platforms that will benefit organizations around the world.
 
-**Ready to contribute?** [Get Started](./docs/spec/getting-started) and be part of the Platform Specification Project today!
+**Ready to contribute?** See the [Involvement](./docs/contributing/involvement) page and be part of the Platform Specification Project today!
