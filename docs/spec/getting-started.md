@@ -40,51 +40,113 @@ spec:
 
 ### Infrastructure
 
-The Infrastructure section defines the cloud provider, environments, and credentials required to set up the foundational layer of the platform. This section is crucial for configuring the base resources (such as regions, virtual machines, or networks) on which the rest of the platform components will run.
+The Infrastructure section defines the cloud provider, environments, and credentials required to set up the foundational layer of the platform. This section is crucial for configuring the base resources (such as regions, virtual machine images, or networks) on which the rest of the platform components will run.
 
 
 ```yaml
 spec:
-  credentials: []
+  credentials:
+    - name: <name>
+      kind: <type>
+      secretRef:
+        name: <secret name>
 
   providers:
     # ===== Infrastructure as a Service (IaaS) Providers =====
-    iaas: []
-    
+    iaas:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
     # ===== DNS Providers =====
-    dns: []
+    dns:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
     
     # ===== Identity Providers =====
-    identity: []
+    identity:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
     
     # ===== Container/Artifact Registries =====
-    registry: []
+    registry:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
     
     # ===== Backup and Disaster Recovery Providers =====
-    backup: []
+    backup:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
     
     # ===== Monitoring Providers =====
-    monitoring: []
+    monitoring:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
 
     # ===== Secret Management Providers =====
-    secrets: []
+    secrets:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
     
     # ===== Observability Providers =====
-    observability: []
+    observability:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
 
     # ===== CI/CD Providers =====
-    cicd: []
+    cicd:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
     
     # ===== Logging Providers =====
-    logging: []
+    logging:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
     
     # ===== Auditing Providers =====
-    auditing: []
+    auditing:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
     
     # ===== Automation and Orchestration Providers =====
-    automation: []
+    automation:
+      - name: <name>
+        type: <type>
+        credentials: <credentials name>
+        config: {}
 
   environments:
+    - name: <name>
+      description: <description>
+      providers:
+        dns: <dns provider name>
+        iaas:
+          - <iaas provider name>
+          - <iaas provider name>
+  
+  images:
+    containers: []
+    machines: []
 
 ```
 
@@ -93,6 +155,30 @@ spec:
 The Compute & Networks section describes the platform’s compute resources, networking components, and clusters. This is where you define virtual machines, Kubernetes clusters, and managed services like databases or load balancers that are central, core, and critical to the Platform itself.
 
 ```yaml
+  spec:
+    clusters:
+      - name: <cluster name>
+        type: <cluster type> # kubernetes | fargate | nomad | ...
+        engine: <cluster engine> # eks | gke | aks | kubeadm | ...
+        version: <cluster version>
+        providers:
+          iaas: <iaas provider name>
+        environment: <environment name>
+        region: <cluster location>
+        networks:
+          - <network name>
+          - <network name>
+        config: {}
+    servers:
+      - name: <server name>
+        providers:
+          iaas: <iaas provider name>
+          environment: <environment name>
+          region: <server location>
+          networks:
+            - <network name>
+            - <network name>
+          config: {}
 
 ```
 
