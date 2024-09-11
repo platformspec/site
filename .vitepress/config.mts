@@ -48,7 +48,6 @@ export default defineConfig({
           text: 'Contributing',
           items: [
             { text: 'Involvement', link: '/docs/contributing/involvement' },
-            { text: 'Resources', link: '/docs/contributing/resources' }
           ]
         }
       ]

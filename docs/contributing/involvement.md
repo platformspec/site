@@ -40,7 +40,7 @@ If you’re ready to contribute code or documentation, you can submit a **[pull 
 
 We review all pull requests carefully and work with contributors to ensure that every change is aligned with the project’s goals. Please include relevant tests and updates to documentation as needed.
 
-Details for how to work on the actual code base are described in the https://github.com/platformspec/site `README.md`.
+Details for how to work on the actual code base are described in the project [README.md](https://github.com/platformspec/site/blob/main/README.md).
 
 
 ## How to Start Contributing
@@ -59,7 +59,7 @@ If you're new to open-source contributions, here are a few simple steps to get s
 
 ## Code of Conduct
 
-We strive to create an inclusive and welcoming environment for all participants. Please be respectful and considerate in all your interactions. We follow the **[Contributor Covenant Code of Conduct](https://github.com/your-org/platform-spec/blob/main/CODE_OF_CONDUCT.md)**, and we expect all contributors to do the same.
+We strive to create an inclusive and welcoming environment for all participants. Please be respectful and considerate in all your interactions. We follow the **[Contributor Covenant Code of Conduct](https://github.com/platformspec/site/blob/main/CODE_OF_CONDUCT.md)**, and we expect all contributors to do the same.
 
 
 ## Stay Updated
