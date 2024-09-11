@@ -21,9 +21,11 @@ The Platform Specification is designed to help platform engineers, infrastructur
 
 ## Website
 
-The official documentation for the Platform Specification is generated statically using Vitepress and can be found at [GitHub Pages Link](#).
+The official documentation for the Platform Specification is generated statically using [Vitepress](https://vitepress.dev) and can be found at https://platformspec.io.
 
 ## Getting Started
+
+The website and documentation is written using [Vitepress :: Vite & Vue Powered Static Site Generator - Markdown to Beautiful Docs in Minutes](https://vitepress.dev).  Please see documentation on https://vitepress.dev for details.
 
 You can work on the Platform Specification and its accompanying documentation locally by following the steps below.
 
@@ -101,7 +103,7 @@ We accept contributions via pull requests. Before submitting one:
 1. Ensure the issue you’re addressing has been discussed or logged.
 2. Fork the repository and create a new branch.
 3. Implement your changes and write tests if necessary.
-4. Run `npm run dev` to ensure everything works.
+4. Run `npm run docs:dev` to ensure everything works.
 5. Submit a pull request with a detailed description of your changes.
 
 ## License
