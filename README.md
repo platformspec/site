@@ -41,6 +41,7 @@ We recommend using Docker to avoid the need for setting up Node.js locally.
 
 2. **Build and Run the Docker Container:**
    ```bash
+   touch .env
    make build
    make run
    ```
