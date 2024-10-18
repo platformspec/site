@@ -4,8 +4,8 @@ Let's now look into how to put the Platform Specification to good use...
 
 The Platform Specification provides a structured approach to defining and managing cloud platforms in a consistent, repeatable manner. By following this workflow, organizations can seamlessly construct and manage their cloud platforms from definition to deployment using Infrastructure as Code (IaC) tooling. This section outlines the four-step process for utilizing the Platform Specification effectively.
 
-![Workflow](./workflow-light.svg){style="display: block; margin: 0 auto" .light-only}
-![Workflow](./workflow-dark.svg){style="display: block; margin: 0 auto" .dark-only}
+![Workflow](./workflow-light.png){style="display: block; margin: 0 auto" .light-only}
+![Workflow](./workflow-dark.png){style="display: block; margin: 0 auto" .dark-only}
 
 ## Preface: The Components
 

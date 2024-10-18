@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="10.600427in"
-   height="2.6104906in"
-   viewBox="0 0 269.25083 66.30646"
+   width="10.604094in"
+   height="2.6089263in"
+   viewBox="0 0 269.34397 66.266728"
    version="1.1"
    id="svg1"
    xml:space="preserve"
@@ -27,7 +27,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.5180135"
-     inkscape:cx="479.90351"
+     inkscape:cx="480.56226"
      inkscape:cy="81.685703"
      inkscape:window-width="2560"
      inkscape:window-height="1486"
@@ -654,7 +654,7 @@
        id="filter605"
        x="0"
        y="-0.0254203"
-       width="1.0118379"
+       width="1"
        height="1.0254203"><feColorMatrix
          type="hueRotate"
          values="180"
@@ -666,7 +666,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-27.046163,-145.51178)"><path
+     transform="translate(-26.955213,-145.5515)"><path
        d="m 162.79606,30.605312 73.30608,73.371168 c 4.63441,4.64711 4.63441,12.15695 0,16.80366 l -72.75942,72.75942 c -4.6344,4.63441 -12.15695,4.63441 -16.79129,0 -4.64709,-4.64709 -4.64709,-12.15695 0,-16.80365 l 51.98785,-51.98785 -153.979244,0.0127 c -6.561371,0 -11.869294,-5.32334 -11.869294,-11.88491 0,-6.54639 5.310661,-11.86928 11.869294,-11.86928 H 199.60659 l -53.6526,-53.599248 c -4.63439,-4.647111 -4.63439,-12.143933 0,-16.791283 2.22698,-2.239662 5.25724,-3.50059 8.42202,-3.50059 3.1625,-0.01273 6.19529,1.25074 8.42199,3.487888 z"
        id="path1-32"
        style="stroke-width:0.650801;filter:url(#filter230)"
@@ -714,10 +714,10 @@
          xml:space="preserve"
          transform="matrix(0.26458333,0,0,0.26458333,-2.4099195,49.353205)"
          id="text230"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:Inter;white-space:pre;shape-inside:url(#rect230);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold';white-space:pre;shape-inside:url(#rect230);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="109.36133"
            y="579.77691"
-           id="tspan5">platform.yaml</tspan></text></g><g
+           id="tspan6">platform.yaml</tspan></text></g><g
        id="g275"
        transform="translate(-1.7953488)"
        style="filter:url(#filter603)"><g
@@ -747,10 +747,10 @@
          xml:space="preserve"
          transform="matrix(0.26458333,0,0,0.26458333,82.500732,49.885185)"
          id="text230-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:Inter;white-space:pre;shape-inside:url(#rect230-8);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold';white-space:pre;shape-inside:url(#rect230-8);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="109.36133"
            y="579.77691"
-           id="tspan6">Blueprint</tspan></text></g><g
+           id="tspan7">Blueprint</tspan></text></g><g
        id="g276"
        transform="translate(-1.7326811)"
        style="filter:url(#filter601)"><g
@@ -775,7 +775,7 @@
          xml:space="preserve"
          transform="matrix(0.26458333,0,0,0.26458333,160.38022,50.517282)"
          id="text230-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:Inter;white-space:pre;shape-inside:url(#rect230-6);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold';white-space:pre;shape-inside:url(#rect230-6);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="109.36133"
            y="579.77691"
            id="tspan8">Builder</tspan></text></g><g
@@ -800,13 +800,13 @@
          xml:space="preserve"
          transform="matrix(0.26458333,0,0,0.26458333,224.55309,47.736379)"
          id="text230-05"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:Inter;text-align:center;white-space:pre;shape-inside:url(#rect230-2);display:inline;fill:#000000;fill-opacity:1;stroke:none"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold';text-align:center;white-space:pre;shape-inside:url(#rect230-2);display:inline;fill:#000000;fill-opacity:1;stroke:none"
          x="74.81604"
          y="0"><tspan
-           x="148.93262"
+           x="147.37793"
            y="579.77691"
            id="tspan9">Cloud
 </tspan><tspan
-           x="132.07324"
+           x="128.63416"
            y="619.77691"
            id="tspan10">Platform</tspan></text></g></g></svg>

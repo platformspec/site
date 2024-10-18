@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="10.600513in"
+   width="10.604094in"
    height="2.6089265in"
-   viewBox="0 0 269.25304 66.266734"
+   viewBox="0 0 269.34397 66.266734"
    version="1.1"
    id="svg1"
    xml:space="preserve"
@@ -27,14 +27,14 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.5180135"
-     inkscape:cx="530.62769"
+     inkscape:cx="531.28645"
      inkscape:cy="81.685703"
      inkscape:window-width="2560"
      inkscape:window-height="1486"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" /><defs
+     inkscape:current-layer="g276" /><defs
      id="defs1"><rect
        x="109.36116"
        y="550.15619"
@@ -571,7 +571,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-27.046163,-145.5515)"><path
+     transform="translate(-26.955213,-145.5515)"><path
        d="m 162.79606,30.605312 73.30608,73.371168 c 4.63441,4.64711 4.63441,12.15695 0,16.80366 l -72.75942,72.75942 c -4.6344,4.63441 -12.15695,4.63441 -16.79129,0 -4.64709,-4.64709 -4.64709,-12.15695 0,-16.80365 l 51.98785,-51.98785 -153.979244,0.0127 c -6.561371,0 -11.869294,-5.32334 -11.869294,-11.88491 0,-6.54639 5.310661,-11.86928 11.869294,-11.86928 H 199.60659 l -53.6526,-53.599248 c -4.63439,-4.647111 -4.63439,-12.143933 0,-16.791283 2.22698,-2.239662 5.25724,-3.50059 8.42202,-3.50059 3.1625,-0.01273 6.19529,1.25074 8.42199,3.487888 z"
        id="path1-32"
        style="stroke-width:0.650801;filter:url(#filter230)"
@@ -622,7 +622,7 @@
            x="109.36133"
            y="579.77691"
            id="tspan3"><tspan
-             style="font-size:32px;font-family:Inter;-inkscape-font-specification:Inter"
+             style="font-weight:600;font-size:32px;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold'"
              id="tspan2">platform.yaml</tspan></tspan></text></g><g
        id="g275"
        transform="translate(-1.7953488)"><g
@@ -652,7 +652,7 @@
          xml:space="preserve"
          transform="matrix(0.26458333,0,0,0.26458333,82.500732,49.885185)"
          id="text230-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:Inter;white-space:pre;shape-inside:url(#rect230-8);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold';white-space:pre;shape-inside:url(#rect230-8);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="109.36133"
            y="579.77691"
            id="tspan4">Blueprint</tspan></text></g><g
@@ -683,7 +683,7 @@
            x="109.36133"
            y="579.77691"
            id="tspan6"><tspan
-             style="font-size:32px;font-family:Inter;-inkscape-font-specification:Inter"
+             style="font-weight:600;font-size:32px;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold'"
              id="tspan5">Builder</tspan></tspan></text></g><g
        id="g277"><path
          d="m 154.76898,96.2462 c 0.36103,-1.445578 0.54158,-2.889744 0.54158,-4.515908 0,-10.295467 -8.48854,-18.784006 -18.784,-18.784006 -2.52872,0 -5.05743,0.541584 -7.40552,1.445577 -5.05742,-12.282311 -16.97884,-20.59058 -30.705424,-20.59058 -17.159463,0 -31.246938,13.004447 -32.873244,29.622397 C 59.219889,83.965265 54.3445,89.383861 54.3445,95.705991 v 0.722101 c -8.30827,1.626094 -14.450131,8.851198 -14.450131,17.520358 0,9.7536 7.947025,17.70097 17.700978,17.70097 h 95.006583 c 9.7536,0 17.70098,-7.94702 17.70098,-17.70097 0.17915,-9.03182 -6.68337,-16.6176 -15.53457,-17.702391 z m -2.16765,31.78986 H 57.594747 c -7.766755,0 -14.089239,-6.32248 -14.089239,-14.08924 0,-7.76675 6.322484,-14.089234 14.089239,-14.089234 h 1.265026 c -0.541584,-1.265026 -0.902617,-2.528711 -0.902617,-3.974394 0,-4.8768 3.974394,-8.851195 8.851194,-8.851195 0.722101,0 1.445578,0.180524 2.167643,0.361033 v -0.361033 c 0,-16.255294 13.18507,-29.441775 29.441775,-29.441775 13.908612,0 25.467382,9.573331 28.718232,22.397156 2.52871,-1.987127 5.77956,-3.250777 9.39271,-3.250777 8.30827,0 15.17226,6.863997 15.17226,15.172267 0,2.889744 -0.90261,5.598936 -2.34816,7.947025 h 3.25078 c 7.76676,0 14.08924,6.322477 14.08924,14.089237 0.17914,7.76923 -6.32389,14.0903 -14.0903,14.0903 z"
@@ -708,14 +708,14 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;line-height:1.25;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';text-align:center;white-space:pre;shape-inside:url(#rect230-2);display:inline;fill:#000000;fill-opacity:1;stroke:none"
          x="74.81604"
          y="0"><tspan
-           x="148.93262"
+           x="147.37793"
            y="579.77691"
            id="tspan8"><tspan
-             style="font-size:32px;font-family:Inter;-inkscape-font-specification:Inter"
+             style="font-weight:600;font-size:32px;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold'"
              id="tspan7">Cloud
 </tspan></tspan><tspan
-           x="132.07324"
+           x="128.63416"
            y="619.77691"
-           id="tspan14"><tspan
-             style="font-size:32px;font-family:Inter;-inkscape-font-specification:Inter"
+           id="tspan10"><tspan
+             style="font-weight:600;font-size:32px;font-family:Inter;-inkscape-font-specification:'Inter Semi-Bold'"
              id="tspan9">Platform</tspan></tspan></text></g></g></svg>
