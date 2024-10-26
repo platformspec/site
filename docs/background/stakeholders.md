@@ -2,6 +2,9 @@
 
 Cloud platforms serve multiple stakeholder groups within an organization, each with its own unique priorities, concerns, and responsibilities. Understanding these groups and their roles is essential for designing and managing a cloud platform that meets the needs of the entire organization. Here’s a detailed description of the four primary stakeholder groups:
 
+![Stakeholders (light)](./Stakeholders-light.drawio.png){.light-only}
+![Stakeholders (dark)](./Stakeholders-dark.drawio.png){.dark-only}
+
 ## **1. Systems Engineers**
 
 > *The people who enable your organization, such as DevOps, SRE, Platform/Infrastructure/Cloud Engineers.*
@@ -22,7 +25,7 @@ Systems Engineers are responsible for the design, deployment, operation, and mai
 
 ## **2. Developers and Experts**
 
-> *The people who create the value in your organization, such as full-stack, front/back-end developers, ML/AI engineers, and more.*
+> *The people who create the value of your organization, such as full-stack, front/back-end developers, ML/AI engineers, and more.*
 
 **Role and Responsibilities:**
 Developers are responsible for building, testing, and deploying applications that run on the cloud platform. Their primary focus is on writing code, developing features, and delivering software that meets user needs. Developers rely on the cloud platform to provide the tools, environments, and services they need to be productive and to deploy their applications quickly and reliably.
