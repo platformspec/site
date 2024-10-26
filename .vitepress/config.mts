@@ -13,12 +13,19 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Documentation', link: '/docs/background/' },
+      { text: 'Documentation', link: '/docs/project/preface/' },
       { text: 'Community', link: '/community' }
     ],
 
     sidebar: {
       '/docs/': [
+        {
+          text: 'Project',
+          items: [
+            { text: 'Preface', link: '/docs/project/preface'},
+            { text: 'Contributing', link: '/docs/project/contributing' }
+          ]
+        },
         {
           text: 'Background',
           items: [
@@ -35,19 +42,12 @@ export default defineConfig({
         {
           text: 'Specification',
           items: [
-            { text: 'Preface', link: '/docs/spec/preface' },
             { text: 'Overview', link: '/docs/spec/overview' },
             { text: 'Getting Started', link: '/docs/spec/getting-started' },
             { text: 'Example', link: '/docs/spec/example' },
             { text: 'Workflow & Usage', link: '/docs/spec/workflow-and-usage' },
             { text: 'SDKs', link: '/docs/spec/sdks' },
             { text: 'License', link: '/docs/spec/license' }
-          ]
-        },
-        {
-          text: 'Contributing',
-          items: [
-            { text: 'Involvement', link: '/docs/contributing/involvement' },
           ]
         }
       ]

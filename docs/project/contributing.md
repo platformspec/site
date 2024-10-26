@@ -1,4 +1,4 @@
-# Getting Involved with the Platform Specification Project
+# Getting Involved
 
 We’re excited to welcome contributors, users, and cloud platform enthusiasts to the Platform Specification project. This is a community-driven initiative aimed at building a standardized approach for defining, deploying, and managing cloud platforms. We value contributions in all forms, from code and documentation improvements to feedback and discussions.
 

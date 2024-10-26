@@ -2,7 +2,7 @@
 
 ![Cloud Platform Banner](./cloud-platform-banner.webp)
 
-## Introduction to Cloud Platforms
+## Cloud Platforms
 
 In today’s landscape, businesses increasingly require platforms that enable rapid application development, deployment, and management. A **Cloud Platform** provides this capability by abstracting the complexities of managing infrastructure, creating an environment for developers and operators that allows them to focus on building and running software, rather than dealing with the underlying infrastructure. Cloud Platforms are built on top of **Infrastructure as a Service (IaaS)** and aim to provide a **Platform as a Service (PaaS)-like** experience, often referred to as a **cloud abstraction layer**.
 

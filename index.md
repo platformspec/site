@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Documentation
-      link: /docs/background/
+      link: /docs/project/preface/
     - theme: alt
       text: Get Involved!
       link: /community
