@@ -72,3 +72,38 @@ THe Platform Specification can be transformed into JSON as YAML and JSON are int
 
 The use of these formats ensures that platforms are easy to define, extend, and automate, with clear human-readable descriptions that are machine-friendly for programmatic management.
 
+## JSON Pointers and References
+
+The Platform Specification leverages [RFC 6901 JSON Pointer](https://datatracker.ietf.org/doc/html/rfc6901) syntax for referencing elements within the YAML document. This allows for clear, unambiguous, and concise references between different sections, promoting modularity and maintainability.
+
+
+**JSON Pointer Syntax:**
+
+A JSON Pointer consists of a forward slash (`/`) followed by zero or more path segments. Each segment represents a property name or index in the JSON structure. 
+
+* **Basic Structure**: `/path/to/property`
+* **Property Names**: Use quoted strings for property names that contain spaces or special characters.  E.g., `"my-special-property"`.
+* **Array Indexes**:  Use zero-based numeric indexes to access array elements. E.g., `[0]`
+
+**Example Usage in Platform Specification:**
+
+```yaml
+credentials:
+  aws-creds:
+    schema: AWS
+    source: environment
+    fields:
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+
+providers:
+  iaas:
+    aws:
+      type: aws
+      credentials: "/credentials/aws-creds"
+```
+
+In this example:
+
+* `"/credentials/aws-creds"` refers to the `aws-creds` credential definition within the `credentials` section.
+
