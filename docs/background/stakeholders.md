@@ -1,9 +1,13 @@
 # **Stakeholder Groups of a Cloud Platform**
 
-Cloud platforms serve multiple stakeholder groups within an organization, each with its own unique priorities, concerns, and responsibilities. Understanding these groups and their roles is essential for designing and managing a cloud platform that meets the needs of the entire organization. Here’s a detailed description of the four primary stakeholder groups:
+Cloud platforms serve multiple stakeholder groups within an organization, each with its own unique priorities, concerns, and responsibilities. Understanding these groups and their roles is essential for designing and managing a cloud platform that meets the needs of the entire organization.
 
 ![Stakeholders (light)](./Stakeholders-light.drawio.png){.light-only}
 ![Stakeholders (dark)](./Stakeholders-dark.drawio.png){.dark-only}
+
+Keep in mind the <u>Key Priorities and Concerns</u> of each of the Stakeholder groups.  It is **essential** that the priorities and concerns of each group is addressed in order for a functional cloud platform to be in place.
+
+These four stakeholder groups each play a critical role in the success of a cloud platform. Understanding their distinct priorities and concerns is essential for designing, implementing, and managing a cloud platform that meets the needs of the entire organization, drives innovation, and ensures operational excellence.
 
 ## **1. Systems Engineers**
 
@@ -77,6 +81,3 @@ Leadership and Executives are responsible for setting the strategic direction of
 - **Scalability and Growth:** The ability of the cloud platform to scale with the organization’s growth and support new initiatives is crucial for long-term success.
 - **Regulatory and Market Changes:** Keeping the platform adaptable to changing regulatory requirements and market conditions is a constant concern for leadership.
 
-## **Summary**
-
-These four stakeholder groups each play a critical role in the success of a cloud platform. Understanding their distinct priorities and concerns is essential for designing, implementing, and managing a cloud platform that meets the needs of the entire organization, drives innovation, and ensures operational excellence.
