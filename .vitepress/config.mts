@@ -43,7 +43,7 @@ export default defineConfig({
           text: 'Specification',
           items: [
             { text: 'Overview', link: '/docs/spec/overview' },
-            { text: 'Getting Started', link: '/docs/spec/getting-started' },
+            { text: 'The Specification', link: '/docs/spec/spec' },
             { text: 'Example', link: '/docs/spec/example' },
             { text: 'Workflow & Usage', link: '/docs/spec/workflow-and-usage' },
             { text: 'SDKs', link: '/docs/spec/sdks' },
