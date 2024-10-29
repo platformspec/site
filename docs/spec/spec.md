@@ -10,6 +10,9 @@ Introduction to YAML in the Platform Specification
 
 The Platform Specification uses [YAML](https://yaml.org) as the format for defining platform components. YAML is chosen for its human-readable syntax and ability to represent complex data structures easily. In this specification, YAML files are used to define various aspects of the platform, such as infrastructure, compute, policies, and more.
 
+> [!WARNING]
+> The specification is still a work in process and is being actively designed.
+
 ## Document Structure
 The Platform Specification document follows a hierarchical structure that clearly defines all key aspects of a cloud platform. This organized approach ensures consistency, clarity, and maintainability.
 
@@ -513,12 +516,41 @@ software:
 
 
 ## Policies
-
 The Policies section governs the operational and cost-management aspects of the platform. Policies may include logging, scaling, backups, or disaster recovery strategies. This ensures that critical governance and operational practices are well defined and consistently applied.
 
+See [Key Pillars: 4. Policies](../background/key-pillars.html#_3-policies) for reference.
 
 ```yaml
 # TBD
 
 ```
 
+## Governance & Compliance
+Configuration and specifications for ensuring that the cloud platform meets governance and compliance requirements, safeguarding data and infrastructure.
+
+See [Key Pillars: 4. Governance & Compliance](../background/key-pillars.html#_4-governance-and-compliance) for reference.
+
+```yaml
+# TBD
+
+```
+
+## Developer Services
+Tools and environments that enhance the developer experience, making it easier to build, test, and deploy applications.
+
+See [Key Pillars: 5. Developer Services and Enabelement](../background/key-pillars.html#_5-developer-services-and-enablement) for reference.
+
+```yaml
+# TBD
+
+```
+
+## Observability and Performance
+For ensuring that the cloud platform and the applications running on it are observable and performant.
+
+See [Key Pillars: 6. Observability and Performance](../background/key-pillars.html#_6-observability-and-performance) for reference.
+
+```yaml
+# TBD
+
+```
