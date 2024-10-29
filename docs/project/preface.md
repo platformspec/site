@@ -10,4 +10,4 @@ Additionally, contributions to the specification itself are encouraged. We envis
 
 Thank you for taking part in this journey with us. We look forward to your ideas, contributions, and collaboration as we continue to build and evolve the Platform Specification.
 
--- The Platform Specification Team
+**-- The Platform Specification Team**

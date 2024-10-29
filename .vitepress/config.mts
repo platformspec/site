@@ -4,6 +4,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "The Platform Specification",
   description: "Standards for Defining Your Cloud Platform",
+  head: [
+    [ 'script', { defer: '', 'data-domain': 'platformspec.io', src: 'https://plausible.io/js/script.js' } ]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: {
@@ -23,7 +26,9 @@ export default defineConfig({
           text: 'Project',
           items: [
             { text: 'Preface', link: '/docs/project/preface'},
-            { text: 'Contributing', link: '/docs/project/contributing' }
+            { text: 'Contributing', link: '/docs/project/contributing' },
+            { text: 'Help Wanted', link: '/docs/project/help'},
+            { text: 'Authors', link: '/docs/project/authors' }
           ]
         },
         {
