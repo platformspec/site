@@ -109,7 +109,7 @@ We accept contributions via pull requests. Before submitting one:
 
 ## License
 
-This project is licensed under the [Creative Commons BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/). See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the [Creative Commons BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ---
 
