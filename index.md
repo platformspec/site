@@ -7,8 +7,8 @@ hero:
   text: "Standards for Defining Your Cloud Platform"
   tagline: Capture Every Component and Configuration of Your Cloud Platform and Infrastructure in One Unified Standard
   image:
-    light: ./images/logo-pressedsteel-light.png
-    dark: ./images/logo-pressedsteel-dark.png
+    light: /logo-pressedsteel-light.png
+    dark: /logo-pressedsteel-dark.png
   actions:
     - theme: brand
       text: Documentation
@@ -59,8 +59,8 @@ features:
 </style>
 <p>&nbsp;</p>
 
-[![Workflow](./images/workflow-light.png){style="display: block; margin: 0 auto" .light-only}](./docs/spec/workflow-and-usage)
-[![Workflow](./images/workflow-dark.png){style="display: block; margin: 0 auto" .dark-only}](./docs/spec/workflow-and-usage)
+[![Workflow](/workflow-light.png){style="display: block; margin: 0 auto" .light-only}](./docs/spec/workflow-and-usage)
+[![Workflow](/workflow-dark.png){style="display: block; margin: 0 auto" .dark-only}](./docs/spec/workflow-and-usage)
 
 The Platform Specification project introduces a comprehensive and structured YAML-based approach to defining, deploying, and managing cloud platforms across diverse environments. By encapsulating every essential component, configuration, and policy within a single document, it ensures consistent, streamlined, and scalable infrastructure management. Whether you're operating across multiple clouds or fine-tuning a single environment, the Platform Specification simplifies the complexity, empowering your team to focus on innovation rather than infrastructure.
 

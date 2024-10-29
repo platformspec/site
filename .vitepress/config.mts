@@ -10,8 +10,8 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: {
-      'light': '/images/logo-black.svg',
-      'dark': '/images/logo-white.svg'
+      'light': '/logo-black.svg',
+      'dark': '/logo-white.svg'
     },
 
     nav: [

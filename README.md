@@ -1,4 +1,4 @@
-![Banner](./images/banner-black.svg)
+![Banner](./banner-black.svg)
 
 Welcome to the Platform Specification project! This repository contains the source code for the entire Platform Specification website as well as the official specification files themselves.
 
