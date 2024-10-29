@@ -5,8 +5,8 @@
    version="1.1"
    viewBox="0 0 496.82443 230.1"
    id="svg2"
-   sodipodi:docname="key-components-white.svg"
-   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   sodipodi:docname="key-components-dark.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    inkscape:export-filename="key-components.png"
    inkscape:export-xdpi="5.81863"
    inkscape:export-ydpi="5.81863"
@@ -30,8 +30,8 @@
      inkscape:zoom="2.8284271"
      inkscape:cx="342.06291"
      inkscape:cy="166.8772"
-     inkscape:window-width="3840"
-     inkscape:window-height="2068"
+     inkscape:window-width="2560"
+     inkscape:window-height="1486"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -125,14 +125,14 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.75"
-     x="181.41112"
-     y="8.9759998"
+     x="168.41803"
+     y="9.5063295"
      id="text287-3"><tspan
        id="tspan287-2"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75;stroke:#ffffff"
-       x="181.41112"
-       y="8.9759998"
-       sodipodi:role="line">Security &amp; Compliance</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke:#ffffff;stroke-width:0.75"
+       x="168.41803"
+       y="9.5063295"
+       sodipodi:role="line">Governance &amp; Compliance</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.75"
