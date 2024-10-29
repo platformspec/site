@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="589.53534pt"
+   height="83.614334pt"
+   version="1.1"
+   viewBox="0 0 589.53534 83.614334"
+   id="svg2"
+   sodipodi:docname="banner-black.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <filter
+       inkscape:menu-tooltip="Pressed metal with a rolled edge"
+       inkscape:menu="Bevels"
+       inkscape:label="Pressed Steel"
+       style="color-interpolation-filters:sRGB"
+       id="filter37"
+       x="-0.0053803213"
+       y="-0.087872959"
+       width="1.0107606"
+       height="1.1757459">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="3"
+         id="feGaussianBlur32" />
+      <feBlend
+         in2="result1"
+         result="result5"
+         mode="multiply"
+         in="result1"
+         id="feBlend32" />
+      <feGaussianBlur
+         in="result5"
+         result="result6"
+         stdDeviation="1"
+         id="feGaussianBlur33" />
+      <feComposite
+         result="result8"
+         in2="result5"
+         in="result6"
+         operator="xor"
+         id="feComposite33" />
+      <feComposite
+         in="result6"
+         result="fbSourceGraphic"
+         operator="xor"
+         in2="result8"
+         id="feComposite34" />
+      <feSpecularLighting
+         in="fbSourceGraphic"
+         result="result1"
+         lighting-color="#ffffff"
+         surfaceScale="2"
+         specularConstant="2.20000005"
+         specularExponent="55"
+         id="feSpecularLighting34">
+        <fePointLight
+           x="-5000"
+           y="-10000"
+           z="20000"
+           id="fePointLight34" />
+      </feSpecularLighting>
+      <feComposite
+         in2="fbSourceGraphic"
+         in="result1"
+         result="result2"
+         operator="in"
+         id="feComposite35" />
+      <feComposite
+         in="fbSourceGraphic"
+         result="result4"
+         operator="arithmetic"
+         k2="2"
+         k3="1"
+         in2="result2"
+         id="feComposite36"
+         k1="0"
+         k4="0" />
+      <feComposite
+         in2="result4"
+         in="result4"
+         operator="in"
+         result="result91"
+         id="feComposite37" />
+      <feBlend
+         mode="darken"
+         in2="result91"
+         id="feBlend37" />
+    </filter>
+    <filter
+       inkscape:menu-tooltip="Pressed metal with a rolled edge"
+       inkscape:menu="Bevels"
+       inkscape:label="Pressed Steel"
+       style="color-interpolation-filters:sRGB"
+       id="filter42"
+       x="-0.077553527"
+       y="-0.077071159"
+       width="1.1551071"
+       height="1.1541423">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="3"
+         id="feGaussianBlur37" />
+      <feBlend
+         in2="result1"
+         result="result5"
+         mode="multiply"
+         in="result1"
+         id="feBlend38" />
+      <feGaussianBlur
+         in="result5"
+         result="result6"
+         stdDeviation="1"
+         id="feGaussianBlur38" />
+      <feComposite
+         result="result8"
+         in2="result5"
+         in="result6"
+         operator="xor"
+         id="feComposite38" />
+      <feComposite
+         in="result6"
+         result="fbSourceGraphic"
+         operator="xor"
+         in2="result8"
+         id="feComposite39" />
+      <feSpecularLighting
+         in="fbSourceGraphic"
+         result="result1"
+         lighting-color="#ffffff"
+         surfaceScale="2"
+         specularConstant="2.20000005"
+         specularExponent="55"
+         id="feSpecularLighting39">
+        <fePointLight
+           x="-5000"
+           y="-10000"
+           z="20000"
+           id="fePointLight39" />
+      </feSpecularLighting>
+      <feComposite
+         in2="fbSourceGraphic"
+         in="result1"
+         result="result2"
+         operator="in"
+         id="feComposite40" />
+      <feComposite
+         in="fbSourceGraphic"
+         result="result4"
+         operator="arithmetic"
+         k2="2"
+         k3="1"
+         in2="result2"
+         id="feComposite41"
+         k1="0"
+         k4="0" />
+      <feComposite
+         in2="result4"
+         in="result4"
+         operator="in"
+         result="result91"
+         id="feComposite42" />
+      <feBlend
+         mode="darken"
+         in2="result91"
+         id="feBlend42" />
+    </filter>
+    <filter
+       inkscape:menu-tooltip="Pressed metal with a rolled edge"
+       inkscape:menu="Bevels"
+       inkscape:label="Pressed Steel"
+       style="color-interpolation-filters:sRGB"
+       id="filter47"
+       x="-0.036033896"
+       y="-0.032232523"
+       width="1.0720678"
+       height="1.064465">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="3"
+         id="feGaussianBlur42" />
+      <feBlend
+         in2="result1"
+         result="result5"
+         mode="multiply"
+         in="result1"
+         id="feBlend43" />
+      <feGaussianBlur
+         in="result5"
+         result="result6"
+         stdDeviation="1"
+         id="feGaussianBlur43" />
+      <feComposite
+         result="result8"
+         in2="result5"
+         in="result6"
+         operator="xor"
+         id="feComposite43" />
+      <feComposite
+         in="result6"
+         result="fbSourceGraphic"
+         operator="xor"
+         in2="result8"
+         id="feComposite44" />
+      <feSpecularLighting
+         in="fbSourceGraphic"
+         result="result1"
+         lighting-color="#ffffff"
+         surfaceScale="2"
+         specularConstant="2.20000005"
+         specularExponent="55"
+         id="feSpecularLighting44">
+        <fePointLight
+           x="-5000"
+           y="-10000"
+           z="20000"
+           id="fePointLight44" />
+      </feSpecularLighting>
+      <feComposite
+         in2="fbSourceGraphic"
+         in="result1"
+         result="result2"
+         operator="in"
+         id="feComposite45" />
+      <feComposite
+         in="fbSourceGraphic"
+         result="result4"
+         operator="arithmetic"
+         k2="2"
+         k3="1"
+         in2="result2"
+         id="feComposite46"
+         k1="0"
+         k4="0" />
+      <feComposite
+         in2="result4"
+         in="result4"
+         operator="in"
+         result="result91"
+         id="feComposite47" />
+      <feBlend
+         mode="darken"
+         in2="result91"
+         id="feBlend47" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="2.1649824"
+     inkscape:cx="506.23968"
+     inkscape:cy="163.51172"
+     inkscape:window-width="3840"
+     inkscape:window-height="2012"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <path
+     d="m 251.64948,360.68847 v -61.57532 c 13.50916,-2.82825 23.56126,-14.76463 23.56126,-28.90393 0,-16.33728 -13.19499,-29.53224 -29.53226,-29.53224 -8.79665,0 -16.33726,3.77041 -21.99163,9.7386 l -53.72184,-30.78825 c 0.94196,-2.82846 1.57006,-5.96839 1.57006,-9.1109 0,-16.33727 -13.19498,-29.53224 -29.53226,-29.53224 -16.33726,0 -29.53224,13.19497 -29.53224,29.53224 0,3.14231 0.62791,6.28205 1.57006,9.1109 l -53.719384,30.79063 c -5.340262,-5.96819 -13.194986,-9.73841 -21.99163,-9.73841 -16.337271,0 -29.5322568,13.19497 -29.5322568,29.53224 0,14.13673 10.0527078,26.07568 23.5612498,28.90394 v 61.57532 c -13.509155,2.82825 -23.5612498,14.76463 -23.5612498,28.90394 0,16.33727 13.1949858,29.53224 29.5322568,29.53224 8.796644,0 16.337256,-3.77042 21.99163,-9.73861 l 53.721844,30.78826 c -0.94196,2.82845 -1.57007,5.96838 -1.57007,9.11089 0,16.33728 13.19499,29.53224 29.53225,29.53224 16.33727,0 29.53226,-13.19496 29.53226,-29.53224 0,-3.14231 -0.62791,-6.28204 -1.57007,-9.11089 l 53.72184,-30.79321 c 5.34027,5.96839 13.19499,9.73861 21.99163,9.73861 16.33728,0 29.53225,-13.19497 29.53225,-29.53224 0,-14.13693 -10.05516,-26.07331 -23.5637,-28.90216 z m -5.96829,-107.76146 c 9.42437,0 17.27916,7.85488 17.27916,17.27924 0,9.42435 -7.85479,17.27903 -17.27916,17.27903 -9.42437,0 -17.27915,-7.85468 -17.27915,-17.27903 0,-9.73861 7.54061,-17.27924 17.27915,-17.27924 z m -103.6749,-60.00387 c 9.42438,0 17.27916,7.85469 17.27916,17.27904 0,9.42455 -7.85478,17.27924 -17.27916,17.27924 -9.42437,0 -17.27915,-7.85469 -17.27915,-17.27924 0,-9.42673 7.85478,-17.27904 17.27915,-17.27904 z m -120.954046,77.2837 c 0,-9.42435 7.854773,-17.27923 17.279154,-17.27923 9.424373,0 17.279156,7.85488 17.279156,17.27923 0,9.42435 -7.854783,17.27904 -17.279156,17.27904 -9.424381,0 -17.279154,-7.85469 -17.279154,-17.27904 z m 17.279154,136.66243 c -9.424381,0 -17.279154,-7.85488 -17.279154,-17.27923 0,-9.42436 7.854773,-17.27924 17.279154,-17.27924 9.424373,0 17.279156,7.85488 17.279156,17.27924 0,9.7386 -7.540611,17.27923 -17.279156,17.27923 z m 103.674892,60.00387 c -9.42437,0 -17.27915,-7.85488 -17.27915,-17.27924 0,-9.42435 7.85478,-17.27903 17.27915,-17.27903 9.42438,0 17.27916,7.85468 17.27916,17.27903 0,9.42693 -7.85478,17.27924 -17.27916,17.27924 z m 21.99165,-37.0705 c -5.34028,-5.96819 -13.19498,-9.7384 -21.99165,-9.7384 -8.79666,0 -16.33727,3.77021 -21.99164,9.7384 l -53.407677,-31.1025 c 0.94196,-2.82826 1.570066,-5.96819 1.570066,-9.1107 0,-14.13692 -10.052717,-26.07588 -23.56126,-28.90394 v -61.57532 c 13.509157,-2.82845 23.56126,-14.76463 23.56126,-28.90393 0,-3.14231 -0.627908,-6.28225 -1.570066,-9.1109 l 53.407677,-31.1025 c 5.34028,5.96838 13.19498,9.7386 21.99164,9.7386 8.79667,0 16.33726,-3.77022 21.99165,-9.7386 l 53.40766,31.1025 c -0.94196,2.82846 -1.56987,5.97077 -1.56987,9.1109 0,14.13672 10.05272,26.07568 23.56126,28.90393 v 61.57532 c -13.50916,2.82846 -23.56126,14.76464 -23.56126,28.90394 0,3.14231 0.62791,6.28205 1.56987,9.1107 z m 81.68325,-22.93337 c -9.42437,0 -17.27915,-7.85488 -17.27915,-17.27923 0,-9.42436 7.85478,-17.27924 17.27915,-17.27924 9.42437,0 17.27916,7.85488 17.27916,17.27924 0,9.7386 -7.85479,17.27923 -17.27916,17.27923 z"
+     id="path1"
+     style="stroke-width:0.613607;filter:url(#filter47)"
+     transform="matrix(0.26373781,0,0,0.26373781,0.21168664,-45.200491)" />
+  <path
+     d="m 203.89252,298.79415 c 0,-2.5144 -1.57007,-4.71237 -3.7703,-5.65433 L 144.51416,268.0059 c -1.57006,-0.62771 -3.45632,-0.62771 -5.02629,0 l -55.608057,25.13392 c -2.20033,0.94255 -3.770316,3.14231 -3.770316,5.65433 0,2.5144 1.570065,4.71218 3.770316,5.65414 l 21.991647,9.7386 -21.991647,9.73861 c -2.20033,0.94255 -3.770316,3.14231 -3.770316,5.65413 0,2.5144 1.570065,4.71238 3.770316,5.65434 l 21.991647,9.7386 -21.991647,10.05266 c -2.20033,0.94255 -3.770316,3.14231 -3.770316,5.65433 0,2.51421 1.570065,4.71218 3.770316,5.65414 l 55.608057,25.13392 c 0.94196,0.31484 1.57007,0.62771 2.51437,0.62771 0.94196,0 1.88392,-0.31287 2.51438,-0.62771 l 55.60806,-25.13392 c 2.20033,-0.94255 3.77029,-3.14231 3.77029,-5.65414 0,-2.5144 -1.57006,-4.71237 -3.77029,-5.65433 l -21.99165,-10.05266 21.99165,-9.7386 c 2.20033,-0.94256 3.77029,-3.14231 3.77029,-5.65434 0,-2.5142 -1.57006,-4.71217 -3.77029,-5.65413 l -21.99165,-9.73861 21.99165,-9.7386 c 2.19793,-0.94256 3.7679,-3.14231 3.7679,-5.65414 z m -21.36331,62.20739 -40.52686,18.22099 -40.52683,-18.22099 19.47709,-8.79665 18.5352,8.4824 c 0.94196,0.31484 1.57007,0.62771 2.51437,0.62771 0.94196,0 1.88392,-0.31485 2.51438,-0.62771 l 18.53521,-8.4824 z m 0,-31.10251 -40.52686,18.221 -40.52683,-18.221 19.47709,-8.79664 18.5352,8.48239 c 0.94196,0.31485 1.57007,0.62771 2.51437,0.62771 0.94196,0 1.88392,-0.31484 2.51438,-0.62771 l 18.53521,-8.48239 z m -40.52686,-12.88091 -40.52683,-18.221 40.52683,-18.221 40.52686,18.221 z"
+     id="path2"
+     style="stroke-width:0.613607;filter:url(#filter42)"
+     transform="matrix(0.26373781,0,0,0.26373781,0.21168664,-45.200491)" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:123.559px;line-height:1.25;font-family:'Lilex Nerd Font Mono';-inkscape-font-specification:'Lilex Nerd Font Mono';fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.38581;stroke-opacity:1;filter:url(#filter37)"
+     x="308.05893"
+     y="367.01633"
+     id="text2"
+     transform="matrix(0.26373781,0,0,0.26373781,0.21168664,-45.200491)"><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lilex Nerd Font Mono';-inkscape-font-specification:'Lilex Nerd Font Mono';stroke:#000000;stroke-width:1.38581;stroke-opacity:1"
+       x="308.05893"
+       y="367.01633">The Platform Specification</tspan></text>
+</svg>
