@@ -81,7 +81,7 @@ The Platform Specification leverages [RFC 6901 JSON Pointer](https://datatracker
 
 A JSON Pointer consists of a forward slash (`/`) followed by zero or more path segments. Each segment represents a property name or index in the JSON structure. 
 
-* **Basic Structure**: `/path/to/property`
+* **Basic Structure**: `#/path/to/property`
 * **Property Names**: Use quoted strings for property names that contain spaces or special characters.  E.g., `"my-special-property"`.
 * **Array Indexes**:  Use zero-based numeric indexes to access array elements. E.g., `[0]`
 
@@ -100,10 +100,10 @@ providers:
   iaas:
     aws:
       type: aws
-      credentials: "/credentials/aws-creds"
+      credentials: "#/credentials/aws-creds"
 ```
 
 In this example:
 
-* `"/credentials/aws-creds"` refers to the `aws-creds` credential definition within the `credentials` section.
+* `"#/credentials/aws-creds"` refers to the `aws-creds` credential definition within the `credentials` section.
 
