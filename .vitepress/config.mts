@@ -1,3 +1,4 @@
+import timeline from 'vitepress-markdown-timeline';
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
@@ -7,6 +8,14 @@ export default defineConfig({
   head: [
     [ 'script', { defer: '', 'data-domain': 'platformspec.io', src: 'https://plausible.io/js/script.js' } ]
   ],
+  sitemap: {
+    hostname: 'https://platformspec.io'
+  },
+  markdown: {
+    config: (md) => {
+      md.use(timeline);
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: {
@@ -17,9 +26,9 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentation', link: '/docs/project/preface/' },
+      { text: 'News', link: '/news'},
       { text: 'Community', link: '/community' }
     ],
-
     sidebar: {
       '/docs/': [
         {
@@ -27,6 +36,7 @@ export default defineConfig({
           items: [
             { text: 'Preface', link: '/docs/project/preface'},
             { text: 'Contributing', link: '/docs/project/contributing' },
+            { text: 'Roadmap', link: '/docs/project/roadmap' },
             { text: 'Help Wanted', link: '/docs/project/help'},
             { text: 'Authors', link: '/docs/project/authors' }
           ]
