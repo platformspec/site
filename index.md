@@ -59,3 +59,4 @@ features:
 
 The Platform Specification project introduces a comprehensive and structured YAML-based approach to defining, deploying, and managing cloud platforms across diverse environments. By encapsulating every essential component, configuration, and policy within a single document, it ensures consistent, streamlined, and scalable infrastructure management. Whether you're operating across multiple clouds or fine-tuning a single environment, the Platform Specification simplifies the complexity, empowering your team to focus on innovation rather than infrastructure.
 
+<p align="center"><a href="mailto:platformspec@foundation.io">platformspec@foundation.io</a></p>

@@ -75,7 +75,7 @@ We look forward to your contributions and involvement in the Platform Specificat
 
 If you have any questions or need help getting started, feel free to reach out via **GitHub Discussions**.
 
-
-
 **[Get started now on GitHub!](https://github.com/platformspec/site)**
 
+## Questions
+If you have any general questions, please reach out to <a href="mailto:platformspec@foundation.io">platformspec@foundation.io</a>.
