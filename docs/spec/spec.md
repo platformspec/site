@@ -79,7 +79,7 @@ Example:
 platform:
   name: example
   organization: Example Demo Company
-  contactEmail: engineering@foundation.io
+  contactEmail: engineering@platformspec.io
   dns:
     provider: "#/providers/dns/route53"
     domain: example.com

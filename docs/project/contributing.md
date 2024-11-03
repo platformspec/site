@@ -78,4 +78,4 @@ If you have any questions or need help getting started, feel free to reach out v
 **[Get started now on GitHub!](https://github.com/platformspec/site)**
 
 ## Questions
-If you have any general questions, please reach out to <a href="mailto:platformspec@foundation.io">platformspec@foundation.io</a>.
+If you have any general questions, please reach out to <a href="mailto:contact@platformspec.io">contact@platformspec.io</a>.
