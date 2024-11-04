@@ -16,4 +16,4 @@ See where The Platform Specification is headed with our transparent roadmap.
 
 ## Future Priorities
 
-* Interactive UI based platform designer; renders out a `platform.yaml`.
+* Interactive UI based platform designer; renders out a `platform.yaml`/`platform.json`.

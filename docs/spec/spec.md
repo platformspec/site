@@ -39,20 +39,41 @@ Let’s walk through these elements:
 ## Version
 Every platform specification document __must__ contain a root level entry of `platformspec` that specifies the version of the spec used within:
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 platformspec: "v1alpha1"
 ```
+
+```json [platform.json]
+{
+  "platformspec": "v1alpha1"
+}
+```
+:::
 
 ## Info
 The `info` root element contains metadata information about the document itself. 
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 info:
   title: Example Platform on AWS
   version: "0.0.1"
   description: "A comprehensive example of an AWS based Kubernetes platform."
   author: Josh West
 ```
+
+```json [platform.json]
+{
+  "info": {
+    "title": "Example Platform on AWS",
+    "version": "0.0.1",
+    "description": "A comprehensive example of an AWS based Kubernetes platform.",
+    "author": "Josh West"
+  }
+}
+```
+:::
 
 It has the following fields:
 
@@ -75,7 +96,8 @@ The `platform` root element has the following fields:
 
 Example:
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 platform:
   name: example
   organization: Example Demo Company
@@ -84,6 +106,22 @@ platform:
     provider: "#/providers/dns/route53"
     domain: example.com
 ```
+
+```json [platform.json]
+{
+  "platform": {
+    "name": "example",
+    "organization": "Example Demo Company",
+    "contactEmail": "engineering@platformspec.io",
+    "dns": {
+      "provider": "#/providers/dns/route53",
+      "domain": "example.com"
+    }
+  }
+}
+```
+
+:::
 
 
 ## Credentials
@@ -98,7 +136,8 @@ The `credentials` root element has the following fields:
 
 Example:
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 credentials:
   aws-creds:
     schema: AWS
@@ -107,6 +146,23 @@ credentials:
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
 ```
+
+```json [platform.json]
+{
+  "credentials": {
+    "aws-creds": {
+      "schema": "AWS",
+      "source": "environment",
+      "fields": {
+        "AWS_ACCESS_KEY_ID": "$AWS_ACCESS_KEY_ID",
+        "AWS_SECRET_ACCESS_KEY": "$AWS_SECRET_ACCESS_KEY"
+      }
+    }
+  }
+}
+```
+
+:::
 
 The credentials section enables secure handling of authentication information by separating it from the platform configuration.  Referencing external secret managers can further enhance security by storing credentials outside the main configuration file.
 
@@ -138,7 +194,7 @@ The official provider categories within the specification are as follows (thus f
 
 Entries within each category follow the exact same structure, which is as follows:
 
-```yaml
+```
 providers:
   <provider-category>:
     <provider-name>:
@@ -147,9 +203,11 @@ providers:
       config: {} # Provider-specific configuration options
 ```
 
+
 For example:
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 providers:
   iaas:
     aws:
@@ -169,13 +227,46 @@ providers:
           key: value
 ```
 
+```json [platform.json]
+{
+  "providers": {
+    "iaas": {
+      "aws": {
+        "type": "aws",
+        "credentials": "/credentials/aws-creds",
+        "config": {
+          "tags": {
+            "key": "value"
+          }
+        }
+      }
+    },
+    "dns": {
+      "route53": {
+        "type": "route53",
+        "credentials": "#/credentials/aws-creds",
+        "config": {
+          "delegationSet": {
+            "enabled": true
+          },
+          "tags": {
+            "key": "value"
+          }
+        }
+      }
+    }
+  }
+}
+```
+:::
+
 ## Environments
 
 The `environments` section of the Platform Specification defines different deployment environments for the platform.  This allows for tailoring configurations and resource allocation based on specific needs (e.g., development, testing, staging, production). 
 
 **Structure:**
 
-```yaml
+```
 environments:
   <environment-name>:
     description: <string> # Brief description of the environment
@@ -193,17 +284,15 @@ environments:
 * **`providers`** __(required)__: 
     * References to specific provider configurations defined within the `providers` section. Environments can inherit from base provider configurations or override them with environment-specific settings.
 
-
 **Usage Notes:**
 
 * Each environment entry allows for defining variations in platform configuration based on its intended use case. 
 *  Environments can share common provider configurations while allowing for targeted customization (e.g., adjusting resource limits or security policies). 
 
-
 Example:
 
-
-```yaml
+::: code-group
+```yaml [platform.yaml]
 environments:
   development:
     description: "Development environment"
@@ -219,6 +308,32 @@ environments:
         - "#/providers/iaas/aws" 
 ```
 
+```json [platform.json]
+{
+  "environments": {
+    "development": {
+      "description": "Development environment",
+      "providers": {
+        "dns": "#/providers/dns/route53",
+        "iaas": [
+          "#/providers/iaas/aws"
+        ]
+      }
+    },
+    "production": {
+      "description": "Production environment",
+      "providers": {
+        "dns": "#/providers/dns/route53",
+        "iaas": [
+          "#/providers/iaas/aws"
+        ]
+      }
+    }
+  }
+}
+```
+:::
+
 This example shows two environments, `development` and `production`. Both share the same DNS provider (`#/providers/dns/route53`) and use AWS as their Iaas provider (`#/providers/iaas/aws`), but they may have further configuration differences.
 
 
@@ -227,7 +342,7 @@ The `images` root element of the Platform Specification defines a registry of ma
 
 **Structure:**
 
-```yaml
+```
 images:
   machine:
     <image-name>:  
@@ -238,8 +353,6 @@ images:
       version: <string>  # Image version
       builder: <object>    # Configuration for building custom images 
       reference: <object>   # Reference to an existing image (e.g., AMI ID)
-
-
 ```
 
 **Fields:**
@@ -265,7 +378,8 @@ images:
 
 **Example:**
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 images:
   containers: {}
   machine:
@@ -283,7 +397,7 @@ images:
           location: us-east-2
           options:
             ami_regions: "us-east-2,us-west-2"
-            ansible_extra_vars: "pinned_debs=\"cloud-init=23.1.2-0ubuntu0~22.04.1\""
+            ansible_extra_vars: "pinned_debs='cloud-init=23.1.2-0ubuntu0~22.04.1'"
         software:
           packages:
             - name: nginx
@@ -304,6 +418,67 @@ images:
         location: us-west-1
 ```
 
+```json [platform.json]
+{
+  "images": {
+    "containers": {},
+    "machine": {
+      "custom-aws-image": {
+        "default": false,
+        "iaasProvider": "#/providers/iaas/aws",
+        "environments": [
+          "#/environments/development",
+          "#/environments/production"
+        ],
+        "version": "v1.28.13",
+        "builder": {
+          "driver": "image-builder",
+          "config": {
+            "target": "ami-ubuntu-2204",
+            "location": "us-east-2",
+            "options": {
+              "ami_regions": "us-east-2,us-west-2",
+              "ansible_extra_vars": "pinned_debs='cloud-init=23.1.2-0ubuntu0~22.04.1'"
+            }
+          },
+          "software": {
+            "packages": [
+              {
+                "name": "nginx",
+                "version": "latest"
+              },
+              {
+                "name": "docker",
+                "version": "20.10.8"
+              }
+            ],
+            "repos": [
+              {
+                "name": "docker",
+                "url": "https://download.docker.com/linux/ubuntu"
+              }
+            ]
+          }
+        }
+      },
+      "existing-aws-image": {
+        "default": true,
+        "iaasProvider": "#/providers/iaas/aws",
+        "environments": [
+          "#/environments/development"
+        ],
+        "version": "v1.28.13",
+        "reference": {
+          "id": "ami-12345678",
+          "location": "us-west-1"
+        }
+      }
+    }
+  }
+}
+```
+:::
+
 * **`custom-aws-image`**: A custom image built using the `image-builder` driver with specific configuration options for software installation and regions.
 * **`existing-aws-image`**: A reference to an existing AWS AMI ID (`ami-12345678`) in the `us-west-1` region.
 
@@ -313,8 +488,7 @@ The `clusters` section of the Platform Specification defines the compute environ
 
 **Structure:**
 
-
-```yaml
+```
 clusters:
   <cluster-name>:
     type: <string> # "kubernetes", "fargate", "nomad", etc. 
@@ -327,7 +501,6 @@ clusters:
     network: <string>    # Network configuration identifier 
     config:
       <configuration-key>: <value> # Additional cluster-specific settings 
-
 ```
 
 
@@ -358,46 +531,81 @@ clusters:
 * **`network`**: An identifier referencing the network configuration used by the cluster.
 * **`config`**: A nested dictionary containing additional configuration options specific to the cluster type:
 
+**Kubernetes-Specific Config:** 
 
 
-    **Kubernetes-Specific Config:** 
+::: code-group
+```yaml [platform.yaml]
+# Example Kubernetes cluster config
+config:
+  autoscaling: true  
+  nodeSize: "t3.medium" 
+  machineImage: "#/images/machine/custom-aws-image"
+  # ... other Kubernetes configurations (e.g., pod settings, service types)
+```
 
-
-   ```yaml
-   # Example Kubernetes cluster config
-   config:
-     autoscaling: true  
-     nodeSize: "t3.medium" 
-     machineImage: "#/images/machine/custom-aws-image"
-     # ... other Kubernetes configurations (e.g., pod settings, service types)
-   ```
-
-
-
-    **Fargate-Specific Config:**
-
-    ```yaml
-    # Example Fargate config
-    config:
-      taskDefinition:  "#/tasks/my-fargate-task"
-      serviceConfig: 
-        desiredCount: 3 
-        launchType: "FARGATE"
-
-
-    ```
+```json [platform.json]
+{
+  "config": {
+    "autoscaling": true,
+    "nodeSize": "t3.medium",
+    "machineImage": "#/images/machine/custom-aws-image"
+  }
+}
+```
+:::
 
 
 
-     **Nomad-Specific Config:**
+**Fargate-Specific Config:**
 
-    ```yaml
-    # Example Nomad config
-    config:
-      clientAddress: "#/providers/network/private-ip-address"
-      datacenter: "main"
-      jobTemplate: "#/jobs/my-nomad-job"
-    ```
+::: code-group
+```yaml [platform.yaml]
+# Example Fargate config
+config:
+  taskDefinition:  "#/tasks/my-fargate-task"
+  serviceConfig: 
+    desiredCount: 3 
+    launchType: "FARGATE"
+```
+
+```json [platform.json]
+{
+  "config": {
+    "taskDefinition": "#/tasks/my-fargate-task",
+    "serviceConfig": {
+      "desiredCount": 3,
+      "launchType": "FARGATE"
+    }
+  }
+}
+```
+:::
+
+
+
+  **Nomad-Specific Config:**
+
+::: code-group
+```yaml [platform.yaml]
+# Example Nomad config
+config:
+  clientAddress: "#/providers/network/private-ip-address"
+  datacenter: "main"
+  jobTemplate: "#/jobs/my-nomad-job"
+```
+
+```json [platform.json]
+{
+  "config": {
+    "clientAddress": "#/providers/network/private-ip-address",
+    "datacenter": "main",
+    "jobTemplate": "#/jobs/my-nomad-job"
+  }
+}
+
+```
+:::
 
 
 
@@ -410,7 +618,7 @@ The `servers` section of the Platform Specification defines individual virtual s
 
 **Structure:**
 
-```yaml
+```
 servers:
   <server-name>: 
     type: <string>   # "ec2", "azureVM", "gceInstance", etc. 
@@ -420,7 +628,6 @@ servers:
     network: <string>    # Network configuration identifier (e.g., VPC name)
     config:
       <configuration-key>: <value> # Additional server-specific settings 
-
 ```
 
 **Fields:**
@@ -440,14 +647,24 @@ servers:
 
 
 
-    ```yaml
-    # Example Server Config
-    config:
-      size: "t3.medium" # Instance size (e.g., EC2 instance type)
-      machineImage: "#/images/machine/custom-aws-image"
-      # ... other server-specific settings 
+::: code-group
+```yaml [platform.yaml]
+# Example Server Config
+config:
+  size: "t3.medium" # Instance size (e.g., EC2 instance type)
+  machineImage: "#/images/machine/custom-aws-image"
+  # ... other server-specific settings 
+```
 
-     ```
+```json [platform.json]
+{
+  "config": {
+    "size": "t3.medium",
+    "machineImage": "#/images/machine/custom-aws-image"
+  }
+}
+```
+:::
 
 **Usage Notes:**
 
@@ -464,7 +681,7 @@ The `software` section of the Platform Specification defines collections or grou
 
 **Structure:**
 
-```yaml
+```
 software:
   groups:
     <group-name>: 
@@ -489,7 +706,8 @@ software:
 
 **Example:**
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 software:
   groups:
     general:
@@ -507,6 +725,37 @@ software:
               - web-namespace
 ```
 
+```json [platform.json]
+{
+  "software": {
+    "groups": {
+      "general": {
+        "packages": [
+          {
+            "name": "nginx-web-server",
+            "type": "helm",
+            "helm": {
+              "chart": "stable/nginx",
+              "version": "1.16.1",
+              "values": {
+                "replicaCount": 2,
+                "service": {
+                  "type": "LoadBalancer"
+                }
+              },
+              "namespaces": [
+                "web-namespace"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+```
+:::
+
  **Usage Notes:**
 
 * The `software` section allows you to define reusable software configurations for deployment across multiple environments. 
@@ -520,37 +769,61 @@ The Policies section governs the operational and cost-management aspects of the 
 
 See [Key Pillars: 4. Policies](../background/key-pillars.html#_3-policies) for reference.
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 # TBD
 
 ```
+
+```json [platform.json]
+// TBD
+```
+:::
 
 ## Governance & Compliance
 Configuration and specifications for ensuring that the cloud platform meets governance and compliance requirements, safeguarding data and infrastructure.
 
 See [Key Pillars: 4. Governance & Compliance](../background/key-pillars.html#_4-governance-and-compliance) for reference.
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 # TBD
 
 ```
+
+```json [platform.json]
+// TBD
+```
+:::
 
 ## Developer Services
 Tools and environments that enhance the developer experience, making it easier to build, test, and deploy applications.
 
 See [Key Pillars: 5. Developer Services and Enabelement](../background/key-pillars.html#_5-developer-services-and-enablement) for reference.
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 # TBD
 
 ```
+
+```json [platform.json]
+// TBD
+```
+:::
 
 ## Observability and Performance
 For ensuring that the cloud platform and the applications running on it are observable and performant.
 
 See [Key Pillars: 6. Observability and Performance](../background/key-pillars.html#_6-observability-and-performance) for reference.
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 # TBD
 
 ```
+
+```json [platform.json]
+// TBD
+```
+:::

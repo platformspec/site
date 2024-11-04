@@ -10,6 +10,15 @@ Stay up-to-date on all things Platform Specification.  This is where you'll find
 
 <p>&nbsp;</p>
 
+::: timeline November 4th, 2024
+::: info JSON Examples
+As requested, the specification has been updated to equally support JSON in addition to YAML as data serialization/structure formats.
+
+The examples sections now includes JSON snippets in addition to YAML.
+
+See [Spec](docs/spec/spec) and [Example](docs/spec/example) for reference.
+:::
+
 ::: timeline November 2nd, 2024
 ::: info Roadmap Published!
 We're thrilled to announce the launch of The Platform Specification's official roadmap.  This roadmap outlines our key priorities and goals for the coming months and years, ensuring transparency and alignment with the needs of our users.  We'll be developing new tools, expanding the specification examples, deepening community engagement, and and publishing Platform Blueprints.  Access the full roadmap and contribute your thoughts on the [Roadmap](docs/project/roadmap) page within the documentation.
