@@ -12,7 +12,6 @@ For example, an organization could run their `platform.yaml` through a **Bluepri
 * **Builders (Infrastructure as Code Systems)** such as:
     * [Terraform](https://www.terraform.io/)
     * [Cloud Formation](https://aws.amazon.com/cloudformation/)
-    * [Metropolis](https://www.metropolisproject.io)
     * and more...
 * **Visualizers (Diagraming Tools)** that can render a 2D or 3D architecture diagram of the defined platform.
 * **Forecasters (Cost Analysis Engines)** that can construct a forecast of cost for the platform, starting with just the baseline expense.
