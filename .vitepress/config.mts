@@ -6,7 +6,18 @@ export default defineConfig({
   title: "The Platform Specification",
   description: "Standards for Defining Your Cloud Platform",
   head: [
-    [ 'script', { defer: '', 'data-domain': 'platformspec.io', src: 'https://plausible.io/js/script.js' } ]
+    [ 'script', { defer: '', 'data-domain': 'platformspec.io', src: 'https://plausible.io/js/script.js' } ],
+    [ 'meta', { property: 'og:url', content: 'https://platformspec.io'}],
+    [ 'meta', { property: 'og:type', content: 'website'}],
+    [ 'meta', { property: 'og:title', content: 'The Platform Specification'}],
+    [ 'meta', { property: 'og:description', content: 'Standards for Defining Your Cloud Platform'}],
+    [ 'meta', { property: 'og:image', content: 'https://platformspec.io/thumbnail.png'}],
+    [ 'meta', { name: 'twitter:card', content: 'summary_large_image'}],
+    [ 'meta', { property: 'twitter:domain', content: 'platformspec.io'}],
+    [ 'meta', { property: 'twitter:url', content: 'https://platformspec.io'}],
+    [ 'meta', { name: 'twitter:title', content: 'The Platform Specification'}],
+    [ 'meta', { name: 'twitter:description', content: 'Standards for Defining Your Cloud Platform'}],
+    [ 'meta', { name: 'twitter:image', content: 'https://platformspec.io/thumbnail.png'}]
   ],
   sitemap: {
     hostname: 'https://platformspec.io'
