@@ -19,7 +19,7 @@ We would greatly appreciate help in many areas, with a few inspirations being th
 ### Tooling & Automation
 Build tools and automation scripts to help users work with The Platform Specification more effectively. Examples include:
 
-* A linter to check the validity and consistency of YAML files.
+* A linter to check the validity and consistency of YAML/JSON files.
 * An interactive playground for testing platform definitions.
 
 ### Documentation Improvements & Extensions

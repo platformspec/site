@@ -39,7 +39,7 @@ Internal Development Platforms (IDPs) have become increasingly vital as organiza
 
 Given these challenges, there is a growing recognition that the current approach to platform engineering is unsustainable in the long term. The constant reinvention of solutions, coupled with the lack of standardization, is leading to inefficiencies and operational risks that could be mitigated by a more unified approach.
 
-This is where the Platform Specification project comes in. The Platform Specification provides a standardized, community-driven framework for defining cloud platforms, encapsulating all essential components, configurations, and policies within a single, structured YAML file. By offering a common foundation, the Platform Specification addresses the core challenges of modern platform engineering:
+This is where the Platform Specification project comes in. The Platform Specification provides a standardized, community-driven framework for defining cloud platforms, encapsulating all essential components, configurations, and policies within a single, structured YAML/JSON file. By offering a common foundation, the Platform Specification addresses the core challenges of modern platform engineering:
 
 1. **Eliminating Redundancy:** The Platform Specification reduces the need for custom solutions by providing a standardized template that covers the most common platform components and configurations. This allows organizations to focus on innovation rather than reinventing the wheel.
 

@@ -15,7 +15,7 @@ The specification also fosters collaboration between teams by providing a shared
 The Platform Specification follows several key conventions to ensure clarity, consistency, and ease of use across all environments:
 
 - **Declarative Approach**: All components and configurations are described declaratively, allowing for clear intent and ease of version control.
-- **YAML Format**: The specification uses YAML for all files to ensure readability, ease of use, and support for hierarchical data structures.
+- **YAML and JSON Formats**: The specification uses YAML or JSON for all files to ensure readability, ease of use, and support for hierarchical data structures.
 - **Modular Design**: The specification encourages modularity, enabling reusable definitions for common platform components and configurations.
 - **Extensibility**: While the core specification is designed to be comprehensive, it is also flexible, allowing for extensions to accommodate specific requirements and customizations.
 - **Cloud Agnostic**: While specific cloud provider features can be defined, the specification remains cloud-agnostic at its core, ensuring it can be applied to any infrastructure, whether on-premises, hybrid, or multi-cloud.
@@ -68,13 +68,15 @@ The Platform Specification uses YAML as its foundational format due to its reada
 - **Lists**: Where multiple entries are required (e.g., multiple environments, services), lists are used for organization and readability.
 - **References**: The specification allows for external references to modularized components, enabling reuse of standard definitions across platforms.
 
+::: tip JSON or YAML
 THe Platform Specification can be transformed into JSON as YAML and JSON are interchangable; however one loses the ability to provide in-line comments and documentation.
+:::
 
 The use of these formats ensures that platforms are easy to define, extend, and automate, with clear human-readable descriptions that are machine-friendly for programmatic management.
 
 ## JSON Pointers and References
 
-The Platform Specification leverages [RFC 6901 JSON Pointer](https://datatracker.ietf.org/doc/html/rfc6901) syntax for referencing elements within the YAML document. This allows for clear, unambiguous, and concise references between different sections, promoting modularity and maintainability.
+The Platform Specification leverages [RFC 6901 JSON Pointer](https://datatracker.ietf.org/doc/html/rfc6901) syntax for referencing elements within the document. This allows for clear, unambiguous, and concise references between different sections, promoting modularity and maintainability.
 
 
 **JSON Pointer Syntax:**
@@ -87,7 +89,8 @@ A JSON Pointer consists of a forward slash (`/`) followed by zero or more path s
 
 **Example Usage in Platform Specification:**
 
-```yaml
+::: code-group
+```yaml [platform.yaml]
 credentials:
   aws-creds:
     schema: AWS
@@ -102,6 +105,30 @@ providers:
       type: aws
       credentials: "#/credentials/aws-creds"
 ```
+
+```json [platform.json]
+{
+  "credentials": {
+    "aws-creds": {
+      "schema": "AWS",
+      "source": "environment",
+      "fields": {
+        "AWS_ACCESS_KEY_ID": "$AWS_ACCESS_KEY_ID",
+        "AWS_SECRET_ACCESS_KEY": "$AWS_SECRET_ACCESS_KEY"
+      }
+    }
+  },
+  "providers": {
+    "iaas": {
+      "aws": {
+        "type": "aws",
+        "credentials": "#/credentials/aws-creds"
+      }
+    }
+  }
+}
+```
+:::
 
 In this example:
 
