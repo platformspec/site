@@ -2,7 +2,7 @@ FROM node:22.8-alpine
 
 WORKDIR /app
 
-RUN npm install vitepress@1.3.4
+RUN npm install vitepress@1.5.0
 
 EXPOSE 5173
 
