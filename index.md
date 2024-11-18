@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Platform Specification"
-  text: "Standards for Defining Your Cloud Platform"
-  tagline: Capture Every Component and Configuration of Your Cloud Platform and Infrastructure in One Unified Standard
+  text: "Standards For Your Cloud Native Platform"
+  tagline: Capture Every Component and Configuration of Your Cloud Native Platform in One Unified Standard
   image:
     light: logo-pressedsteel-light.png
     dark: logo-pressedsteel-dark.png
@@ -18,10 +18,10 @@ hero:
       link: /community
 
 features:
-  - title: Unified Platform Definition
-    details: A single `platform.yaml` file to encapsulate all essential components, configurations, and policies of your cloud platform.
+  - title: Multiple Platform Types
+    details: There are many types of platforms -- from Infrastructure and Operations focused, Application Developer Focused, to Services and Control Plane focused; Platform Spec captures them all.
   - title: Community-Driven Standards
-    details: Built on a standardized, community-driven approach to defining cloud platforms.
+    details: Built on a standardized, community-driven approach to defining cloud native platforms.
   - title: Cross-Environment Consistency
     details: Supports consistent platform deployment across multiple cloud providers and environments.
   - title: Extensible and Modular Design
@@ -29,7 +29,7 @@ features:
   - title: Streamlined Collaboration
     details: Facilitates collaboration among platform engineers, developers, and operations teams through a shared, transparent configuration file.
   - title: Accelerated Time to Value
-    details: Provides a clear, structured approach to cloud platform engineering, reducing the learning curve for new team members and accelerating platform deployment.
+    details: Provides a clear, structured approach to platform engineering, reducing the learning curve for new team members and accelerating platform deployment.
 ---
 
 <style>
@@ -54,8 +54,9 @@ features:
 </style>
 <p>&nbsp;</p>
 
-[![Workflow](/workflow-light.png){style="display: block; margin: 0 auto" .light-only}](./docs/spec/workflow-and-usage)
-[![Workflow](/workflow-dark.png){style="display: block; margin: 0 auto" .dark-only}](./docs/spec/workflow-and-usage)
+
+![Platform Types](/PlatformTypes-light.drawio.png){style="display: block; margin: 0 auto" .light-only}
+![Platform Types](/PlatformTypes-dark.drawio.png){style="display: block; margin: 0 auto" .dark-only}
 
 The Platform Specification project introduces a comprehensive and structured YAML/JSON-based approach to defining, deploying, and managing cloud platforms across diverse environments. By encapsulating every essential component, configuration, and policy within a single document, it ensures consistent, streamlined, and scalable infrastructure management. Whether you're operating across multiple clouds or fine-tuning a single environment, the Platform Specification simplifies the complexity, empowering your team to focus on innovation rather than infrastructure.
 
