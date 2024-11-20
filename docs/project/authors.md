@@ -1,4 +1,4 @@
-# Authors and Contributors
+# Corporate Sponsors
 
 The Platform Specification has emerged from [FoundationIO](https://www.foundation.io), a company passionately focused entirely on cloud platform engineering leveraging the cloud-native ecosystem:
 
@@ -6,6 +6,12 @@ The Platform Specification has emerged from [FoundationIO](https://www.foundatio
 
 [![FoundationIO](./fio_full_black_lockup_solid.png){style="display: block; margin: 0 auto" .light-only}](https://www.foundation.io)
 [![FoundationIO](./fio_full_white_lockup_solid.png){style="display: block; margin: 0 auto" .dark-only}](https://www.foundation.io)
+
+<p>&nbsp;</p>
+
+---
+
+# Individual Contributors
 
 <p>&nbsp;</p>
 

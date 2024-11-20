@@ -52,11 +52,26 @@ features:
   }
 }
 </style>
+
 <p>&nbsp;</p>
+
+---
+
+<h3>
+<center>
+APIs for Defining Platforms
+</center>
+</h3>
 
 The Platform Specification is a community-driven standard designed to simplify <strong>Cloud Native Platform Engineering</strong>. It provides a common set of APIs for platform engineers, developers, and operations teams, regardless of their chosen cloud provider or environment. By leveraging proven best practices and a shared configuration, Platform Spec streamlines collaboration, boosts efficiency, and accelerates time to value. Whether you're operating across multiple clouds or fine-tuning a single environment, Platform Spec ensures cross-cloud consistency and reduces the complexities of platform management. This means your team can focus on what truly matters: building innovative applications and delivering exceptional user experiences. Join the community and discover how Platform Spec can empower your team to build better platforms faster.
 
 <p>&nbsp;</p>
+
+<h3>
+<center>
+Multiple Platform Types
+</center>
+</h3>
 
 ![Platform Types](/PlatformTypes-light.drawio.png){style="display: block; margin: 0 auto" .light-only}
 ![Platform Types](/PlatformTypes-dark.drawio.png){style="display: block; margin: 0 auto" .dark-only}
