@@ -73,8 +73,8 @@ Multiple Platform Types
 </center>
 </h3>
 
-![Platform Types](/PlatformTypes-light.drawio.png){style="display: block; margin: 0 auto" .light-only}
-![Platform Types](/PlatformTypes-dark.drawio.png){style="display: block; margin: 0 auto" .dark-only}
+[![Platform Types](/PlatformTypes-light.drawio.png){style="display: block; margin: 0 auto" .light-only}](/docs/types/types)
+[![Platform Types](/PlatformTypes-dark.drawio.png){style="display: block; margin: 0 auto" .dark-only}](/docs/types/types)
 
 <p>&nbsp;</p>
 
