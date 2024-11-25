@@ -268,7 +268,7 @@ kind: Image
 metadata:
   name: custom-aws-image
 spec:
-  type: machine
+  class: machine
   spec:
     default: false
     providerRefs:
@@ -303,7 +303,7 @@ kind: Image
 metadata:
   name: existing-aws-image
 spec:
-  type: machine
+  class: machine
   spec:
     default: true
     providerRefs:
