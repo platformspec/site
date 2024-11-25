@@ -13,6 +13,10 @@ The Platform Specification uses [YAML](https://yaml.org) as the format for defin
 > [!WARNING]
 > The specification is still a work in process and is being actively designed.
 
+## Key Domains
+![Key Domains (light)](./key-components-light.png){.light-only}
+![Key Domains (dark)](./key-components-dark.png){.dark-only}
+
 ## Document Structure
 The Platform Specification document follows a hierarchical structure that clearly defines all key aspects of a cloud platform. This organized approach ensures consistency, clarity, and maintainability.
 

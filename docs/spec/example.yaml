@@ -43,11 +43,11 @@ spec:
 # ===== IaaS Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: IaasProvider
+kind: Provider
 metadata:
   name: aws
 spec:
-  type: iaas
+  class: iaas
   driver: organizations
   credentialRef:
     name: aws-creds
@@ -58,11 +58,11 @@ spec:
 # ===== DNS Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: DnsProvider
+kind: Provider
 metadata:
   name: route53
 spec:
-  type: dns
+  class: dns
   credentialRef:
     name: aws-creds
   config:
@@ -74,10 +74,11 @@ spec:
 # ===== Identity Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: IdentityProvider
+kind: Provider
 metadata:
   name: okta
 spec:
+  class: identity
   type: okta
   credentialsRef:
     name: okta-creds
@@ -87,10 +88,11 @@ spec:
 # ===== Container/Artifact Registries =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: OciRegistryProvider
+kind: Provider
 metadata:
   name: harbor
 spec:
+  class: oci-registry
   type: harbor
   credentialsRef:
     name: harbor-creds
@@ -101,10 +103,11 @@ spec:
 # ===== Backup and Disaster Recovery Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: BackupProvider
+kind: Provider
 metadata:
   name: snapshot
 spec:
+  class: backup
   type: snapshot
   credentialsRef:
     name: snapshot-creds
@@ -113,10 +116,11 @@ spec:
 # ===== Monitoring Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: MonitoringProvider
+kind: Provider
 metadata:
   name: prometheus
 spec:
+  class: monitoring
   type: prometheus
   credentialsRef: 
     name: prometheus-creds
@@ -125,10 +129,11 @@ spec:
 # ===== Secret Management Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: SecretsProvider
+kind: Provider
 metadata:
   name: hashivault
 spec:
+  class: secrets
   type: vault
   credentialsRef:
     name: vault-creds
@@ -137,20 +142,22 @@ spec:
 # ===== Observability Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: ObservabilityProvider
+kind: Provider
 metadata:
   name: grafana
 spec:
+  class: observability
   type: grafana
   credentialsRef:
     name: grafana-creds
   config: {}
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: ObservabilityProvider
+kind: Provider
 metadata:
   name: datadog
 spec:
+  class: observability
   type: datadog
   credentialsRef:
     name: datadog-creds
@@ -159,10 +166,11 @@ spec:
 # ===== CI/CD Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: CiCdProvider
+kind: Provider
 metadata:
   name: argocd
 spec:
+  class: cicd
   type: argocd
   credentialsRef:
     name: argocd-creds
@@ -171,10 +179,11 @@ spec:
 # ===== Logging Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: LoggingProvider
+kind: Provider
 metadata:
   name: elasticsearch
 spec:
+  class: logging
   type: elasticsearch
   credentialsRef:
     name: elasticsearch-creds
@@ -183,10 +192,11 @@ spec:
 # ===== Auditing Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: AuditingProvider
+kind: Provider
 metadata:
   name: splunk
 spec:
+  class: auditing
   type: splunk
   credentialsRef:
     name: splunk-creds
@@ -195,20 +205,22 @@ spec:
 # ===== Automation and Orchestration Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: AutomationProvider
+kind: Provider
 metadata:
   name: terraform-atlantis
 spec:
+  class: automation
   type: terraform-atlantis
   credentialsRef:
     name: terraform-atlantis-creds
   config: {}
 ---
 apiVersion: core.platformspec.io/v1alpha1
-kind: AutomationProvider
+kind: Provider
 metadata:
   name: ansible
 spec:
+  class: automation
   type: ansible
   credentialsRef:
     name: ansible-creds
@@ -227,9 +239,9 @@ metadata:
 spec:
   description: Development environment
   providerRefs:
-    - kind: DnsProvider
+    - kind: Provider
       name: route53
-    - kind: IaasProvider
+    - kind: Provider
       name: aws
 ---
 apiVersion: core.platformspec.io/v1alpha1
@@ -239,9 +251,9 @@ metadata:
 spec:
   description: Production environment
   providerRefs:
-    - kind: DnsProvider
+    - kind: Provider
       name: route53
-    - kind: IaasProvider
+    - kind: Provider
       name: aws
 
 
@@ -260,11 +272,13 @@ spec:
   spec:
     default: false
     providerRefs:
-      - kind: IaasProvider
+      - kind: Provider
         name: aws
     environmentRefs:
       - name: development
+        kind: Environment
       - name: production
+        kind: Environment
     version: v1.28.13
     builder:
       driver: image-builder
@@ -293,10 +307,11 @@ spec:
   spec:
     default: true
     providerRefs:
-      - kind: IaasProvider
+      - kind: Provider
         name: aws
     environmentRefs:
       - name: development
+        kind: Environment
     version: v1.28.13
     reference:
       id: ami-12345678
@@ -318,7 +333,7 @@ spec:
   engine: kubeadm
   version: "1.28.13"
   providerRefs:
-    - kind: IaasProvider
+    - kind: Provider
       name: aws
   environmentRef:
     name: development
@@ -347,10 +362,11 @@ metadata:
 spec:
     type: ec2
     providerRefs:
-      - kind: IaasProvider
+      - kind: Provider
         name: aws
     environmentRef:
       name: development
+      kind: Environment
     region: us-west-2
     network: aws-vpc-us-west-2
     config:
