@@ -16,6 +16,34 @@ spec:
     providerRef:
       name: route53
     domain: example.com
+  resources:
+    environments:
+      - name: development
+        kind: Environment
+      - name: production
+        kind: Environment
+    providers:
+      - name: aws
+        kind: Provider
+      - name: route53
+        kind: Provider
+    clusters:
+      - name: dev-cluster-aws-kubeadm
+        kind: Cluster
+    servers:
+      - name: dev-server-aws
+        kind: Server
+    images:
+      - name: custom-aws-image
+        kind: Image
+      - name: existing-aws-image
+        kind: Image
+    softwareGroups:
+      - name: general
+        kind: SoftwareGroup
+    credentials:
+      - name: aws-creds
+        kind: Credential
 
 
 # ========================================================================
