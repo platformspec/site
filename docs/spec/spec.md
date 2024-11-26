@@ -1,9 +1,8 @@
 ---
-outline: [2, 3]
+outline: deep
 ---
 
 # The Specification
-
 ## Introduction
 The Platform Specification defines a structured, declarative framework for describing and managing cloud-native platforms. It is designed to standardize how platforms are represented, making it easier for teams to define, build, and operate consistent, scalable, and secure platforms across diverse environments. By capturing the essential components, configurations, and policies of a platform in a clear and organized format, the specification serves as the foundation for both human and automated processes in platform engineering.
 
@@ -16,7 +15,7 @@ While the Platform Specification is modeled on Kubernetes Custom Resource Defini
 >
 > Expect active/frequent changes.
 >
-> Modifications to the spec will be called out on the [news](../../news) page accordingly.
+> Modifications to the spec will be highlighted on the [news](../../news) page accordingly.
 
 ## Key Domains
 ![Key Domains (light)](./key-components-light.png){.light-only}
@@ -47,27 +46,54 @@ The Platform Specification structure promotes a modular and organized approach t
 
 Let’s walk through these API Kinds:
 
-## Platform
-The `platform` API kind in the Platform Specification defines fundamental information about the platform being described. This includes its name, organization details, contact information, and DNS configuration.  It is the top-level resource.
+## Kinds
+### Platform
 
-`Platform` spec section has the following fields:
+The `Platform` CRD in The Platform Specification serves as the central entrypoint for your entire cloud platform, encompassing all its components, configurations, and policies. It provides a structured framework for defining and managing your infrastructure, services, and resources across different environments.
 
-  * **`title`** __(required)__: Human readable title name of the Platform defined within this document
-  * **`description`** __(optional)__: A short description about the platform.
-  * **`organization`** __(required)__: The name of the organization responsible for the platform.
-  * **`author`** __(optional)__: Author of the platform specification document.
-  * **`version`** __(required)__: A version of the platform, internal to the team definining and managing the platform.
-  * **`contactEmail`** __(required)__: Email address for contacting the platform's administrators.
-  * **`dns`**:
-    * **`providerRef`** __(required)__: Refers to a predefined DNS provider defined in the providers section of the specification.
-    * **`domain`** __(required)__: The top-level domain name associated with the platform.
-  * **`resources`** __(required)__: A list of objectReferences, for each component that composes the Platform; a manifest.
-
-Example:
+**Structure:**
 
 ::: code-group
-```yaml [yaml]
----
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Platform
+metadata:
+  name: <platform-name> 
+spec:
+  organization: <organization-name>
+  description: <platform-description> 
+  author: <author-name>
+  version: <platform-version>
+  contactEmail: <email-address>
+  dns:
+    providerRef:
+      name: <dns-provider-name>
+    domain: <domain-name>
+  resources:
+    environments:
+      - name: <environment-name> 
+        kind: Environment
+    providers:
+      - name: <provider-name>
+        kind: Provider
+    clusters:
+      - name: <cluster-name>
+        kind: Cluster
+    servers:
+      - name: <server-name>
+        kind: Server
+    images:
+      - name: <image-name>
+        kind: Image
+    softwareGroups:
+      - name: <softwaregroup-name>
+        kind: SoftwareGroup
+    credentials:
+      - name: <credential-name>
+        kind: Credential
+```
+
+```yaml [example]
 apiVersion: core.platformspec.io/v1alpha1
 kind: Platform
 metadata:
@@ -112,22 +138,49 @@ spec:
       - name: aws-creds
         kind: Credential
 ```
+
 :::
 
+**Key Fields:**
 
-## Credentials
-The credentials section in the Platform Specification YAML defines how authentication credentials are managed for various cloud services. This allows for flexible configuration and secure storage of sensitive information.
+* **`name` *(required)*:**  A unique identifier for your platform within the Platform Specification.
+* **`organization` *(required)*:** The organization responsible for managing this platform.
+* **`description` *(optional)*:** A brief description of the platform's purpose and functionalities. 
+* **`author` *(optional)*:** The name or team responsible for creating or maintaining this platform.
+* **`version` *(required)*:** A version of the platform, internal to the team definining and managing the platform.
+* **`contactEmail` *(required)*:** An email address for contacting the platform's administrators, maintainers or support team.
+* **`dns`:** Defines the DNS provider and domain used by your platform.
+   * `providerRef` *(required)*:  References a `Provider` resource defining the chosen DNS service (e.g., Route53).
+   * `domain` *(required)*: Specifies the top-level domain name associated with this platform.
+ * **`resources` *(required)*:** References to the various resources leveraged or managed by this platform:
+   * **`environments`:**  Defines different deployment environments (e.g., development, staging, production) for your platform's services and applications.
+   * **`providers`: ** References `Provider` resources that define the specific cloud platforms or services used within your environment (e.g., AWS, Azure, GCP). 
+   * **`clusters`:**  Defines Kubernetes clusters managed by this platform (if applicable). Each cluster can have its own configuration and deployment parameters.
+   * **`servers`:**  Lists virtual machines or servers managed within your platform, specifying their configurations and roles.
+   * **`images`:** Defines container images used for deploying applications or components within your platform.
+   * **`softwareGroups`: ** Groups together related software packages or dependencies required by various services or applications within your platform.
+ *  **`credentials`:** References `Credential` resources containing the necessary credentials for accessing and interacting with different cloud providers and services.
 
-The `Credentials` spec has the following fields:
 
-  * **`schema`** __(optional)__: Specifies the format of the credentials according to a predefined schema. This ensures compatibility with specific cloud services.
-  * **`source`** __(required)__: Defines where the credentials are retrieved from. Supported sources may include environment variables, secret managers, or hardcoded values within the YAML file.
-  * **`fields`** __(optional)__: key-value pairs defining individual credential fields and how they map to their source values.
+### Credentials
+The credentials section in the Platform Specification defines how authentication credentials are managed for various cloud services. This allows for flexible configuration and secure storage of sensitive information.
 
-Example:
+**Structure:**
 
 ::: code-group
-```yaml [yaml]
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Credential
+metadata:
+  name: <credential-name> 
+spec:
+  schema: <credential-schema> 
+  source: <credential-source>
+  fields:
+    <field-name>: <field-value>
+```
+
+```yaml [example]
 apiVersion: core.platformspec.io/v1alpha1
 kind: Credential
 metadata:
@@ -139,12 +192,17 @@ spec:
     AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
     AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
 ```
-
 :::
 
-The credentials section enables secure handling of authentication information by separating it from the platform configuration.  Referencing external secret managers can further enhance security by storing credentials outside the main configuration file.
+**Key Fields:**
 
-### Schemas
+* **`name` *(required)*:** A unique identifier for the credential within your platform.
+* **`schema` *(optional)*:** Specifies the type of credentials being managed. This defines the expected format and structure of the `fields`.
+* **`source` *(required)*:** Determines how the credential values are obtained.
+* **`fields` *(required)*:** Defines the specific credential attributes required by the specified schema. These fields can be simple string values, complex JSON objects, or other data types depending on the chosen schema.  Ensure the `field-value` matches the format expected by the provider and its associated APIs.
+
+
+#### Schemas
 Different sets of credentials, for various providers, often follow their own schema. To accommodate the diverse schemas used by different platforms, we've introduced the schema field.  This field acts as a key indicator for *consumers of this API*, providing crucial information about the format and structure of the credentials associated with this resource.
 
 Schemas:
@@ -155,187 +213,180 @@ Schemas:
 | `GCP` | GCP API access credentials |  |
 | `...` | ... |  | 
 
-### Sources
+#### Sources
 Credentials are stored in many types of secrets managers, or other plaintext locations.  This field indicates the location to the credential *relative to the system leveraging this API*.
 
 |  *Source*  |  *Description*  |
 | --- | --- |
 | `static` | Hardcoded values within `fields` section; not advised for production use. |
 | `environment` | Environment variables containing the contents of the credentials, as defined in `fields`. |
+| `file` | File path _relative to consumer of the Credential API_. |
+| `vault` | Hashicorp Vault. |
+| `aws-ssm` | AWS SSM Parameter Store. |
+| `aws-secrets` | AWS Secrets Manager. |
+| `aws-s3` | AWS S3. |
+| `aws-kms` | AWS KMS. |
+| `gcp-secrets` | GCP Secrets Manager. |
+| `gcp-kms` | GCP KMS. |
+| `gcp-gcs` | GCP Cloud Storage. |
+| `azure-keyvault` | Azure Key Vault. |
+| `tfstate` | Terraform (tfstate) file path _relative to consumer of the Credential API_. |
+| `tfstate-s3` | Terraform (tfstate) file stored in S3. |
+| `tfstate-gcs` | Terraform (tfstate) file stored in GCS. |
+| `tfstate-azurerm` | Terraform (tfstate) file in AzureRM Blob storage. |
+| `tfstate-remote` | Terraform (tfstate) in Terraform Cloud / Terraform Enterprise. |
+| `gitlab` | GitLab Secrets. |
+| `kubernetes-configmap` | Kubernetes Config Map. |
+| `kubernetes-secret` | Kubernetes Secret. |
 | `...` | |
 
 
-## Providers
-The `providers` root element in the Platform Specification YAML defines a registry of supported service providers and their configuration options. This allows for modularity, reusability, and extensibility when describing various platform components.
+### Providers
 
-The official provider categories within the specification are as follows (thus far):
-
-  * **`iaas`**: Infrastructure as a Service providers (e.g., AWS, Azure, GCP) offering virtual machines, storage, networking, and other fundamental cloud resources.
-  * **`dns`**: Domain Name System providers responsible for managing DNS records and resolving domain names to IP addresses (e.g., Route53, Cloudflare).
-  * **`identity`**: Identity and Access Management (IAM) providers that handle user authentication, authorization, and access control (e.g., Okta, AWS IAM).
-  * **`registry`**: Container/Artifact Registry providers for storing and managing container images and software artifacts (e.g., Docker Hub, Harbor, Amazon ECR).
-  * **`backup`**: Backup and Disaster Recovery providers offering tools to create and manage backups of data and infrastructure (e.g., Veeam, AWS Backup).
-  * **`monitoring`**: Monitoring providers for collecting metrics and performance data from applications and infrastructure (e.g., Prometheus, Datadog, CloudWatch).
-  * **`secrets`**: Secret Management providers that securely store and manage sensitive data like API keys, passwords, and certificates (e.g., HashiCorp Vault, AWS Secrets Manager).
-  * **`observability`**: Observability platforms that provide comprehensive visibility into application behavior and performance through metrics, logs, and traces (e.g., Grafana, Datadog).
-  * **`cicd`**: Continuous Integration/Continuous Delivery (CI/CD) providers for automating the software development lifecycle (e.g., Argo CD, Jenkins, GitLab CI).
-  * **`logging`**: Logging providers that collect, store, and analyze log data from applications and systems (e.g., Elasticsearch, Splunk, Graylog).
-  * **`auditing`**: Auditing providers that track and monitor platform activity for compliance and security purposes (e.g., Splunk, AWS CloudTrail).
-  * **`security`**: Security providers offering services like intrusion detection/prevention, vulnerability scanning, and web application firewalls (e.g., CrowdStrike Falcon, AWS WAF).
-  * **`automation`**: Automation and Orchestration providers for managing infrastructure and applications through code (e.g., Terraform, Ansible).
-  * **`x-custom`**: An internal, custom category used internally that is not part of the official specification provider categories list.
-
-> [!NOTE]
-> Custom cateogories should always be prefixed with `x-`.
-> 
-> For example, `x-internal`.
-
-Entries within each category follow the exact same structure, which is as follows:
-
-```
-providers:
-  <provider-category>:
-    <provider-name>:
-      type: <string> # Identifier for the provider type (e.g., aws, route53)
-      credentials: "#/credentials/<credential-name>" # Reference
-      config: {} # Provider-specific configuration options
-```
-
-
-For example:
-
-::: code-group
-```yaml [platform.yaml]
-providers:
-  iaas:
-    aws:
-      type: aws
-      credentials: "/credentials/aws-creds"
-      config:
-        tags:
-          key: value
-  dns:
-    route53:
-      type: route53
-      credentials: "#/credentials/aws-creds"
-      config:
-        delegationSet:
-          enabled: true
-        tags:
-          key: value
-```
-
-```json [platform.json]
-{
-  "providers": {
-    "iaas": {
-      "aws": {
-        "type": "aws",
-        "credentials": "/credentials/aws-creds",
-        "config": {
-          "tags": {
-            "key": "value"
-          }
-        }
-      }
-    },
-    "dns": {
-      "route53": {
-        "type": "route53",
-        "credentials": "#/credentials/aws-creds",
-        "config": {
-          "delegationSet": {
-            "enabled": true
-          },
-          "tags": {
-            "key": "value"
-          }
-        }
-      }
-    }
-  }
-}
-```
-:::
-
-## Environments
-
-The `environments` section of the Platform Specification defines different deployment environments for the platform.  This allows for tailoring configurations and resource allocation based on specific needs (e.g., development, testing, staging, production). 
+The `Provider` CRD defines the specific cloud provider or service used for managing infrastructure and platform components within your environment.  Providers offer pre-configured integrations and functionalities tailored to their respective platforms, simplifying deployment and management.
 
 **Structure:**
 
-```
-environments:
-  <environment-name>:
-    description: <string> # Brief description of the environment
-    providers:
-      # References to provider configurations for this environment
-      ... 
-```
-
-**Fields:**
-
-* **`<environment-name>`** __(required)__: A unique identifier for the environment (e.g., `development`, `staging`, `production`).
-
-
-* **`description`** __(optional)__:  A brief explanation of the purpose and characteristics of the environment.
-* **`providers`** __(required)__: 
-    * References to specific provider configurations defined within the `providers` section. Environments can inherit from base provider configurations or override them with environment-specific settings.
-
-**Usage Notes:**
-
-* Each environment entry allows for defining variations in platform configuration based on its intended use case. 
-*  Environments can share common provider configurations while allowing for targeted customization (e.g., adjusting resource limits or security policies). 
-
-Example:
-
 ::: code-group
-```yaml [platform.yaml]
-environments:
-  development:
-    description: "Development environment"
-    providers:
-      dns: "#/providers/dns/route53"
-      iaas:
-        - "#/providers/iaas/aws"
-  production:
-    description: "Production environment"
-    providers:
-      dns: "#/providers/dns/route53"
-      iaas:
-        - "#/providers/iaas/aws" 
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: <provider-name> 
+spec:
+  category: <category> 
+  engine: <engine-name> 
+  credentialRef:
+    name: <credential-name> 
+  config:
+    <configuration-parameters>: ...
 ```
 
-```json [platform.json]
-{
-  "environments": {
-    "development": {
-      "description": "Development environment",
-      "providers": {
-        "dns": "#/providers/dns/route53",
-        "iaas": [
-          "#/providers/iaas/aws"
-        ]
-      }
-    },
-    "production": {
-      "description": "Production environment",
-      "providers": {
-        "dns": "#/providers/dns/route53",
-        "iaas": [
-          "#/providers/iaas/aws"
-        ]
-      }
-    }
-  }
-}
+```yaml [example: iaas]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: aws
+spec:
+  category: iaas
+  engine: aws-organizations
+  credentialRef:
+    name: aws-creds
+  config:
+    tags:
+      somekey: somevalue 
 ```
 :::
 
-This example shows two environments, `development` and `production`. Both share the same DNS provider (`#/providers/dns/route53`) and use AWS as their Iaas provider (`#/providers/iaas/aws`), but they may have further configuration differences.
+**Key Fields:**
+
+* **`name` *(required)*:** A unique identifier for the provider within your platform.
+* **`category` *(required)*:** Categorizes the provider type, enabling filtering and organization. 
+* **`engine` *(required)*:** Specifies the specific implementation or technology used by a provider within its category. This allows you to distinguish between different ways of deploying or managing a particular type of service.
+* **`credentialRef` *(optional)*:** References a `Credential` resource containing credentials needed to interact with the provider.
+* **`config` *(optional)*:** Holds configuration parameters specific to the provider.
+
+#### Categories
+Possible categories include:
+
+|  *Category*  |  *Description*  |
+| --- | --- |
+| `iaas` | Infrastructure as a Service providers (e.g., AWS, Azure, GCP) |
+| `dns` | Domain Name System providers (e.g., Route53, Cloudflare) |
+| `identity` | Identity and access management (IAM) providers (e.g., Okta, Auth0) |
+| `registry` | Container image registries (e.g., Docker Hub, ECR, GCR) |
+| `backup` | Backup and recovery services (e.g., AWS Backup, Azure Backup) | 
+| `monitoring` | Monitoring and observability platforms (e.g., Prometheus, Datadog) |
+| `secrets` | Secrets management systems (e.g., Vault, HashiCorp Secret Manager) |
+| `observability` | Comprehensive observability tools (e.g., Grafana, Jaeger). |
+| `cicd` | Continuous integration and continuous delivery platforms (e.g., CircleCI, ArgoCD, Jenkins, GitLab CI/CD) |
+| `logging` | Logging providers that collect, store, and analyze log data from applications and systems (e.g., Elasticsearch, Splunk, Graylog). |
+| `automation` | Automation tools (e.g., Terraform Atlantis, Rundeck, Ansible). |
+| `auditing` | Security auditing and compliance solutions (e.g., CloudTrail, Audit Logs). |
+| `security` | Security posture management platforms (e.g., Prisma Cloud, Qualys). |
+| `alerting` | Alerting and notification services (e.g., PagerDuty, Opsgenie). |
+| `cluster` | Cluster management systems (e.g., Kubernetes on AWS, Azure, GCP). |
+| `x-custom`| Placeholder for custom provider categories. |
+
+#### Engines
+Possible engines include:
+  *  Under the `category: iaas`, you may have engines such as:
+    * `aws-organizations` for AWS with Organizations for Account Management
+    * `aws-static` for AWS with static/existing account configuration.
+    * `gcp-projects` for Google Cloud Platform Projects.
+  * Under the `category: dns`, you may have engines such as:
+    * `route53` for AWS Route53.
+    * `clouddns` for GCP Cloud DNS.
+    * `cloudflare` for Cloudflare.
+  * Uunder the `category: cluster`, you may have engines such as:
+    * `aws-eks` for Amazon Elastic Kubernetes Service
+    * `kubeadm` for self-managed Kubernetes clusters using kubeadm
+    * `gcp-gke` for Google Kubernetes Engine
+    * `azure-aks` for Azure Kubernetes Service
+    * `fargate` for AWS Fargate container deployment
+    * `nomad` for Nomad cluster management.
 
 
-## Images
+### Environments
+
+The `Environment` CRD in The Platform Specification represents a distinct deployment ecosystems within your platform, such as development, testing, staging, or production. It defines the specific configurations and resources required for deploying and managing applications and services within that particular environment.
+
+**Structure:**
+
+::: code-group
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Environment
+metadata:
+  name: <environment-name> 
+spec:
+  description: <environment-description>
+  providerRefs:
+    - kind: Provider
+      name: <provider-name> 
+    - kind: Provider
+      name: <provider-name>
+```
+
+```yaml [example]
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Environment
+metadata:
+  name: development
+spec:
+  description: Development environment
+  providerRefs:
+    - kind: Provider
+      name: route53
+    - kind: Provider
+      name: aws
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Environment
+metadata:
+  name: production
+spec:
+  description: Production environment
+  providerRefs:
+    - kind: Provider
+      name: route53
+    - kind: Provider
+      name: aws
+```
+:::
+
+**Key Fields:**
+
+* **`name` *(required)*:** A unique identifier for the environment, typically reflecting its purpose (e.g., `development`, `staging`, `production`).
+* **`description` *(optional)*:** Provides a concise description of the environment's purpose and intended use.
+* **`providerRefs` *(required)*:**  References specific `Provider` resources that define the cloud platforms or services used within this environment. This ensures that the correct configurations and credentials are applied based on the target environment.
+   * `kind`: Specifies the type of resource being referenced, which is always "Provider" in this case.
+   * `name` *(required)*:  The name of the `Provider` resource being referenced, indicating the specific provider or service used within this environment.
+
+
+
+### Images
 The `images` root element of the Platform Specification defines a registry of machine images and container images used for deploying applications and infrastructure within the platform. This ensures consistency, version control, and easy management of these foundational components. 
 
 **Structure:**
@@ -481,7 +532,7 @@ images:
 * **`existing-aws-image`**: A reference to an existing AWS AMI ID (`ami-12345678`) in the `us-west-1` region.
 
 
-## Clusters
+### Clusters
 The `clusters` section of the Platform Specification defines the compute environments used for deploying and managing applications within the platform. This includes Kubernetes clusters, serverless deployments (like AWS Fargate), container orchestration systems like Nomad, and potentially other future technologies. Each cluster entry represents a distinct deployment environment with its own configuration parameters.
 
 **Structure:**
@@ -611,7 +662,7 @@ config:
 
 * The `clusters` section provides a flexible way to define and manage diverse compute environments across various platforms.
 
-## Servers
+### Servers
 The `servers` section of the Platform Specification defines individual virtual servers (instances) that exist within various environments and Infrastructure as a Service (IaaS) providers.  These are standalone servers, distinct from server groups or clusters. Each server entry represents a specific instance with its own configuration details.
 
 **Structure:**
@@ -672,7 +723,7 @@ config:
 
 
 
-## Software
+### Software
 
 The `software` section of the Platform Specification defines collections or groups of software to be deployed across your clusters and servers.  These groups encapsulate the necessary configurations and instructions for installing, managing, and updating software components within your platform.
 
@@ -762,7 +813,7 @@ software:
 
 
 
-## Policies
+### Policies
 The Policies section governs the operational and cost-management aspects of the platform. Policies may include logging, scaling, backups, or disaster recovery strategies. This ensures that critical governance and operational practices are well defined and consistently applied.
 
 ::: code-group
@@ -776,44 +827,3 @@ The Policies section governs the operational and cost-management aspects of the 
 ```
 :::
 
-## Governance & Compliance
-Configuration and specifications for ensuring that the cloud platform meets governance and compliance requirements, safeguarding data and infrastructure.
-
-::: code-group
-```yaml [platform.yaml]
-# TBD
-
-```
-
-```json [platform.json]
-// TBD
-```
-:::
-
-## Developer Services
-Tools and environments that enhance the developer experience, making it easier to build, test, and deploy applications.
-
-::: code-group
-```yaml [platform.yaml]
-# TBD
-
-```
-
-```json [platform.json]
-// TBD
-```
-:::
-
-## Monitoring and Insights
-For ensuring that the platform and the applications running on it are observable and performant.
-
-::: code-group
-```yaml [platform.yaml]
-# TBD
-
-```
-
-```json [platform.json]
-// TBD
-```
-:::
