@@ -111,7 +111,7 @@
        x="-0.792"
        y="181.81104"
        sodipodi:role="line"
-       id="tspan1">and Services</tspan></text>
+       id="tspan1">&amp; Services</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -159,16 +159,16 @@
        x="196.88176"
        y="344.92117"
        id="text287-91"><tspan
-         id="tspan287-07"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
          x="196.88176"
          y="344.92117"
-         sodipodi:role="line">Observability</tspan><tspan
+         sodipodi:role="line"
+         id="tspan289">Monitoring &amp; </tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
          x="196.88176"
          y="359.92117"
          sodipodi:role="line"
-         id="tspan289">&amp; Performance</tspan></text>
+         id="tspan2">Insights</tspan></text>
   </g>
   <text
      xml:space="preserve"

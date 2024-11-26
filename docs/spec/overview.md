@@ -30,7 +30,7 @@ The Platform Specification is organized into several sections, each representing
 - **Policies**: Defines cost management, logging, scaling, and other operational policies critical to the platform's functionality and governance.
 - **Security & Compliance**: Ensures security configurations, including access control, identity management, and compliance-related requirements, are well-defined.
 - **Developer Enablement**: Encompasses services that accelerate developer productivity, such as application APIs, serverless services, and more.
-- **Observability & Performance**: Provides tools and configurations for monitoring, alerting, and performance tuning.
+- **Monitoring & Insights**: Provides tools and configurations for monitoring, alerting, and performance tuning.
 
 Each section is designed to be self-contained yet interoperable, allowing teams to mix and match configurations based on their specific requirements.
 
