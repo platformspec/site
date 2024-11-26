@@ -161,8 +161,9 @@ spec:
    * **`softwareGroups`: ** Groups together related software packages or dependencies required by various services or applications within your platform.
  *  **`credentials`:** References `Credential` resources containing the necessary credentials for accessing and interacting with different cloud providers and services.
 
+---
 
-### Credentials
+### Credential
 The credentials section in the Platform Specification defines how authentication credentials are managed for various cloud services. This allows for flexible configuration and secure storage of sensitive information.
 
 **Structure:**
@@ -240,8 +241,9 @@ Credentials are stored in many types of secrets managers, or other plaintext loc
 | `kubernetes-secret` | Kubernetes Secret. |
 | `...` | |
 
+---
 
-### Providers
+### Provider
 
 The `Provider` CRD defines the specific cloud provider or service used for managing infrastructure and platform components within your environment.  Providers offer pre-configured integrations and functionalities tailored to their respective platforms, simplifying deployment and management.
 
@@ -326,8 +328,8 @@ Possible engines include:
     * `fargate` for AWS Fargate container deployment
     * `nomad` for Nomad cluster management.
 
-
-### Environments
+---
+### Environment
 
 The `Environment` CRD in The Platform Specification represents a distinct deployment ecosystems within your platform, such as development, testing, staging, or production. It defines the specific configurations and resources required for deploying and managing applications and services within that particular environment.
 
@@ -385,339 +387,283 @@ spec:
    * `name` *(required)*:  The name of the `Provider` resource being referenced, indicating the specific provider or service used within this environment.
 
 
+---
 
-### Images
-The `images` root element of the Platform Specification defines a registry of machine images and container images used for deploying applications and infrastructure within the platform. This ensures consistency, version control, and easy management of these foundational components. 
+### Network
+
+---
+
+### Image
+
+The `Image` CRD in The Platform Specification represents a fundamental building block for your cloud platform, encompassing both container images and machine images (e.g. AMIs). It defines the source, versioning, and configuration details of these artifacts, ensuring consistent deployment across environments.
 
 **Structure:**
 
-```
-images:
-  machine:
-    <image-name>:  
-      default: <boolean> # True if this image is the default for a given environment/provider
-      iaasProvider: <string> # Reference to provider configuration (e.g., "#/providers/iaas/aws") 
-      environments:
-        - <environment-reference> # References to environments where this image is used
-      version: <string>  # Image version
-      builder: <object>    # Configuration for building custom images 
-      reference: <object>   # Reference to an existing image (e.g., AMI ID)
-```
-
-**Fields:**
-
-* **`<image-name>`**: A unique identifier for the machine image.
-* **`default`**:  A boolean value indicating whether this image is the default choice for a given environment/provider combination. 
-* **`iaasProvider`**: A reference to the provider configuration responsible for managing the platform's infrastructure as a service (e.g., AWS, Azure).  Use JSON Pointers to refer to providers defined elsewhere in the specification.
-* **`environments`**: An array of references to environments where this image is used. Allows for defining images specific to certain deployment contexts.
-* **`version`**: The version string of the machine image.
-* **`builder`**:  Used to define configurations for building custom machine images: 
-    * **`driver`**: Specifies the builder tool (e.g., `image-builder`, `packer`).
-    * **`config`**: Configuration parameters for the builder, such as target image type, location, and customization options.
-
-        * **`target`**: The base image to build from (e.g., `ami-ubuntu-2204`).
-        * **`location`**:  The AWS region where the image will be built/stored.
-        * **`options`**: Additional configuration options specific to the builder driver.
-
-    * **`software`**: 
-       * **`packages`**: A list of software packages to install on the image, including name and version.
-       * **`repos`**:  A list of software repositories to use for package installation, with names and URLs. 
-* **`reference`**: Used when referencing an existing machine image (e.g., AMI ID):
-    * **`id`**: The unique identifier of the existing image (e.g., `ami-12345678`).
-
-**Example:**
-
 ::: code-group
-```yaml [platform.yaml]
-images:
-  containers: {}
-  machine:
-    custom-aws-image:
-      default: false
-      iaasProvider: "#/providers/iaas/aws"
-      environments:
-        - "#/environments/development"
-        - "#/environments/production"
-      version: v1.28.13
-      builder:
-        driver: image-builder
-        config:
-          target: ami-ubuntu-2204
-          location: us-east-2
-          options:
-            ami_regions: "us-east-2,us-west-2"
-            ansible_extra_vars: "pinned_debs='cloud-init=23.1.2-0ubuntu0~22.04.1'"
-        software:
-          packages:
-            - name: nginx
-              version: latest
-            - name: docker
-              version: 20.10.8
-          repos:
-            - name: docker
-              url: "https://download.docker.com/linux/ubuntu"
-    existing-aws-image:
-      default: true
-      iaasProvider: "#/providers/iaas/aws"
-      environments:
-        - "#/environments/development"
-      version: v1.28.13
-      reference:
-        id: ami-12345678
-        location: us-west-1
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Image
+metadata:
+  name: <image-name> 
+spec:
+  category: machine | container  # Specifies the type of image (machine or container)
+  spec:
+    default: boolean # Whether this image is the default for a given provider and environment.
+    providerRefs:
+      - kind: Provider
+        name: <provider-name> 
+    environmentRefs:
+      - name: <environment-name>
+        kind: Environment
+      # ... more environment references (optional)
+    version: <image-version> # Semantic versioning string
+    builder: # Only used for building images, not pre-existing ones.
+      driver: image-builder # Name of the builder driver (e.g., image-builder, docker).
+      config:
+        # ... Builder-specific configuration (target, location, options)
+      software:
+        packages:
+          - name: <package-name>
+            version: <package-version>
+        repos:
+          - name: <repo-name>
+            url: <repo-url>
+
+    reference: # Only used for pre-existing images, not built ones.
+      id: <image-id>   # Unique identifier of the image (e.g., AMI ID)
+      location: <region>
 ```
 
-```json [platform.json]
-{
-  "images": {
-    "containers": {},
-    "machine": {
-      "custom-aws-image": {
-        "default": false,
-        "iaasProvider": "#/providers/iaas/aws",
-        "environments": [
-          "#/environments/development",
-          "#/environments/production"
-        ],
-        "version": "v1.28.13",
-        "builder": {
-          "driver": "image-builder",
-          "config": {
-            "target": "ami-ubuntu-2204",
-            "location": "us-east-2",
-            "options": {
-              "ami_regions": "us-east-2,us-west-2",
-              "ansible_extra_vars": "pinned_debs='cloud-init=23.1.2-0ubuntu0~22.04.1'"
-            }
-          },
-          "software": {
-            "packages": [
-              {
-                "name": "nginx",
-                "version": "latest"
-              },
-              {
-                "name": "docker",
-                "version": "20.10.8"
-              }
-            ],
-            "repos": [
-              {
-                "name": "docker",
-                "url": "https://download.docker.com/linux/ubuntu"
-              }
-            ]
-          }
-        }
-      },
-      "existing-aws-image": {
-        "default": true,
-        "iaasProvider": "#/providers/iaas/aws",
-        "environments": [
-          "#/environments/development"
-        ],
-        "version": "v1.28.13",
-        "reference": {
-          "id": "ami-12345678",
-          "location": "us-west-1"
-        }
-      }
-    }
-  }
-}
+```yaml [example: build]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Image
+metadata:
+  name: custom-aws-image
+spec:
+  category: machine
+  spec:
+    default: false
+    providerRefs:
+      - kind: Provider
+        name: aws
+    environmentRefs:
+      - name: development
+        kind: Environment
+      - name: production
+        kind: Environment
+    version: v1.28.13
+    builder:
+      driver: image-builder
+      config:
+        target: ami-ubuntu-2204
+        location: us-east-2
+        options:
+          ami_regions: "us-east-2,us-west-2"
+          ansible_extra_vars: "pinned_debs='cloud-init=23.1.2-0ubuntu0~22.04.1'"
+      software:
+        packages:
+          - name: nginx
+            version: latest
+          - name: docker
+            version: 20.10.8
+        repos:
+          - name: docker
+            url: "https://download.docker.com/linux/ubuntu"
+```
+
+```yaml [example: existing]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Image
+metadata:
+  name: existing-aws-image
+spec:
+  category: machine
+  spec:
+    default: true
+    providerRefs:
+      - kind: Provider
+        name: aws
+    environmentRefs:
+      - name: development
+        kind: Environment
+    version: v1.28.13
+    reference:
+      id: ami-12345678
+      location: us-west-1
 ```
 :::
 
-* **`custom-aws-image`**: A custom image built using the `image-builder` driver with specific configuration options for software installation and regions.
-* **`existing-aws-image`**: A reference to an existing AWS AMI ID (`ami-12345678`) in the `us-west-1` region.
+**Key Fields:**
+
+* **`category` (spec):**  Indicates the type of image being defined.
+
+   * `machine`: Represents a machine image, such as an Amazon Machine Image (AMI).
+   * `container`: Defines a container image used for deploying applications within your platform.
 
 
-### Clusters
-The `clusters` section of the Platform Specification defines the compute environments used for deploying and managing applications within the platform. This includes Kubernetes clusters, serverless deployments (like AWS Fargate), container orchestration systems like Nomad, and potentially other future technologies. Each cluster entry represents a distinct deployment environment with its own configuration parameters.
+* **`spec` (spec):** Contains configuration details specific to the image.
+
+    * **`default`:**  (boolean) Indicates whether this image is the default choice for a given provider and environment combination. This helps simplify deployments by setting up common starting points. 
+    * **`providerRefs`:** References `Provider` resources specifying the cloud platform on which the image can be deployed (e.g., AWS, Azure).
+    * **`environmentRefs`:** References `Environment` resources indicating the environments where this image is intended to be used. This ensures that the correct images are targeted for different deployment stages.
+    * **`version`:**  (string) Represents the version of the image using semantic versioning (e.g., v1.28.13). This helps track and manage image updates effectively.
+    * **`builder`:**
+       * `driver`: Specifies the type of image builder to use for creating this image (e.g., `image-builder`, `docker`).
+       * `config`: Contains configuration parameters specific to the chosen builder driver:
+           * `target`:  (for `image-builder`) Defines the base AMI or template for building the image.
+           * `location`:  (for `image-builder`) Specifies the region where the image will be built.
+           * `options`: (for `image-builder`) Provides additional options or customizations for the builder process.
+       * `software`: 
+          * `packages`: Defines the software packages to be included in the image, specifying their names and versions. 
+          * `repos`: Lists the repositories from which packages will be sourced during image building.
+    * **`reference`:**
+       * `id`: (string)  Unique identifier of a pre-existing image (e.g., AMI ID for machine images). This field is used when you are referencing an image that already exists in your cloud provider's registry.
+       * `location`:  (string) Specifies the region where the pre-existing image is located.
+
+
+---
+
+### Cluster
+The `Cluster` CRD in The Platform Specification represents a managed cluster deployment, encapsulating all necessary configurations to provision and manage your infrastructure within a specific environment. 
 
 **Structure:**
 
+::: code-group
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Cluster
+metadata:
+  name: <cluster-name>  
+spec:
+  providerRefs:
+    - kind: Provider
+      name: <provider-name>
+    - ... more provider references (optional) 
+  environmentRef:
+    name: <environment-name>
+      kind: Environment 
+  softwareGroupRefs:
+    name: <software-group-name> 
+  version: "<cluster engine version>"
+  region: <deployment-region>
+  config: {}
 ```
-clusters:
-  <cluster-name>:
-    type: <string> # "kubernetes", "fargate", "nomad", etc. 
-    engine: <string> # The specific engine or platform for the cluster type (e.g., "eks" for Kubernetes on AWS, "ecs" for Fargate)
-    version: <string> # Version information for the platform/engine (e.g., Kubernetes version, Nomad version)
-    providers:
-      iaas: <string> # Reference to provider configuration for infrastructure 
-    environment: <string>  # Reference to the environment where the cluster resides
-    region: <string>      # Geographic region for the cluster
-    network: <string>    # Network configuration identifier 
+
+```yaml [example: aws/kubeadm]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Cluster
+metadata:
+  name: dev-cluster-aws-kubeadm
+spec:
+  providerRefs:
+    - kind: Provider
+      name: aws
+    - kind: Provider
+      name: aws-kubeadm
+  environmentRef:
+    name: development
+  softwareGroupRefs:
+    name: general
+  version: "1.28.13"
+  region: us-east-2
+  config:
+    autoscaling: true
+    controlPlane:
+      instanceType: "t3.medium"
+      machineImageRef: 
+        name: custom-aws-image
+      replicas: 3
+```
+
+```yaml [example: aws/fargate]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Cluster
+metadata:
+  name: dev-cluster-aws-fargate
+spec:
+  providerRefs:
+    - kind: Provider
+      name: aws
+    - kind: Provider
+      name: aws-fargate
+  environmentRef:
+    name: development
+  version: "1.4.0"
+  region: us-east-2
+  config: {} 
+```
+
+```yaml [example: nomad]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Cluster
+metadata:
+  name: dev-cluster-nomad
+spec:
+  providerRefs:
+    - kind: Provider
+      name: aws
+    - kind: Provider
+      name: nomad
+  environmentRef:
+    name: development 
+  version: "1.9.3"
+  region: us-east-2
+  config: {}
+
+```
+:::
+
+ **Key Fields:**
+
+* **`providerRefs` (required):** Specifies the cloud providers responsible for provisioning and managing the Kubernetes infrastructure.  Each reference points to a `Provider` resource, defining details like account credentials and region.
+* **`environmentRef` (required):** References an `Environment` resource, associating the cluster with its corresponding deployment stage (development, staging, production). This ensures that the cluster is configured with the appropriate settings for its intended purpose.
+* **`softwareGroupRefs` (optional):** Links to a `SoftwareGroup` resource defining the base Kubernetes components and additional tools or software packages that will be included in the cluster. 
+* **`version` (required):**  Specifies the version to be deployed within cluster's engine, enabling you to manage different versions for various environments.
+* **`region` (required):** Indicates the geographical region where the cluster resources will be deployed. 
+* **`config` (optional):** Configuration parameters for the Provider provisioning or managing the Cluster.
+
+
+---
+
+### Server
+The `Servers` section of the Platform Specification defines individual virtual servers (instances) that exist within various environments and Infrastructure as a Service (IaaS) providers.  These are standalone servers, distinct from server groups or clusters. Each server entry represents a specific instance with its own configuration details.
+
+
+**Structure:**
+
+::: code-group
+
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Server
+metadata:
+  name: <server-name> 
+spec:
+    providerRefs:
+      - kind: Provider
+        name: <provider-name>
+      - ... more provider references (optional) 
+    environmentRef:
+      name: <environment-name>
+      kind: Environment 
+    region: <deployment-region>
+    network: <network-identifier>  
     config:
-      <configuration-key>: <value> # Additional cluster-specific settings 
-```
-
-
-**Fields:**
-
-* **`<cluster-name>`**: A unique identifier for the cluster (e.g., `dev-cluster-aws-eks`).
-* **`type`**: Specifies the type of compute environment:
-    * "kubernetes": Kubernetes clusters managed using various tools.
-    * "fargate": Serverless container deployments on AWS Fargate.
-    * "nomad": Nomad clusters for distributed container orchestration.
-    * (**Future expansion**) Other cluster types as they emerge. 
-
-* **`engine`**:  Specifies the specific engine or platform used within the `type`. Examples:
-    * For `"kubernetes"`:
-        * "eks": AWS Elastic Kubernetes Service
-        * "kubeadm": Self-managed Kubernetes using kubeadm.
-        * "gke": Google Kubernetes Engine
-    * For `"fargate"`: 
-        * "ecs": Amazon Elastic Container Service (Fargate)
-    * For `"nomad"`: 
-       * " Nomad"  (self-hosted Nomad)
-
-* **`version`**: The version information for the engine or platform. This could be a Kubernetes version, Fargate runtime version, Nomad version, etc.
-* **`providers`**: A dictionary containing references to provider configurations responsible for provisioning the underlying infrastructure: 
-   * **`iaas`**: Reference to the Infrastructure as a Service (IaaS) provider configuration (e.g., `#/providers/iaas/aws`).
-* **`environment`**:  Reference to the environment where the cluster will operate (e.g., `#/environments/development`).
-* **`region`**: The geographic region where the cluster's infrastructure will be located.
-* **`network`**: An identifier referencing the network configuration used by the cluster.
-* **`config`**: A nested dictionary containing additional configuration options specific to the cluster type:
-
-**Kubernetes-Specific Config:** 
-
-
-::: code-group
-```yaml [platform.yaml]
-# Example Kubernetes cluster config
-config:
-  autoscaling: true  
-  nodeSize: "t3.medium" 
-  machineImage: "#/images/machine/custom-aws-image"
-  # ... other Kubernetes configurations (e.g., pod settings, service types)
-```
-
-```json [platform.json]
-{
-  "config": {
-    "autoscaling": true,
-    "nodeSize": "t3.medium",
-    "machineImage": "#/images/machine/custom-aws-image"
-  }
-}
+      size: <instance-type>
+      machineImageRef:
+        name: <image-name>     
 ```
 :::
 
 
+**Key Fields:**
 
-**Fargate-Specific Config:**
+* **`providerRefs` (required):** Specifies the cloud providers responsible for managing this server. Each reference points to a `Provider` resource, defining details like account credentials and region. 
+* **`environmentRef` (required):** References an `Environment` resource, associating the server with its corresponding deployment stage (development, staging, production). This ensures that the server is configured with the appropriate settings for its intended purpose.
+* **`region` (required):** Indicates the geographical region where the server resources will be deployed.
+* **`network` (optional):** Identifies the network or VPC to which this server will be connected.
+* **`config` (optional):** {}
 
-::: code-group
-```yaml [platform.yaml]
-# Example Fargate config
-config:
-  taskDefinition:  "#/tasks/my-fargate-task"
-  serviceConfig: 
-    desiredCount: 3 
-    launchType: "FARGATE"
-```
-
-```json [platform.json]
-{
-  "config": {
-    "taskDefinition": "#/tasks/my-fargate-task",
-    "serviceConfig": {
-      "desiredCount": 3,
-      "launchType": "FARGATE"
-    }
-  }
-}
-```
-:::
-
-
-
-  **Nomad-Specific Config:**
-
-::: code-group
-```yaml [platform.yaml]
-# Example Nomad config
-config:
-  clientAddress: "#/providers/network/private-ip-address"
-  datacenter: "main"
-  jobTemplate: "#/jobs/my-nomad-job"
-```
-
-```json [platform.json]
-{
-  "config": {
-    "clientAddress": "#/providers/network/private-ip-address",
-    "datacenter": "main",
-    "jobTemplate": "#/jobs/my-nomad-job"
-  }
-}
-
-```
-:::
-
-
-
-**Usage Notes:**
-
-* The `clusters` section provides a flexible way to define and manage diverse compute environments across various platforms.
-
-### Servers
-The `servers` section of the Platform Specification defines individual virtual servers (instances) that exist within various environments and Infrastructure as a Service (IaaS) providers.  These are standalone servers, distinct from server groups or clusters. Each server entry represents a specific instance with its own configuration details.
-
-**Structure:**
-
-```
-servers:
-  <server-name>: 
-    type: <string>   # "ec2", "azureVM", "gceInstance", etc. 
-    iaasProvider: <string> # Reference to provider configuration (e.g., "#/providers/iaas/aws")
-    environment: <string>  # Reference to the environment where the server resides
-    region: <string>      # Geographic region for the server
-    network: <string>    # Network configuration identifier (e.g., VPC name)
-    config:
-      <configuration-key>: <value> # Additional server-specific settings 
-```
-
-**Fields:**
-
-* **`<server-name>`**: A unique identifier for the server instance (e.g., `dev-server-aws`).
-* **`type`**: Specifies the type of virtual machine technology being used:
-    * "ec2": Amazon EC2 instances
-    * "azureVM": Azure Virtual Machines
-    * "gceInstance": Google Compute Engine Instances
-    * (**Future expansion**) Other IaaS provider instance types
-* **`iaasProvider`**:  Reference to the provider configuration responsible for managing the server. This usually points to a section in your YAML that defines specific settings for the IaaS provider (e.g., `#/providers/iaas/aws`).
-* **`environment`**:  Reference to the environment where the server will be deployed (e.g., `#/environments/development`). 
-* **`region`**: The geographic region where the server's infrastructure will reside.
-* **`network`**: An identifier referencing the network configuration used by the server, such as a VPC name or subnet ID.
-
-* **`config`**: A nested dictionary containing additional server-specific configurations:
-
-
-
-::: code-group
-```yaml [platform.yaml]
-# Example Server Config
-config:
-  size: "t3.medium" # Instance size (e.g., EC2 instance type)
-  machineImage: "#/images/machine/custom-aws-image"
-  # ... other server-specific settings 
-```
-
-```json [platform.json]
-{
-  "config": {
-    "size": "t3.medium",
-    "machineImage": "#/images/machine/custom-aws-image"
-  }
-}
-```
-:::
-
-**Usage Notes:**
-
-* The `servers` section allows for the definition of individual servers across different cloud providers and environments, enabling a modular and scalable approach to infrastructure management.
 
 
 
