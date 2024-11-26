@@ -57,8 +57,8 @@ export default defineConfig({
           text: 'The Specification',
           items: [
             { text: 'Overview', link: '/docs/spec/overview' },
-            { text: 'The Specification', link: '/docs/spec/spec' },
             { text: 'Scope', link: '/docs/spec/scope' },
+            { text: 'The Specification', link: '/docs/spec/spec' },
             { text: 'Example', link: '/docs/spec/example' },
             { text: 'Workflow & Usage', link: '/docs/spec/workflow-and-usage' },
             { text: 'SDKs', link: '/docs/spec/sdks' },
