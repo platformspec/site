@@ -144,6 +144,9 @@ spec:
     credentials:
       - name: <credential-name>
         kind: Credential
+    networks:
+      - name: <network-name>
+        kind: Network
 ```
 
 <<< ../../examples/aws/platform.yaml{yaml}[example]
@@ -293,6 +296,7 @@ Possible categories include:
 | `security` | Security posture management platforms (e.g., Prisma Cloud, Qualys). |
 | `alerting` | Alerting and notification services (e.g., PagerDuty, Opsgenie). |
 | `cluster` | Cluster management systems (e.g., Kubernetes on AWS, Azure, GCP). |
+| `server` | Virtual machines (e.g. EC2 instance). |
 | `x-custom`| Placeholder for custom provider categories. |
 
 #### Engines
