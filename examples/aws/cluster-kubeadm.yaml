@@ -11,7 +11,8 @@ spec:
   environmentRef:
     name: development
   softwareGroupRefs:
-    name: general
+    - kind: SoftwareGroup
+      name: general
   version: "1.28.13"
   region: us-east-2
   config:

@@ -5,7 +5,7 @@ metadata:
 spec:
   title: Example Demo Company Platform
   organization: Example Demo Company
-  description: A comprehensive example of an AWS based Kubernetes platform."
+  description: A comprehensive example of an AWS based Kubernetes platform.
   author: Josh West
   version: 1.0.0
   contactEmail: engineering@platformspec.io

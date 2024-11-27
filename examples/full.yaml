@@ -9,7 +9,7 @@ metadata:
   name: example
 spec:
   organization: Example Demo Company
-  description: A comprehensive example of an AWS based Kubernetes platform."
+  description: A comprehensive example of an AWS based Kubernetes platform.
   author: Josh West
   version: 1.0.0
   contactEmail: engineering@platformspec.io
@@ -161,7 +161,7 @@ kind: Provider
 metadata:
   name: harbor
 spec:
-  category: oci-registry
+  category: registry
   engine: harbor
   credentialsRef:
     name: harbor-creds
@@ -343,7 +343,7 @@ spec:
     cidrBlocks: [10.0.0.0/16]
     subnetConfiguration:
       publicSubnets: ["subnet-id1", "subnet-id2"]
-      privateSubnets: ["subnet-id3, "subnet-id4"]
+      privateSubnets: ["subnet-id3", "subnet-id4"]
     tags:
       foo: bar
 
@@ -430,7 +430,8 @@ spec:
     - kind: Network
       name: primary-vpc
   softwareGroupRefs:
-    name: general
+    - kind: SoftwareGroup
+      name: general
   version: "1.28.13"
   region: us-east-2
   config:
