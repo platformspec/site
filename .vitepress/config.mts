@@ -69,6 +69,7 @@ export default defineConfig({
           text: 'Platforms',
           items: [
             { text: 'Types of Platforms', link: '/docs/types/types' },
+            { text: 'Helpful Resources', link: '/docs/types/resources' },
             {
               text: 'Infrastructure Platforms',
               items: [
@@ -77,7 +78,6 @@ export default defineConfig({
                 { text: 'Responsibilities', link: '/docs/types/infrastructure/responsibilities'},
                 { text: 'Stakeholders', link: '/docs/types/infrastructure/stakeholders' },
                 { text: 'The Four Layers', link: '/docs/types/infrastructure/the-four-layers' },
-                { text: 'The Six Key Pillars', link: '/docs/types/infrastructure/key-pillars' },
               ]
             },
             {
