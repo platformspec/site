@@ -8,6 +8,7 @@ In no particular order, they are as follows:
   * [CNCF Platforms White Paper](https://tag-app-delivery.cncf.io/whitepapers/platforms/)
   * [CNCF Platform Engineering Maturity Model](https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/)
   * [What is platform engineering?](https://platformengineering.org/blog/what-is-platform-engineering)
+  * [What I Talk About When I Talk About Platforms](https://martinfowler.com/articles/talk-about-platforms.html) by Martin Fowler and Evan Bottcher
 
 ## Reports
 
