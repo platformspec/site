@@ -23,7 +23,7 @@ The Platform Specification follows several key conventions to ensure clarity, co
 
 ## Layout
 
-The Platform Specification is organized into several sections, each representing a distinct aspect (the [six key domains](./key-domains)) of a platform. These sections provide a structured way to capture all necessary details for platform creation and management:
+The Platform Specification is organized into several sections, each representing a distinct aspect of a platform. These sections provide a structured way to capture all necessary details for platform creation and management:
 
 - **Infrastructure**: Captures details related to cloud providers, environments, and credentials required to set up and manage the underlying platform infrastructure.
 - **Compute, Networks, and Services**: Describes the platform’s compute, networking components, clusters, and related managed services.

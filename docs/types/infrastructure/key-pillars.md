@@ -6,9 +6,6 @@ To make this happen, we can break down "what makes a cloud paltform" into six di
 &nbsp;
 &nbsp;
 
-![Key Components (light)](./key-components-light.svg){.light-only}
-![Key Components (dark)](./key-components-dark.svg){.dark-only}
-
 The key pillars are as follows:
 
 ## 1. **Infrastructure**
