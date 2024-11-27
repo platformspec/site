@@ -1,0 +1,12 @@
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: aws
+spec:
+  category: iaas
+  engine: aws-organizations
+  credentialRef:
+    name: aws-creds
+  config:
+    tags:
+      somekey: somevalue 

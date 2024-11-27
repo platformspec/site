@@ -1,0 +1,15 @@
+apiVersion: core.platformspec.io/v1alpha1
+kind: Cluster
+metadata:
+  name: dev-cluster-nomad
+spec:
+  providerRefs:
+    - kind: Provider
+      name: aws
+    - kind: Provider
+      name: nomad
+  environmentRef:
+    name: development 
+  version: "1.9.3"
+  region: us-east-2
+  config: {}

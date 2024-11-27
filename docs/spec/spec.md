@@ -21,10 +21,62 @@ While the Platform Specification is modeled on Kubernetes Custom Resource Defini
 ![Key Domains (light)](./key-components-light.png){.light-only}
 ![Key Domains (dark)](./key-components-dark.png){.dark-only}
 
+The six domains that The Platform Specification captures, to fully define a platform, irrespective of its type (Infrastructure Platform, Developer Platform, Services Platform), are as follows:
+
+**1. Infrastructure**
+   - Core physical and virtual resources required to support the platform, including:
+     - **Providers**: Cloud providers, on-premises infrastructure.
+     - **Environments**: Staging, production, etc.
+     - **Credentials and Access**: Authentication details for providers.
+     - **Machine Images**: AMIs, VM templates, etc.
+     - **Storage and Persistence**: Volumes, S3 buckets, databases.
+
+**2. Compute & Networks**
+   - Compute and networking resources needed for workloads, covering:
+     - **Servers and Nodes**: Virtual machines, bare-metal servers, etc.
+     - **Kubernetes Clusters**: Managed (EKS, GKE) or self-hosted.
+     - **Networking Configurations**: VPCs, subnets, security groups, firewalls.
+     - **Managed Services**: Hosted databases, message queues, and similar services.
+
+**3. Policies**
+   - Rules and guidelines to control platform operations and behaviors:
+     - **Cost Management**: Budgeting, quotas, alerts.
+     - **Scaling Policies**: Auto-scaling, load balancing.
+     - **Disaster Recovery**: Backups, replication, and restoration.
+     - **Security**: Identity and access management (IAM), encryption.
+     - **Governance**: Compliance standards (SOC2, GDPR).
+
+**4. Governance & Compliance**
+   - Ensures platform operation adheres to organizational and regulatory requirements:
+     - **Auditing**: Logs of access and operations.
+     - **Compliance Standards**: Policies aligned to ISO, SOC2, PCI-DSS, etc.
+     - **Identity & Access**: RBAC, multi-factor authentication.
+     - **Data Protection**: Retention policies, secure data handling.
+
+**5. Developer Services & Enablement**
+   - Tools and services that empower developers to build, test, and deploy applications:
+     - **CI/CD Pipelines**: Jenkins, GitHub Actions, ArgoCD.
+     - **Application Hosting**: Serverless functions, app containers.
+     - **API Management**: API gateways, service meshes.
+     - **Dev Tools**: IDE integrations, debugging tools.
+     - **Platform SDKs**: Libraries for interacting with platform resources.
+
+**6. Monitoring and Insights**
+   - Systems for monitoring, analyzing, and improving platform performance:
+     - **Metrics and Monitoring**: Prometheus, Grafana, CloudWatch.
+     - **Cost Accounting**: Kubecost, Opencost, Cloudhealth, etc.
+     - **Logging**: Log aggregation, search, and analysis tools.
+     - **Alerting**: PagerDuty, Slack integrations.
+     - **Tracing**: Distributed tracing for performance debugging.
+     - **Performance Benchmarks**: Testing under load, latency analysis.
+
+You will see this reflected within the various API kinds, defined below.
+
+
 ## Document Structure
 The Platform Specification has embraced a modern approach to defining and managing your platforms using Kubernetes Custom Resource Definitions (CRDs). This allows us to leverage the power and flexibility of Kubernetes while providing a structured and declarative way to represent platform components.
 
-The Platform Specification defines several core CRD types, each representing a distinct element within your platform:
+The Platform Specification defines several core API kinds, each representing a distinct element within your platform:
 
 ![PlatformSpecMindMap (light)](./PlatformSpecMindMap-light.drawio.png){.light-only}
 ![PlatformSpecMindMap (dark)](./PlatformSpecMindMap-dark.drawio.png){.dark-only}
@@ -44,7 +96,7 @@ Each api kind represents a fundamental aspect of the platform:
 
 The Platform Specification structure promotes a modular and organized approach to defining complex cloud platforms, ensuring clarity, maintainability, and consistency across different environments and deployments.
 
-Let’s walk through these API Kinds:
+Let’s walk through these API kinds:
 
 ## Kinds
 ### Platform
@@ -60,6 +112,7 @@ kind: Platform
 metadata:
   name: <platform-name> 
 spec:
+  title: <short-title>
   organization: <organization-name>
   description: <platform-description> 
   author: <author-name>
@@ -93,57 +146,13 @@ spec:
         kind: Credential
 ```
 
-```yaml [example]
-apiVersion: core.platformspec.io/v1alpha1
-kind: Platform
-metadata:
-  name: example
-spec:
-  title: Example Demo Company Platform
-  organization: Example Demo Company
-  description: A comprehensive example of an AWS based Kubernetes platform."
-  author: Josh West
-  version: 1.0.0
-  contactEmail: engineering@platformspec.io
-  dns:
-    providerRef:
-      name: route53
-    domain: example.com
-  resources:
-    environments:
-      - name: development
-        kind: Environment
-      - name: production
-        kind: Environment
-    providers:
-      - name: aws
-        kind: Provider
-      - name: route53
-        kind: Provider
-    clusters:
-      - name: dev-cluster-aws-kubeadm
-        kind: Cluster
-    servers:
-      - name: dev-server-aws
-        kind: Server
-    images:
-      - name: custom-aws-image
-        kind: Image
-      - name: existing-aws-image
-        kind: Image
-    softwareGroups:
-      - name: general
-        kind: SoftwareGroup
-    credentials:
-      - name: aws-creds
-        kind: Credential
-```
-
+<<< ../../examples/aws/platform.yaml{yaml}[example]
 :::
 
 **Key Fields:**
 
 * **`name` *(required)*:**  A unique identifier for your platform within the Platform Specification.
+* **`title` *(required)*:** A short human readable title for this platform.
 * **`organization` *(required)*:** The organization responsible for managing this platform.
 * **`description` *(optional)*:** A brief description of the platform's purpose and functionalities. 
 * **`author` *(optional)*:** The name or team responsible for creating or maintaining this platform.
@@ -164,7 +173,7 @@ spec:
 ---
 
 ### Credential
-The credentials section in the Platform Specification defines how authentication credentials are managed for various cloud services. This allows for flexible configuration and secure storage of sensitive information.
+The credentials API kind in the Platform Specification defines how authentication credentials are managed for various cloud services. This allows for flexible configuration and secure storage of sensitive information.
 
 **Structure:**
 
@@ -181,18 +190,7 @@ spec:
     <field-name>: <field-value>
 ```
 
-```yaml [example]
-apiVersion: core.platformspec.io/v1alpha1
-kind: Credential
-metadata:
-  name: aws-creds
-spec:
-  schema: AWS
-  source: environment
-  fields:
-    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
-    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
-```
+<<< ../../examples/aws/credentials.yaml{yaml}[example]
 :::
 
 **Key Fields:**
@@ -245,7 +243,7 @@ Credentials are stored in many types of secrets managers, or other plaintext loc
 
 ### Provider
 
-The `Provider` CRD defines the specific cloud provider or service used for managing infrastructure and platform components within your environment.  Providers offer pre-configured integrations and functionalities tailored to their respective platforms, simplifying deployment and management.
+The `Provider` API kind defines the specific cloud provider or service used for managing infrastructure and platform components within your environment.  Providers offer pre-configured integrations and functionalities tailored to their respective platforms, simplifying deployment and management.
 
 **Structure:**
 
@@ -264,20 +262,7 @@ spec:
     <configuration-parameters>: ...
 ```
 
-```yaml [example: iaas]
-apiVersion: core.platformspec.io/v1alpha1
-kind: Provider
-metadata:
-  name: aws
-spec:
-  category: iaas
-  engine: aws-organizations
-  credentialRef:
-    name: aws-creds
-  config:
-    tags:
-      somekey: somevalue 
-```
+<<< ../../examples/aws/providers.yaml{yaml}[example]
 :::
 
 **Key Fields:**
@@ -331,7 +316,7 @@ Possible engines include:
 ---
 ### Environment
 
-The `Environment` CRD in The Platform Specification represents a distinct deployment ecosystems within your platform, such as development, testing, staging, or production. It defines the specific configurations and resources required for deploying and managing applications and services within that particular environment.
+The `Environment` API kind in The Platform Specification represents a distinct deployment ecosystems within your platform, such as development, testing, staging, or production. It defines the specific configurations and resources required for deploying and managing applications and services within that particular environment.
 
 **Structure:**
 
@@ -349,33 +334,7 @@ spec:
     - kind: Provider
       name: <provider-name>
 ```
-
-```yaml [example]
----
-apiVersion: core.platformspec.io/v1alpha1
-kind: Environment
-metadata:
-  name: development
-spec:
-  description: Development environment
-  providerRefs:
-    - kind: Provider
-      name: route53
-    - kind: Provider
-      name: aws
----
-apiVersion: core.platformspec.io/v1alpha1
-kind: Environment
-metadata:
-  name: production
-spec:
-  description: Production environment
-  providerRefs:
-    - kind: Provider
-      name: route53
-    - kind: Provider
-      name: aws
-```
+<<< ../../examples/aws/environments.yaml{yaml}[example]
 :::
 
 **Key Fields:**
@@ -391,11 +350,48 @@ spec:
 
 ### Network
 
+The `Network` API kind provides a standardized way to define and manage various types of network infrastructures within your platform. Whether it's a traditional VPC, a VPN tunnel, an overlay network, or any other custom connectivity model, this resource encapsulates the essential configurations required for reliable and secure communication across your cloud environments.
+
+**Structure:**
+
+::: code-group
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: Network
+metadata:
+  name: <network-name> 
+spec:
+  type: <network-type> # (e.g., vpc, vpn, overlay)
+  providerRefs:
+    - kind: Provider
+      name: <provider-name> 
+  config:
+    # Network-specific configuration properties based on 'type'
+```
+
+<<< ../../examples/aws/network-vpc.yaml{yaml}[example]
+
+:::
+
+
+**Key Fields:**
+
+  * **`name`:** A unique identifier for this network.
+  * **`type`:** Specifies the category or model of the network being defined. 
+      * **Common Types:** 
+          * `vpc`: Virtual Private Cloud (e.g., AWS VPC, Azure VNet).
+          * `vpn`: VPN tunnel (IPsec, OpenVPN, etc.) connecting networks.
+          * `overlay`: Overlay networking technology (e.g., VXLAN, NVGRE) for segmenting and connecting virtual resources.
+      * **Custom Types:** You can define your own network types to represent specialized connectivity models within your platform.
+  * **`providerRefs`:** References one or more `Provider` resources responsible for managing this network infrastructure.  This allows you to associate specific cloud providers or networking tools with the network definition.
+  * **`config`:** Holds network-specific configurations based on the `type`. 
+
+
 ---
 
 ### Image
 
-The `Image` CRD in The Platform Specification represents a fundamental building block for your cloud platform, encompassing both container images and machine images (e.g. AMIs). It defines the source, versioning, and configuration details of these artifacts, ensuring consistent deployment across environments.
+The `Image` API kind in The Platform Specification represents a fundamental building block for your cloud platform, encompassing both container images and machine images (e.g. AMIs). It defines the source, versioning, and configuration details of these artifacts, ensuring consistent deployment across environments.
 
 **Structure:**
 
@@ -434,76 +430,20 @@ spec:
       location: <region>
 ```
 
-```yaml [example: build]
-apiVersion: core.platformspec.io/v1alpha1
-kind: Image
-metadata:
-  name: custom-aws-image
-spec:
-  category: machine
-  spec:
-    default: false
-    providerRefs:
-      - kind: Provider
-        name: aws
-    environmentRefs:
-      - name: development
-        kind: Environment
-      - name: production
-        kind: Environment
-    version: v1.28.13
-    builder:
-      driver: image-builder
-      config:
-        target: ami-ubuntu-2204
-        location: us-east-2
-        options:
-          ami_regions: "us-east-2,us-west-2"
-          ansible_extra_vars: "pinned_debs='cloud-init=23.1.2-0ubuntu0~22.04.1'"
-      software:
-        packages:
-          - name: nginx
-            version: latest
-          - name: docker
-            version: 20.10.8
-        repos:
-          - name: docker
-            url: "https://download.docker.com/linux/ubuntu"
-```
+<<< ../../examples/aws/image-build.yaml{yaml}[example: build]
 
-```yaml [example: existing]
-apiVersion: core.platformspec.io/v1alpha1
-kind: Image
-metadata:
-  name: existing-aws-image
-spec:
-  category: machine
-  spec:
-    default: true
-    providerRefs:
-      - kind: Provider
-        name: aws
-    environmentRefs:
-      - name: development
-        kind: Environment
-    version: v1.28.13
-    reference:
-      id: ami-12345678
-      location: us-west-1
-```
+<<< ../../examples/aws/image-existing.yaml{yaml}[example: existing]
+
 :::
 
 **Key Fields:**
 
-* **`category` (spec):**  Indicates the type of image being defined.
+* **`category` (required):**  Indicates the type of image being defined.
 
    * `machine`: Represents a machine image, such as an Amazon Machine Image (AMI).
    * `container`: Defines a container image used for deploying applications within your platform.
-
-
 * **`spec` (spec):** Contains configuration details specific to the image.
-
-    * **`default`:**  (boolean) Indicates whether this image is the default choice for a given provider and environment combination. This helps simplify deployments by setting up common starting points. 
+    * **`default`:** (boolean) Indicates whether this image is the default choice for a given provider and environment combination. This helps simplify deployments by setting up common starting points. 
     * **`providerRefs`:** References `Provider` resources specifying the cloud platform on which the image can be deployed (e.g., AWS, Azure).
     * **`environmentRefs`:** References `Environment` resources indicating the environments where this image is intended to be used. This ensures that the correct images are targeted for different deployment stages.
     * **`version`:**  (string) Represents the version of the image using semantic versioning (e.g., v1.28.13). This helps track and manage image updates effectively.
@@ -524,7 +464,7 @@ spec:
 ---
 
 ### Cluster
-The `Cluster` CRD in The Platform Specification represents a managed cluster deployment, encapsulating all necessary configurations to provision and manage your infrastructure within a specific environment. 
+The `Cluster` API kind in The Platform Specification represents a managed cluster deployment, encapsulating all necessary configurations to provision and manage your infrastructure within a specific environment. 
 
 **Structure:**
 
@@ -549,68 +489,12 @@ spec:
   config: {}
 ```
 
-```yaml [example: aws/kubeadm]
-apiVersion: core.platformspec.io/v1alpha1
-kind: Cluster
-metadata:
-  name: dev-cluster-aws-kubeadm
-spec:
-  providerRefs:
-    - kind: Provider
-      name: aws
-    - kind: Provider
-      name: aws-kubeadm
-  environmentRef:
-    name: development
-  softwareGroupRefs:
-    name: general
-  version: "1.28.13"
-  region: us-east-2
-  config:
-    autoscaling: true
-    controlPlane:
-      instanceType: "t3.medium"
-      machineImageRef: 
-        name: custom-aws-image
-      replicas: 3
-```
+<<< ../../examples/aws/cluster-kubeadm.yaml{yaml}[example: aws/kubeadm]
 
-```yaml [example: aws/fargate]
-apiVersion: core.platformspec.io/v1alpha1
-kind: Cluster
-metadata:
-  name: dev-cluster-aws-fargate
-spec:
-  providerRefs:
-    - kind: Provider
-      name: aws
-    - kind: Provider
-      name: aws-fargate
-  environmentRef:
-    name: development
-  version: "1.4.0"
-  region: us-east-2
-  config: {} 
-```
+<<< ../../examples/aws/cluster-fargate.yaml{yaml}[example: aws/fargate]
 
-```yaml [example: nomad]
-apiVersion: core.platformspec.io/v1alpha1
-kind: Cluster
-metadata:
-  name: dev-cluster-nomad
-spec:
-  providerRefs:
-    - kind: Provider
-      name: aws
-    - kind: Provider
-      name: nomad
-  environmentRef:
-    name: development 
-  version: "1.9.3"
-  region: us-east-2
-  config: {}
+<<< ../../examples/aws/cluster-nomad.yaml{yaml}[example: nomad]
 
-```
 :::
 
  **Key Fields:**
@@ -626,13 +510,12 @@ spec:
 ---
 
 ### Server
-The `Servers` section of the Platform Specification defines individual virtual servers (instances) that exist within various environments and Infrastructure as a Service (IaaS) providers.  These are standalone servers, distinct from server groups or clusters. Each server entry represents a specific instance with its own configuration details.
+The `Servers` API kind of the Platform Specification defines individual virtual servers (instances) that exist within various environments and Infrastructure as a Service (IaaS) providers.  These are standalone servers, distinct from server groups or clusters. Each server entry represents a specific instance with its own configuration details.
 
 
 **Structure:**
 
 ::: code-group
-
 ```yaml [spec]
 apiVersion: core.platformspec.io/v1alpha1
 kind: Server
@@ -653,6 +536,8 @@ spec:
       machineImageRef:
         name: <image-name>     
 ```
+
+<<< ../../examples/aws/server.yaml{yaml}[example]
 :::
 
 
@@ -664,112 +549,52 @@ spec:
 * **`network` (optional):** Identifies the network or VPC to which this server will be connected.
 * **`config` (optional):** {}
 
+---
 
+### SoftwareGroup
 
-
-
-
-### Software
-
-The `software` section of the Platform Specification defines collections or groups of software to be deployed across your clusters and servers.  These groups encapsulate the necessary configurations and instructions for installing, managing, and updating software components within your platform.
-
+The `SoftwareGroup` API kind in The Platform Specification acts as a mechaism for defining and managing application software stacks across your platform. It encapsulates a collection of packages, configurations, and dependencies required to deploy and operate specific software components or applications consistently across different environments.
 
 **Structure:**
 
-```
-software:
-  groups:
-    <group-name>: 
-      packages:
-        - name: <package-name>
-          type: <installation-mechanism> # "helm", "ansible", "docker", etc. 
-          # ... Configuration specific to the installation type
-```
-
-**Fields:**
-
-* **`groups`**: A dictionary containing groups of software packages:
-
-    * **`<group-name>`**:  A descriptive name for the software group (e.g., `general`, `database`, `frontend`).
-     * **`packages`**: An array of individual software package definitions within the group:
-      * **`name`**: A unique identifier for the software package (e.g., `nginx-web-server`). 
-      * **`type`**: The method used to install and manage this package:
-        * `"helm"`:  Installation using Helm charts.
-        * `"ansible"`: Deployment using Ansible playbooks.
-        * `"docker"`: Containerized deployment using Docker images.
-         **(Future expansion)** Other software installation mechanisms.
-
-**Example:**
-
 ::: code-group
-```yaml [platform.yaml]
-software:
-  groups:
-    general:
-      packages:
-        - name: nginx-web-server
-          type: helm
-          helm:
-            chart: stable/nginx
-            version: "1.16.1"
-            values:
-              replicaCount: 2
-              service:
-                type: LoadBalancer
-            namespaces:
-              - web-namespace
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: SoftwareGroup
+metadata:
+  name: <software-group-name> 
+spec:
+  packages:
+    - name: <package-or-releasename>
+      engine: <type> # (e.g., helm, docker)
+      config: <type-specific-configuration> 
+
 ```
 
-```json [platform.json]
-{
-  "software": {
-    "groups": {
-      "general": {
-        "packages": [
-          {
-            "name": "nginx-web-server",
-            "type": "helm",
-            "helm": {
-              "chart": "stable/nginx",
-              "version": "1.16.1",
-              "values": {
-                "replicaCount": 2,
-                "service": {
-                  "type": "LoadBalancer"
-                }
-              },
-              "namespaces": [
-                "web-namespace"
-              ]
-            }
-          }
-        ]
-      }
-    }
-  }
-}
-```
 :::
 
- **Usage Notes:**
-
-* The `software` section allows you to define reusable software configurations for deployment across multiple environments. 
-* By separating installation methods (`type`) and specific configuration settings, you can create modular and adaptable software deployments.
+**Key Fields:**
 
 
+* **`name` (required):** A unique identifier for this software group.
+* **`packages` (spec):**  A list of individual software components included in this group. Each package specifies its name, type, and configuration details:
+    * **`name`:** The unique name of the package or release within this software group.
+    * **`engine`:** Defines the format and deployment method for this package (e.g., `helm`, `docker`). 
+    * **`<engine-specific-configuration>`:**  Provides configuration options specific to the package engine.
 
+---
 
 ### Policies
-The Policies section governs the operational and cost-management aspects of the platform. Policies may include logging, scaling, backups, or disaster recovery strategies. This ensures that critical governance and operational practices are well defined and consistently applied.
+The Policies API kind governs the operational and cost-management aspects of the platform. Policies may include logging, scaling, backups, or disaster recovery strategies. This ensures that critical governance and operational practices are well defined and consistently applied.
 
 ::: code-group
-```yaml [platform.yaml]
+```yaml [spec]
 # TBD
 
 ```
 
-```json [platform.json]
-// TBD
+```yaml [example]
+# TBD
 ```
 :::
 

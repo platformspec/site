@@ -28,6 +28,9 @@ spec:
         kind: Provider
       - name: route53
         kind: Provider
+    networks:
+      - name: primary-vpc
+        kind: Network
     clusters:
       - name: dev-cluster-aws-kubeadm
         kind: Cluster
@@ -322,6 +325,27 @@ spec:
     - kind: Provider
       name: aws
 
+# ========================================================================
+# Networks
+# ========================================================================
+
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Network
+metadata:
+  name: primary-vpc
+spec:
+  type: vpc 
+  providerRefs:
+    - kind: Provider
+      name: aws 
+  config:
+    cidrBlocks: [10.0.0.0/16]
+    subnetConfiguration:
+      publicSubnets: ["subnet-id1", "subnet-id2"]
+      privateSubnets: ["subnet-id3, "subnet-id4"]
+    tags:
+      foo: bar
 
 
 # ========================================================================
@@ -402,6 +426,9 @@ spec:
       name: aws-kubeadm
   environmentRef:
     name: development
+  networkRefs:
+    - kind: Network
+      name: primary-vpc
   softwareGroupRefs:
     name: general
   version: "1.28.13"
@@ -434,8 +461,10 @@ spec:
     environmentRef:
       name: development
       kind: Environment
+    networkRefs:
+      - kind: Network
+        name: primary-vpc
     region: us-west-2
-    network: aws-vpc-us-west-2
     config:
       size: "t3.medium"
       machineImageRef:
@@ -455,8 +484,8 @@ metadata:
 spec:
   packages:
     - name: nginx-web-server
-      type: helm
-      helm:
+      engine: helm
+      config:
         chart: stable/nginx
         version: "1.16.1"
         values:

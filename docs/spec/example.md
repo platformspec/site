@@ -12,5 +12,5 @@ Below is an example of a platform definition using `v1alpha1` of The Platform Sp
 > 
 > See [Workflow and Usage](workflow-and-usage) for further details.
 
-<<< ./example.yaml{yaml}
+<<< ../../examples/full.yaml{yaml}
 
