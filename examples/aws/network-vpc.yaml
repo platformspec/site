@@ -11,6 +11,6 @@ spec:
     cidrBlocks: [10.0.0.0/16]
     subnetConfiguration:
       publicSubnets: ["subnet-id1", "subnet-id2"]
-      privateSubnets: ["subnet-id3, "subnet-id4"]
+      privateSubnets: ["subnet-id3", "subnet-id4"]
     tags:
       foo: bar
