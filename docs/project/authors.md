@@ -15,8 +15,7 @@ const members = [
     name: 'Jens Saade',
     links: [
         { icon: 'github', link: 'https://github.com/jenssaade' },
-        { icon: 'linkedin', link: 'https://www.linkedin.com/in/jenssaade/' },
-        { icon: 'twitter', link: 'https://x.com/JensSaade' }
+        { icon: 'linkedin', link: 'https://www.linkedin.com/in/jenssaade/' }
     ]
   }
 ]
