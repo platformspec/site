@@ -486,6 +486,9 @@ spec:
   environmentRef:
     name: <environment-name>
       kind: Environment 
+  networkRefs:
+    - name: <network-name>
+      kind: Network
   softwareGroupRefs:
     name: <software-group-name> 
   version: "<cluster engine version>"
@@ -505,6 +508,7 @@ spec:
 
 * **`providerRefs` (required):** Specifies the cloud providers responsible for provisioning and managing the Kubernetes infrastructure.  Each reference points to a `Provider` resource, defining details like account credentials and region.
 * **`environmentRef` (required):** References an `Environment` resource, associating the cluster with its corresponding deployment stage (development, staging, production). This ensures that the cluster is configured with the appropriate settings for its intended purpose.
+* **`networkRefs` (optional):** Identifies the network or VPC to which this server will be connected.
 * **`softwareGroupRefs` (optional):** Links to a `SoftwareGroup` resource defining the base Kubernetes components and additional tools or software packages that will be included in the cluster. 
 * **`version` (required):**  Specifies the version to be deployed within cluster's engine, enabling you to manage different versions for various environments.
 * **`region` (required):** Indicates the geographical region where the cluster resources will be deployed. 
@@ -534,7 +538,9 @@ spec:
       name: <environment-name>
       kind: Environment 
     region: <deployment-region>
-    network: <network-identifier>  
+    networkRefs:
+      - name: <network-name>
+        kind: Network 
     config:
       size: <instance-type>
       machineImageRef:
@@ -550,6 +556,7 @@ spec:
 * **`providerRefs` (required):** Specifies the cloud providers responsible for managing this server. Each reference points to a `Provider` resource, defining details like account credentials and region. 
 * **`environmentRef` (required):** References an `Environment` resource, associating the server with its corresponding deployment stage (development, staging, production). This ensures that the server is configured with the appropriate settings for its intended purpose.
 * **`region` (required):** Indicates the geographical region where the server resources will be deployed.
+* **`networkRefs` (optional):** Identifies the network or VPC to which this cluster will be connected.
 * **`network` (optional):** Identifies the network or VPC to which this server will be connected.
 * **`config` (optional):** {}
 
