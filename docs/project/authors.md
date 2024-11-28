@@ -1,4 +1,30 @@
-# Corporate Sponsors
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme';
+
+const members = [
+  {
+    avatar: '../../authors/josh-west.jpg',
+    name: 'Josh West',
+    links: [
+      { icon: 'github', link: 'https://github.com/codewest' },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/in/josh-west/' }
+    ]
+  },
+  {
+    avatar: '../../authors/jens-saade.jpg',
+    name: 'Jens Saade',
+    links: [
+        { icon: 'github', link: 'https://github.com/jenssaade' },
+        { icon: 'linkedin', link: 'https://www.linkedin.com/in/jenssaade/' },
+        { icon: 'twitter', link: 'https://x.com/JensSaade' }
+    ]
+  }
+]
+</script>
+
+# Authors
+
+## Corporate Sponsors
 
 The Platform Specification has emerged from [FoundationIO](https://www.foundation.io), a company passionately focused entirely on cloud platform engineering leveraging the cloud-native ecosystem:
 
@@ -9,10 +35,6 @@ The Platform Specification has emerged from [FoundationIO](https://www.foundatio
 
 <p>&nbsp;</p>
 
----
+## Authors and Contributors
 
-# Individual Contributors
-
-<p>&nbsp;</p>
-
-As additional contributors join the project, they will be proudly listed here!
+<VPTeamMembers size="medium" :members="members" />
