@@ -40,7 +40,7 @@ The highlight of the changes to the specification and site are as follows:
 
 We have a new contributor to the project -- [Jens Saade](https://github.com/jenssaade) -- who has provided much needed review, fixes, and guidance.
 
-Last but not least, we have our first SDK, graciously authored by [Jens Saade](https://github.com/jenssaade) for Java!.
+Last but not least, we have our first [SDK for Java](https://github.com/verticle-io/platformspec-model-java), graciously authored by [Jens Saade](https://github.com/jenssaade)!
 
 :::
 
