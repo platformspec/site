@@ -1,0 +1,24 @@
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Environment
+metadata:
+  name: development
+spec:
+  description: Development environment
+  providerRefs:
+    - kind: Provider
+      name: route53
+    - kind: Provider
+      name: aws
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Environment
+metadata:
+  name: production
+spec:
+  description: Production environment
+  providerRefs:
+    - kind: Provider
+      name: route53
+    - kind: Provider
+      name: aws

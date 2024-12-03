@@ -1,13 +1,10 @@
-# Key Pillars of a Cloud Platform
+# Key Pillars of an Infrastructure Platform
 We've captured the different layers that compose the software and services within a cloud platform, but that's not all that's involved.  There's more -- from configurations regarding behavior and expectations of components within the platform, to precanned solutions of systems available within the platform.  Much more work needs to take place in order to capture and define these elements of a cloud platform, instead of solely representing the services and software selected at each layer.
 
 To make this happen, we can break down "what makes a cloud paltform" into six distinct key pillars of important definitions, characteristics, and structural elements that support the platform.
 
 &nbsp;
 &nbsp;
-
-![Key Components (light)](./key-components-light.svg){.light-only}
-![Key Components (dark)](./key-components-dark.svg){.dark-only}
 
 The key pillars are as follows:
 

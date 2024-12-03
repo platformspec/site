@@ -8,8 +8,7 @@ Here’s how you can get involved and contribute to the project.
 ## How to Get Involved
 
 ### 1. **Explore and Engage via GitHub Discussions**
-
-We use **[GitHub Discussions](https://github.com/platformspec/site/discussions)** as our primary forum for conversations about the Platform Specification. Whether you’re a newcomer or a seasoned platform engineer, feel free to join the discussions. This space allows you to:
+We use **Slack channel** **[#platformspec](https://cloud-native.slack.com/archives/C0826E3MFFA)** as our primary mechanism for conversations about the Platform Specification. Whether you’re a newcomer or a seasoned platform engineer, feel free to join the discussions. This space allows you to:
 
 - Ask questions about the project.
 - Share ideas or proposals for new features.
@@ -67,9 +66,8 @@ We strive to create an inclusive and welcoming environment for all participants.
 Stay in the loop with updates and new releases by:
 
 - **Watching** the repository on GitHub for notifications.
-- Joining the conversations on **GitHub Discussions**.
+- Joining the conversations on Slack **[#platformspec](https://cloud-native.slack.com/archives/C0826E3MFFA)**.
 - Subscribing to updates on issues or pull requests that interest you.
-
 
 We look forward to your contributions and involvement in the Platform Specification project! Together, we can build a standardized approach to cloud platforms that benefits the entire cloud-native community.
 

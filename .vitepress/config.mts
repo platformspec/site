@@ -1,5 +1,5 @@
 import timeline from 'vitepress-markdown-timeline';
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -46,6 +46,7 @@ export default defineConfig({
           text: 'Project',
           items: [
             { text: 'Preface', link: '/docs/project/preface'},
+            { text: 'About The Project', link: '/docs/project/about' },
             { text: 'Contributing', link: '/docs/project/contributing' },
             { text: 'Roadmap', link: '/docs/project/roadmap' },
             { text: 'Help Wanted', link: '/docs/project/help'},
@@ -53,27 +54,50 @@ export default defineConfig({
           ]
         },
         {
-          text: 'Background',
-          items: [
-            { text: 'Introduction', link: '/docs/background/' },
-            { text: 'What is a Cloud Platform?', link: '/docs/background/what-is-a-cloud-platform' },
-            { text: 'Who needs a Cloud Platform?', link: '/docs/background/who-needs-a-cloud-platform' },
-            { text: 'The Four Layers', link: '/docs/background/the-four-layers' },
-            { text: 'The Six Key Pillars', link: '/docs/background/key-pillars' },
-            { text: 'Stakeholders', link: '/docs/background/stakeholders' },
-            { text: 'What is Platform Enginering', link: '/docs/background/platform-engineering' },
-            { text: 'How Are They Related?', link: '/docs/background/cloud-platform-platform-engineering-relationship' },
-          ]
-        },
-        {
-          text: 'Specification',
+          text: 'The Specification',
           items: [
             { text: 'Overview', link: '/docs/spec/overview' },
+            { text: 'Scope', link: '/docs/spec/scope' },
             { text: 'The Specification', link: '/docs/spec/spec' },
             { text: 'Example', link: '/docs/spec/example' },
             { text: 'Workflow & Usage', link: '/docs/spec/workflow-and-usage' },
             { text: 'SDKs', link: '/docs/spec/sdks' },
             { text: 'License', link: '/docs/spec/license' }
+          ]
+        },
+        {
+          text: 'Platforms',
+          items: [
+            { text: 'Types of Platforms', link: '/docs/types/types' },
+            { text: 'Helpful Resources', link: '/docs/types/resources' },
+            {
+              text: 'Infrastructure Platforms',
+              items: [
+                { text: 'What is an Infrastructure Platform?', link: '/docs/types/infrastructure/what-is-an-infrastructure-platform' },
+                { text: 'Who needs an Infrastructure Platform?', link: '/docs/types/infrastructure/who-needs-an-infrastructure-platform' },
+                //{ text: 'Responsibilities', link: '/docs/types/infrastructure/responsibilities'},
+                { text: 'The Four Layers', link: '/docs/types/infrastructure/the-four-layers' },
+                { text: 'Stakeholders', link: '/docs/types/infrastructure/stakeholders' },
+              ]
+            },
+            {
+              text: 'Developer Platforms',
+              items: [
+                { text: 'What is a Developer Platform?', link: '/docs/types/developer/what-is-a-developer-platform' },
+               // { text: 'Who needs a Developer Platform?', link: '/docs/types/developer/who-needs-a-developer-platform' },
+               // { text: 'Responsibilities', link: '/docs/types/developer/responsibilities'},
+               // { text: 'Stakeholders', link: '/docs/types/developer/stakeholders' }
+              ]
+            },
+            {
+              text: 'Services Platforms',
+              items: [
+                { text: 'What is a Services Platform?', link: '/docs/types/services/what-is-a-services-platform' },
+               // { text: 'Who needs a Services Platform?', link: '/docs/types/services/who-needs-a-services-platform' },
+               // { text: 'Responsibilities', link: '/docs/types/services/responsibilities'},
+               // { text: 'Stakeholders', link: '/docs/types/services/stakeholders' }
+              ]
+            }
           ]
         }
       ]

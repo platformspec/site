@@ -1,17 +1,17 @@
 # The Four Layers
 
-Let's begin diving into what makes up a Cloud Platform, by breaking down the physical architecture layers....
+Let's begin diving into what makes up an Infrastructure Platform, by breaking down the physical architecture layers....
 
-A Cloud Platform is a sophisticated stack of services and technologies designed to provide a standardized and scalable environment for building, deploying, and managing applications. A well-architected platform typically consists of four distinct layers, each serving a critical role in the platform’s overall functionality. These layers work together to abstract the complexities of infrastructure, orchestrate system-level tasks, provide essential services to developers, and support application delivery and operations.
+An Infrastructure Platform is a sophisticated stack of services and technologies designed to provide a standardized and scalable environment for building, deploying, and managing applications. A well-architected platform typically consists of four distinct layers, each serving a critical role in the platform’s overall functionality. These layers work together to abstract the complexities of infrastructure, orchestrate system-level tasks, provide essential services to developers, and support application delivery and operations.
 
-![Cloud Platform Layers (light)](./CloudPlatformLayers-light.drawio.svg){.light-only}
-![Cloud Platform Layers (dark)](./CloudPlatformLayers-dark.drawio.svg){.dark-only}
+![Infrastructure Platform Layers (light)](./InfrastructurePlatformLayers-light.drawio.svg){.light-only}
+![Infrastructure Platform Layers (dark)](./InfrastructurePlatformLayers-dark.drawio.svg){.dark-only}
 
-Understanding these four layers—**Infrastructure Services**, **System Services**, **Platform Services**, and **Application Services**—is key to comprehending how a Cloud Platform functions and delivers value. Each layer serves a unique purpose, contributing to the automation, scalability, security, and efficiency of cloud operations. Together, they enable organizations to build robust, flexible platforms capable of managing complex workloads and delivering applications across diverse environments.
+Understanding these four layers—**Infrastructure Services**, **System Services**, **Platform Services**, and **Application Services**—is key to comprehending how an Infrastructure Platform functions and delivers value. Each layer serves a unique purpose, contributing to the automation, scalability, security, and efficiency of cloud operations. Together, they enable organizations to build robust, flexible platforms capable of managing complex workloads and delivering applications across diverse environments.
 
-In this section, we will explore each of these layers, breaking down their roles, responsibilities, and how they integrate to create a seamless cloud experience. By examining these layers, we can better understand the architecture and design principles that power modern Cloud Platforms, as well as the benefits they offer to development teams, operators, and organizations as a whole.
+In this section, we will explore each of these layers, breaking down their roles, responsibilities, and how they integrate to create a seamless cloud experience. By examining these layers, we can better understand the architecture and design principles that power modern Infrastructure Platforms, as well as the benefits they offer to development teams, operators, and organizations as a whole.
 
-## **The Four Layers of a Cloud Platform**
+## **The Four Layers of a Infrastructure Platform**
 
 
 
@@ -96,7 +96,7 @@ Application services cater directly to developers and operational teams, providi
 
 ---
 
-### **The Importance of Layering in Cloud Platforms**
+### **The Importance of Layering in Infrastructure Platforms**
 
 Layering cloud platforms into these four distinct groups—**Infrastructure Services**, **System Services**, **Platform Services**, and **Application Services**—provides a structured approach to discussing, and managing, the complexity inherent in modern cloud environments. Each layer builds on the one below it, allowing for increasing levels of abstraction, automation, and developer focus. This layered approach ensures that platform engineers, developers, security teams, and executives all have the same terminology when discussing the tools and services they require to meet their goals.
 
@@ -110,4 +110,4 @@ By defining and structuring these four layers, the **Platform Specification** pr
 ## Is that all?
 But wait... there's more...
 
-Cloud Platforms are not just about the layers of services and software components.  What about the policies regarding interaction between the specified services?  How about the experience provided to developers?  And we cannot forget about security!  These elements are equally as important to the definition of a cloud platform as the services/software providers themselves.  So let's get into that...
+Infrastructure Platforms are not just about the layers of services and software components.  What about the policies regarding interaction between the specified services?  How about the experience provided to developers?  And we cannot forget about security!  These elements are equally as important to the definition of a cloud platform as the services/software providers themselves.  So let's get into that...

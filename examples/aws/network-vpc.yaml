@@ -1,0 +1,16 @@
+apiVersion: core.platformspec.io/v1alpha1
+kind: Network
+metadata:
+  name: primary-vpc
+spec:
+  type: vpc 
+  providerRefs:
+    - kind: Provider
+      name: aws 
+  config:
+    cidrBlocks: [10.0.0.0/16]
+    subnetConfiguration:
+      publicSubnets: ["subnet-id1", "subnet-id2"]
+      privateSubnets: ["subnet-id3", "subnet-id4"]
+    tags:
+      foo: bar

@@ -14,7 +14,7 @@ The Platform Specification is just getting started, and we’re currently at **v
 - **Grow Your Skills:** Contributing to the Platform Specification is a great way to expand your knowledge and skills in cloud platform engineering and architecture.
 
 **How to Get Involved:**
-- **Join the Discussion:** Participate in our community forums, GitHub discussions, and virtual meetups.
+- **Involvement:**  See the [Involvement](./docs/project/contributing) page for details.
 - **Contribute Code and Ideas:** Help us refine the specification by submitting code, documentation, or simply sharing your thoughts and feedback.
 - **Stay Updated:** Follow our progress, get involved in our roadmap planning, and be the first to know about new features and updates.
 

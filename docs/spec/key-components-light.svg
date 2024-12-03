@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="496.82443pt"
-   height="230.10001pt"
+   width="496.87247pt"
+   height="221.83492pt"
    version="1.1"
-   viewBox="0 0 496.82443 230.1"
+   viewBox="0 0 496.87246 221.83491"
    id="svg2"
    sodipodi:docname="key-components-light.svg"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
-   inkscape:export-filename="key-components.png"
-   inkscape:export-xdpi="5.81863"
-   inkscape:export-ydpi="5.81863"
+   inkscape:export-filename="key-components-light.png"
+   inkscape:export-xdpi="375.01224"
+   inkscape:export-ydpi="375.01224"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,11 +27,11 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
      showgrid="false"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="342.06291"
-     inkscape:cy="166.8772"
-     inkscape:window-width="2560"
-     inkscape:window-height="1486"
+     inkscape:zoom="1.75"
+     inkscape:cx="216.28571"
+     inkscape:cy="166.57143"
+     inkscape:window-width="2506"
+     inkscape:window-height="1528"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -39,8 +39,8 @@
     <inkscape:grid
        id="grid2"
        units="px"
-       originx="-4.0896749"
-       originy="-121.98199"
+       originx="-4.0416751"
+       originy="-122.24715"
        spacingx="0.74999998"
        spacingy="0.74999998"
        empcolor="#0099e5"
@@ -54,142 +54,147 @@
        visible="false" />
   </sodipodi:namedview>
   <path
-     d="M 303.55017,125.88802 V 95.855487 c 6.58891,-1.37948 11.49168,-7.20121 11.49168,-14.09747 0,-7.96826 -6.43567,-14.40393 -14.40395,-14.40393 -4.29044,0 -7.96826,1.83892 -10.72611,4.74984 l -26.20206,-15.01657 c 0.45945,-1.37949 0.76574,-2.91095 0.76574,-4.44367 0,-7.96827 -6.43567,-14.40393 -14.40395,-14.40393 -7.96826,0 -14.40393,6.43566 -14.40393,14.40393 0,1.53264 0.30628,3.06401 0.76574,4.44367 l -26.20087,15.01777 c -2.60465,-2.91096 -6.43567,-4.74984 -10.72612,-4.74984 -7.96826,0 -14.40393,6.43567 -14.40393,14.40394 0,6.89505 4.90306,12.71809 11.49167,14.09746 v 30.032533 c -6.5889,1.37949 -11.49167,7.20122 -11.49167,14.09746 0,7.96828 6.43567,14.40394 14.40393,14.40394 4.29045,0 7.96828,-1.8389 10.72612,-4.74983 l 26.20205,15.01655 c -0.45944,1.3795 -0.76572,2.91097 -0.76572,4.44368 0,7.96827 6.43567,14.40393 14.40393,14.40393 7.96828,0 14.40394,-6.43566 14.40394,-14.40393 0,-1.53263 -0.30628,-3.06401 -0.76574,-4.44368 l 26.20207,-15.01895 c 2.60464,2.91096 6.43566,4.74984 10.72611,4.74984 7.96827,0 14.40394,-6.43567 14.40394,-14.40394 0,-6.89506 -4.90426,-12.7169 -11.49287,-14.09657 z m -2.91094,-52.559163 c 4.59659,0 8.42765,3.83106 8.42765,8.42767 0,4.5966 -3.83106,8.42766 -8.42765,8.42766 -4.59662,0 -8.42767,-3.83106 -8.42767,-8.42766 0,-4.74984 3.67783,-8.42767 8.42767,-8.42767 z m -50.56597,-29.26606 c 4.59661,0 8.42766,3.83106 8.42766,8.42766 0,4.5966 -3.83105,8.42765 -8.42766,8.42765 -4.59661,0 -8.42766,-3.83105 -8.42766,-8.42765 0,-4.5978 3.83105,-8.42766 8.42766,-8.42766 z m -58.99362,37.69402 c 0,-4.59659 3.83106,-8.42765 8.42767,-8.42765 4.5966,0 8.42766,3.83106 8.42766,8.42765 0,4.59662 -3.83106,8.42767 -8.42766,8.42767 -4.59661,0 -8.42767,-3.83105 -8.42767,-8.42767 z m 8.42767,66.655133 c -4.59661,0 -8.42767,-3.83105 -8.42767,-8.42766 0,-4.59661 3.83106,-8.42766 8.42767,-8.42766 4.5966,0 8.42766,3.83105 8.42766,8.42766 0,4.74984 -3.67783,8.42766 -8.42766,8.42766 z m 50.56595,29.26606 c -4.59661,0 -8.42766,-3.83104 -8.42766,-8.42765 0,-4.59661 3.83105,-8.42766 8.42766,-8.42766 4.59661,0 8.42766,3.83105 8.42766,8.42766 0,4.59781 -3.83105,8.42765 -8.42766,8.42765 z m 10.72612,-18.08056 c -2.60465,-2.91095 -6.43567,-4.74983 -10.72612,-4.74983 -4.29044,0 -7.96827,1.83892 -10.7261,4.74983 l -26.04883,-15.16978 c 0.45944,-1.37949 0.76572,-2.91095 0.76572,-4.44368 0,-6.89506 -4.90306,-12.7181 -11.49166,-14.09747 V 95.853997 c 6.5889,-1.37949 11.49166,-7.20122 11.49166,-14.09747 0,-1.53263 -0.30628,-3.06401 -0.76572,-4.44368 l 26.04883,-15.16978 c 2.60464,2.91095 6.43566,4.74983 10.7261,4.74983 4.29045,0 7.96826,-1.83891 10.72612,-4.74983 l 26.04882,15.16978 c -0.45944,1.3795 -0.76572,2.91212 -0.76572,4.44368 0,6.89506 4.90306,12.71809 11.49165,14.09747 v 30.032523 c -6.58889,1.37949 -11.49165,7.20122 -11.49165,14.09747 0,1.53264 0.30628,3.06401 0.76572,4.44368 z m 39.83985,-11.1855 c -4.59662,0 -8.42767,-3.83105 -8.42767,-8.42766 0,-4.59661 3.83105,-8.42766 8.42767,-8.42766 4.59659,0 8.42765,3.83105 8.42765,8.42766 0,4.74984 -3.83106,8.42766 -8.42765,8.42766 z"
+     d="M 303.59817,125.62285 V 95.590322 c 6.58891,-1.37948 11.49168,-7.20121 11.49168,-14.09747 0,-7.96826 -6.43567,-14.40393 -14.40395,-14.40393 -4.29044,0 -7.96826,1.83892 -10.72611,4.74984 l -26.20206,-15.01657 c 0.45945,-1.37949 0.76574,-2.91095 0.76574,-4.44367 0,-7.96827 -6.43567,-14.40393 -14.40395,-14.40393 -7.96826,0 -14.40393,6.43566 -14.40393,14.40393 0,1.53264 0.30628,3.06401 0.76574,4.44367 l -26.20087,15.01777 c -2.60465,-2.91096 -6.43567,-4.74984 -10.72612,-4.74984 -7.96826,0 -14.40393,6.43567 -14.40393,14.40394 0,6.89505 4.90306,12.71809 11.49167,14.09746 v 30.032528 c -6.5889,1.37949 -11.49167,7.20122 -11.49167,14.09746 0,7.96828 6.43567,14.40394 14.40393,14.40394 4.29045,0 7.96828,-1.8389 10.72612,-4.74983 l 26.20205,15.01655 c -0.45944,1.3795 -0.76572,2.91097 -0.76572,4.44368 0,7.96827 6.43567,14.40393 14.40393,14.40393 7.96828,0 14.40394,-6.43566 14.40394,-14.40393 0,-1.53263 -0.30628,-3.06401 -0.76574,-4.44368 l 26.20207,-15.01895 c 2.60464,2.91096 6.43566,4.74984 10.72611,4.74984 7.96827,0 14.40394,-6.43567 14.40394,-14.40394 0,-6.89506 -4.90426,-12.7169 -11.49287,-14.09657 z m -2.91094,-52.559158 c 4.59659,0 8.42765,3.83106 8.42765,8.42767 0,4.5966 -3.83106,8.42766 -8.42765,8.42766 -4.59662,0 -8.42767,-3.83106 -8.42767,-8.42766 0,-4.74984 3.67783,-8.42767 8.42767,-8.42767 z m -50.56597,-29.26606 c 4.59661,0 8.42766,3.83106 8.42766,8.42766 0,4.5966 -3.83105,8.42765 -8.42766,8.42765 -4.59661,0 -8.42766,-3.83105 -8.42766,-8.42765 0,-4.5978 3.83105,-8.42766 8.42766,-8.42766 z m -58.99362,37.69402 c 0,-4.59659 3.83106,-8.42765 8.42767,-8.42765 4.5966,0 8.42766,3.83106 8.42766,8.42765 0,4.59662 -3.83106,8.42767 -8.42766,8.42767 -4.59661,0 -8.42767,-3.83105 -8.42767,-8.42767 z m 8.42767,66.655128 c -4.59661,0 -8.42767,-3.83105 -8.42767,-8.42766 0,-4.59661 3.83106,-8.42766 8.42767,-8.42766 4.5966,0 8.42766,3.83105 8.42766,8.42766 0,4.74984 -3.67783,8.42766 -8.42766,8.42766 z m 50.56595,29.26606 c -4.59661,0 -8.42766,-3.83104 -8.42766,-8.42765 0,-4.59661 3.83105,-8.42766 8.42766,-8.42766 4.59661,0 8.42766,3.83105 8.42766,8.42766 0,4.59781 -3.83105,8.42765 -8.42766,8.42765 z m 10.72612,-18.08056 c -2.60465,-2.91095 -6.43567,-4.74983 -10.72612,-4.74983 -4.29044,0 -7.96827,1.83892 -10.7261,4.74983 L 213.34633,144.1625 c 0.45944,-1.37949 0.76572,-2.91095 0.76572,-4.44368 0,-6.89506 -4.90306,-12.7181 -11.49166,-14.09747 V 95.588832 c 6.5889,-1.37949 11.49166,-7.20122 11.49166,-14.09747 0,-1.53263 -0.30628,-3.06401 -0.76572,-4.44368 l 26.04883,-15.16978 c 2.60464,2.91095 6.43566,4.74983 10.7261,4.74983 4.29045,0 7.96826,-1.83891 10.72612,-4.74983 l 26.04882,15.16978 c -0.45944,1.3795 -0.76572,2.91212 -0.76572,4.44368 0,6.89506 4.90306,12.71809 11.49165,14.09747 v 30.032518 c -6.58889,1.37949 -11.49165,7.20122 -11.49165,14.09747 0,1.53264 0.30628,3.06401 0.76572,4.44368 z m 39.83985,-11.1855 c -4.59662,0 -8.42767,-3.83105 -8.42767,-8.42766 0,-4.59661 3.83105,-8.42766 8.42767,-8.42766 4.59659,0 8.42765,3.83105 8.42765,8.42766 0,4.74984 -3.83106,8.42766 -8.42765,8.42766 z"
      id="path1"
      style="stroke-width:0.299278" />
   <path
-     d="m 280.2574,95.699867 c 0,-1.22635 -0.76573,-2.29836 -1.83891,-2.75778 l -27.12205,-12.25871 c -0.76573,-0.30629 -1.68577,-0.30629 -2.4515,0 l -27.12205,12.25871 c -1.07316,0.45945 -1.83891,1.53263 -1.83891,2.75778 0,1.22636 0.76575,2.29837 1.83891,2.75779 l 10.72611,4.749843 -10.72611,4.74983 c -1.07316,0.45945 -1.83891,1.53263 -1.83891,2.75779 0,1.22635 0.76575,2.29836 1.83891,2.75778 l 10.72611,4.74983 -10.72611,4.90307 c -1.07316,0.45945 -1.83891,1.53263 -1.83891,2.75778 0,1.22635 0.76575,2.29837 1.83891,2.75779 l 27.12205,12.25872 c 0.45945,0.15315 0.76573,0.30627 1.22635,0.30627 0.45944,0 0.91888,-0.15314 1.22635,-0.30627 l 27.12204,-12.25872 c 1.07317,-0.45945 1.83891,-1.53263 1.83891,-2.75779 0,-1.22634 -0.76574,-2.29836 -1.83891,-2.75778 l -10.72611,-4.90307 10.72611,-4.74983 c 1.07317,-0.45945 1.83891,-1.53263 1.83891,-2.75778 0,-1.22636 -0.76574,-2.29837 -1.83891,-2.75779 l -10.72611,-4.74983 10.72611,-4.749843 c 1.07202,-0.45945 1.83775,-1.53263 1.83775,-2.75779 z m -10.41965,30.340783 -19.7664,8.88704 -19.76639,-8.88704 9.49966,-4.29045 9.04028,4.13721 c 0.45946,0.15315 0.76574,0.30629 1.22636,0.30629 0.45945,0 0.91887,-0.15315 1.22636,-0.30629 l 9.04028,-4.13721 z m 0,-15.16978 -19.7664,8.88704 -19.76639,-8.88704 9.49966,-4.29045 9.04028,4.13721 c 0.45946,0.15315 0.76574,0.30628 1.22636,0.30628 0.45945,0 0.91887,-0.15315 1.22636,-0.30628 l 9.04028,-4.13721 z m -19.7664,-6.28245 -19.76639,-8.887043 19.76639,-8.88706 19.7664,8.88706 z"
+     d="m 280.3054,95.434702 c 0,-1.22635 -0.76573,-2.29836 -1.83891,-2.75778 l -27.12205,-12.25871 c -0.76573,-0.30629 -1.68577,-0.30629 -2.4515,0 l -27.12205,12.25871 c -1.07316,0.45945 -1.83891,1.53263 -1.83891,2.75778 0,1.22636 0.76575,2.29837 1.83891,2.75779 l 10.72611,4.749838 -10.72611,4.74983 c -1.07316,0.45945 -1.83891,1.53263 -1.83891,2.75779 0,1.22635 0.76575,2.29836 1.83891,2.75778 l 10.72611,4.74983 -10.72611,4.90307 c -1.07316,0.45945 -1.83891,1.53263 -1.83891,2.75778 0,1.22635 0.76575,2.29837 1.83891,2.75779 l 27.12205,12.25872 c 0.45945,0.15315 0.76573,0.30627 1.22635,0.30627 0.45944,0 0.91888,-0.15314 1.22635,-0.30627 l 27.12204,-12.25872 c 1.07317,-0.45945 1.83891,-1.53263 1.83891,-2.75779 0,-1.22634 -0.76574,-2.29836 -1.83891,-2.75778 l -10.72611,-4.90307 10.72611,-4.74983 c 1.07317,-0.45945 1.83891,-1.53263 1.83891,-2.75778 0,-1.22636 -0.76574,-2.29837 -1.83891,-2.75779 l -10.72611,-4.74983 10.72611,-4.749838 c 1.07202,-0.45945 1.83775,-1.53263 1.83775,-2.75779 z m -10.41965,30.340778 -19.7664,8.88704 -19.76639,-8.88704 9.49966,-4.29045 9.04028,4.13721 c 0.45946,0.15315 0.76574,0.30629 1.22636,0.30629 0.45945,0 0.91887,-0.15315 1.22636,-0.30629 l 9.04028,-4.13721 z m 0,-15.16978 -19.7664,8.88704 -19.76639,-8.88704 9.49966,-4.29045 9.04028,4.13721 c 0.45946,0.15315 0.76574,0.30628 1.22636,0.30628 0.45945,0 0.91887,-0.15315 1.22636,-0.30628 l 9.04028,-4.13721 z m -19.7664,-6.28245 -19.76639,-8.887038 19.76639,-8.88706 19.7664,8.88706 z"
      id="path2"
      style="stroke-width:0.299278" />
   <path
      style="fill:none;stroke:#000000;stroke-width:4.2761;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 188.46515,143.26683 -19.71873,19.77863 h -33.64205"
+     d="m 188.51315,143.00166 -19.71873,19.77863 h -33.64205"
      id="path4" />
   <path
      style="fill:none;stroke:#000000;stroke-width:4.2761;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="M 188.98629,76.841287 169.26756,57.062667 H 135.62551"
+     d="M 189.03429,76.576122 169.31556,56.797502 H 135.67351"
      id="path4-6" />
   <path
      style="fill:none;stroke:#000000;stroke-width:4.2761;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 311.47896,78.919847 19.71873,-19.77863 h 33.64206"
+     d="m 311.52696,78.654682 19.71873,-19.77863 h 33.64206"
      id="path4-7" />
   <path
      style="fill:none;stroke:#000000;stroke-width:4.2761;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 312.13609,144.48346 19.71872,19.77863 h 33.64205"
+     d="m 312.18409,144.21829 19.71872,19.77863 h 33.64205"
      id="path4-5" />
   <path
      style="fill:none;stroke:#000000;stroke-width:4.2761;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 250.15873,181.36071 v 23.53082"
+     d="m 250.20673,181.09554 v 23.53082"
      id="path5" />
   <path
      style="fill:none;stroke:#000000;stroke-width:4.2761;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 250.19367,16.211957 v 23.53081"
+     d="m 250.24167,15.946792 v 23.53081"
      id="path5-3" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="202.40919"
-     y="221.95609"
+     x="202.4572"
+     y="221.69092"
      id="text287"><tspan
        id="tspan287"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="202.40919"
-       y="221.95609"
+       x="202.4572"
+       y="221.69092"
        sodipodi:role="line">Infrastructure</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="-0.83999997"
-     y="167.0762"
+     x="-0.792"
+     y="166.81104"
      id="text287-6"><tspan
        id="tspan287-0"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="-0.83999997"
-       y="167.0762"
-       sodipodi:role="line">Compute &amp; Networks</tspan></text>
+       x="-0.792"
+       y="166.81104"
+       sodipodi:role="line">Compute, Networks,</tspan><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
+       x="-0.792"
+       y="181.81104"
+       sodipodi:role="line"
+       id="tspan1">&amp; Services</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="70.709557"
-     y="60.727131"
+     x="70.757553"
+     y="60.461967"
      id="text287-2"><tspan
        id="tspan287-7"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="70.709557"
-       y="60.727131"
+       x="70.757553"
+       y="60.461967"
        sodipodi:role="line">Policies</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="168.15286"
-     y="9.2411652"
+     x="168.20087"
+     y="8.9759998"
      id="text287-3"><tspan
        id="tspan287-2"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="168.15286"
-       y="9.2411652"
+       x="168.20087"
+       y="8.9759998"
        sodipodi:role="line">Governance &amp; Compliance</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="368.13638"
-     y="54.376911"
+     x="368.18439"
+     y="54.111748"
      id="text287-9"><tspan
        id="tspan287-9"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="368.13638"
-       y="54.376911"
+       x="368.18439"
+       y="54.111748"
        sodipodi:role="line">Developer Services</tspan><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="368.13638"
-       y="69.376907"
+       x="368.18439"
+       y="69.111748"
        sodipodi:role="line"
        id="tspan288">&amp; Enablement</tspan></text>
   <g
      id="g1-14"
-     transform="translate(177.22757,-182.65577)">
+     transform="translate(177.27557,-182.92094)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
        x="196.88176"
        y="344.92117"
        id="text287-91"><tspan
-         id="tspan287-07"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
          x="196.88176"
          y="344.92117"
-         sodipodi:role="line">Observability</tspan><tspan
+         sodipodi:role="line"
+         id="tspan289">Monitoring &amp; </tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
          x="196.88176"
          y="359.92117"
          sodipodi:role="line"
-         id="tspan289">&amp; Performance</tspan></text>
+         id="tspan2">Insights</tspan></text>
   </g>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="247.0872"
-     y="173.13931"
+     x="247.13521"
+     y="172.87415"
      id="text860"><tspan
        sodipodi:role="line"
        id="tspan860"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="247.0872"
-       y="173.13931">1</tspan></text>
+       x="247.13521"
+       y="172.87415">1</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="196.20399"
-     y="143.09097"
+     x="196.252"
+     y="142.82581"
      id="text860-0"><tspan
        sodipodi:role="line"
        id="tspan860-4"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="196.20399"
-       y="143.09097">2</tspan></text>
+       x="196.252"
+       y="142.82581">2</tspan></text>
   <g
      id="g1"
-     transform="translate(-50.412628,-87.833342)">
+     transform="translate(-50.364628,-88.098507)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -205,34 +210,34 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="247.0573"
-     y="55.135151"
+     x="247.1053"
+     y="54.869987"
      id="text860-1"><tspan
        sodipodi:role="line"
        id="tspan860-0"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="247.0573"
-       y="55.135151">4</tspan></text>
+       x="247.1053"
+       y="54.869987">4</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="297.86099"
-     y="85.002533"
+     x="297.909"
+     y="84.737366"
      id="text860-22"><tspan
        sodipodi:role="line"
        id="tspan860-2"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="297.86099"
-       y="85.002533">5</tspan></text>
+       x="297.909"
+       y="84.737366">5</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:1.25;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="297.44318"
-     y="143.31386"
+     x="297.49118"
+     y="143.04869"
      id="text860-5"><tspan
        sodipodi:role="line"
        id="tspan860-5"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Lilex Nerd Font';-inkscape-font-specification:'Lilex Nerd Font, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.75"
-       x="297.44318"
-       y="143.31386">6</tspan></text>
+       x="297.49118"
+       y="143.04869">6</tspan></text>
 </svg>

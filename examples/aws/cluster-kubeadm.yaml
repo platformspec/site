@@ -1,0 +1,24 @@
+apiVersion: core.platformspec.io/v1alpha1
+kind: Cluster
+metadata:
+  name: dev-cluster-aws-kubeadm
+spec:
+  providerRefs:
+    - kind: Provider
+      name: aws
+    - kind: Provider
+      name: aws-kubeadm
+  environmentRef:
+    name: development
+  softwareGroupRefs:
+    - kind: SoftwareGroup
+      name: general
+  version: "1.28.13"
+  region: us-east-2
+  config:
+    autoscaling: true
+    controlPlane:
+      instanceType: "t3.medium"
+      machineImageRef: 
+        name: custom-aws-image
+      replicas: 3

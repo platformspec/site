@@ -1,0 +1,497 @@
+# ========================================================================
+# Platform
+# ========================================================================
+
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Platform
+metadata:
+  name: example
+spec:
+  organization: Example Demo Company
+  description: A comprehensive example of an AWS based Kubernetes platform.
+  author: Josh West
+  version: 1.0.0
+  contactEmail: engineering@platformspec.io
+  dns:
+    providerRef:
+      name: route53
+    domain: example.com
+  resources:
+    environments:
+      - name: development
+        kind: Environment
+      - name: production
+        kind: Environment
+    providers:
+      - name: aws
+        kind: Provider
+      - name: route53
+        kind: Provider
+    networks:
+      - name: primary-vpc
+        kind: Network
+    clusters:
+      - name: dev-cluster-aws-kubeadm
+        kind: Cluster
+    servers:
+      - name: dev-server-aws
+        kind: Server
+    images:
+      - name: custom-aws-image
+        kind: Image
+      - name: existing-aws-image
+        kind: Image
+    softwareGroups:
+      - name: general
+        kind: SoftwareGroup
+    credentials:
+      - name: aws-creds
+        kind: Credential
+
+
+# ========================================================================
+# Credentials
+# ========================================================================
+
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Credential
+metadata:
+  name: aws-creds
+spec:
+  schema: AWS
+  source: environment
+  fields:
+    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+
+
+
+# ========================================================================
+# Providers
+# ========================================================================
+
+# ===== IaaS Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: aws
+spec:
+  category: iaas
+  engine: aws-organizations
+  credentialRef:
+    name: aws-creds
+  config:
+    tags:
+      somekey: somevalue
+
+# ===== DNS Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: route53
+spec:
+  category: dns
+  engine: route53
+  credentialRef:
+    name: aws-creds
+  config:
+    delegationSet:
+      enabled: true
+    tags:
+      key: value
+
+# ===== Cluster and Server Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: aws-eks
+spec:
+  category: cluster
+  engine: eks
+  credentialRef:
+    name: aws-creds
+  config: {}
+
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: aws-kubeadm
+spec:
+  category: kubernetes
+  engine: kubeadm
+  credentialRef:
+    name: aws-creds
+  config: {}
+
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: aws-ec2
+spec:
+  category: server
+  engine: ec2
+  credentialRef:
+    name: aws-creds
+  config: {}
+
+
+# ===== Identity Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: okta
+spec:
+  category: identity
+  engine: okta
+  credentialRef:
+    name: okta-creds
+  config:
+    domain: example.okta.com
+
+# ===== Container/Artifact Registries =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: harbor
+spec:
+  category: registry
+  engine: harbor
+  credentialRef:
+    name: harbor-creds
+  config:
+    project: my-project
+    zone: example-com
+  
+# ===== Backup and Disaster Recovery Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: snapshot
+spec:
+  category: backup
+  engine: snapshot
+  credentialRef:
+    name: snapshot-creds
+  config: {}
+  
+# ===== Monitoring Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: prometheus
+spec:
+  category: monitoring
+  engine: prometheus
+  credentialRef: 
+    name: prometheus-creds
+  config: {}
+
+# ===== Secret Management Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: hashivault
+spec:
+  category: secrets
+  engine: vault
+  credentialRef:
+    name: vault-creds
+  config: {}
+
+# ===== Observability Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: grafana
+spec:
+  category: observability
+  engine: grafana
+  credentialRef:
+    name: grafana-creds
+  config: {}
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: datadog
+spec:
+  category: observability
+  engine: datadog
+  credentialRef:
+    name: datadog-creds
+  config: {}
+
+# ===== CI/CD Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: argocd
+spec:
+  category: cicd
+  engine: argocd
+  credentialRef:
+    name: argocd-creds
+  config: {}
+
+# ===== Logging Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: elasticsearch
+spec:
+  category: logging
+  engine: elasticsearch
+  credentialRef:
+    name: elasticsearch-creds
+  config: {}
+
+# ===== Auditing Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: splunk
+spec:
+  category: auditing
+  engine: splunk
+  credentialRef:
+    name: splunk-creds
+  config: {}
+
+# ===== Automation and Orchestration Providers =====
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: terraform-atlantis
+spec:
+  category: automation
+  engine: terraform-atlantis
+  credentialRef:
+    name: terraform-atlantis-creds
+  config: {}
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Provider
+metadata:
+  name: ansible
+spec:
+  category: automation
+  engine: ansible
+  credentialRef:
+    name: ansible-creds
+  config: {}
+
+
+# ========================================================================
+# Environments
+# ========================================================================
+
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Environment
+metadata:
+  name: development
+spec:
+  description: Development environment
+  providerRefs:
+    - kind: Provider
+      name: route53
+    - kind: Provider
+      name: aws
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Environment
+metadata:
+  name: production
+spec:
+  description: Production environment
+  providerRefs:
+    - kind: Provider
+      name: route53
+    - kind: Provider
+      name: aws
+
+# ========================================================================
+# Networks
+# ========================================================================
+
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Network
+metadata:
+  name: primary-vpc
+spec:
+  type: vpc 
+  providerRefs:
+    - kind: Provider
+      name: aws 
+  config:
+    cidrBlocks: [10.0.0.0/16]
+    subnetConfiguration:
+      publicSubnets: ["subnet-id1", "subnet-id2"]
+      privateSubnets: ["subnet-id3", "subnet-id4"]
+    tags:
+      foo: bar
+
+
+# ========================================================================
+# Images
+# ========================================================================
+
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Image
+metadata:
+  name: custom-aws-image
+spec:
+  category: machine
+  spec:
+    default: false
+    providerRefs:
+      - kind: Provider
+        name: aws
+    environmentRefs:
+      - name: development
+        kind: Environment
+      - name: production
+        kind: Environment
+    version: v1.28.13
+    builder:
+      driver: image-builder
+      config:
+        target: ami-ubuntu-2204
+        location: us-east-2
+        options:
+          ami_regions: "us-east-2,us-west-2"
+          ansible_extra_vars: "pinned_debs='cloud-init=23.1.2-0ubuntu0~22.04.1'"
+      software:
+        packages:
+          - name: nginx
+            version: latest
+          - name: docker
+            version: 20.10.8
+        repos:
+          - name: docker
+            url: "https://download.docker.com/linux/ubuntu"
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Image
+metadata:
+  name: existing-aws-image
+spec:
+  category: machine
+  spec:
+    default: true
+    providerRefs:
+      - kind: Provider
+        name: aws
+    environmentRefs:
+      - name: development
+        kind: Environment
+    version: v1.28.13
+    reference:
+      id: ami-12345678
+      location: us-west-1
+
+
+
+# ========================================================================
+# Clusters
+# ========================================================================
+
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Cluster
+metadata:
+  name: dev-cluster-aws-kubeadm
+spec:
+  providerRefs:
+    - kind: Provider
+      name: aws
+    - kind: Provider
+      name: aws-kubeadm
+  environmentRef:
+    name: development
+  networkRefs:
+    - kind: Network
+      name: primary-vpc
+  softwareGroupRefs:
+    - kind: SoftwareGroup
+      name: general
+  version: "1.28.13"
+  region: us-east-2
+  config:
+    autoscaling: true
+    controlPlane:
+      instanceType: "t3.medium"
+      machineImageRef: 
+        name: custom-aws-image
+      replicas: 3
+
+
+
+# ========================================================================
+# Servers
+# ========================================================================
+
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Server
+metadata:
+  name: dev-server-aws
+spec:
+    providerRefs:
+      - kind: Provider
+        name: aws
+      - kind: Provider
+        name: aws-ec2
+    environmentRef:
+      name: development
+      kind: Environment
+    networkRefs:
+      - kind: Network
+        name: primary-vpc
+    region: us-west-2
+    config:
+      size: "t3.medium"
+      machineImageRef:
+        name: custom-aws-image
+
+
+
+# ========================================================================
+# Software
+# ========================================================================
+
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: SoftwareGroup
+metadata:
+  name: general
+spec:
+  packages:
+    - name: nginx-web-server
+      engine: helm
+      config:
+        chart: stable/nginx
+        version: "1.16.1"
+        values:
+          replicaCount: 2
+          service:
+            type: LoadBalancer
+        namespaces:
+          - web-namespace

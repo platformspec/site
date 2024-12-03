@@ -1,0 +1,17 @@
+apiVersion: core.platformspec.io/v1alpha1
+kind: SoftwareGroup
+metadata:
+  name: general
+spec:
+  packages:
+    - name: nginx-web-server
+      engine: helm
+      config:
+        chart: stable/nginx
+        version: "1.16.1"
+        values:
+          replicaCount: 2
+          service:
+            type: LoadBalancer
+        namespaces:
+          - web-namespace
