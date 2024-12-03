@@ -75,27 +75,27 @@ export default defineConfig({
               items: [
                 { text: 'What is an Infrastructure Platform?', link: '/docs/types/infrastructure/what-is-an-infrastructure-platform' },
                 { text: 'Who needs an Infrastructure Platform?', link: '/docs/types/infrastructure/who-needs-an-infrastructure-platform' },
-                { text: 'Responsibilities', link: '/docs/types/infrastructure/responsibilities'},
-                { text: 'Stakeholders', link: '/docs/types/infrastructure/stakeholders' },
+                //{ text: 'Responsibilities', link: '/docs/types/infrastructure/responsibilities'},
                 { text: 'The Four Layers', link: '/docs/types/infrastructure/the-four-layers' },
+                { text: 'Stakeholders', link: '/docs/types/infrastructure/stakeholders' },
               ]
             },
             {
               text: 'Developer Platforms',
               items: [
                 { text: 'What is a Developer Platform?', link: '/docs/types/developer/what-is-a-developer-platform' },
-                { text: 'Who needs a Developer Platform?', link: '/docs/types/developer/who-needs-a-developer-platform' },
-                { text: 'Responsibilities', link: '/docs/types/developer/responsibilities'},
-                { text: 'Stakeholders', link: '/docs/types/developer/stakeholders' }
+               // { text: 'Who needs a Developer Platform?', link: '/docs/types/developer/who-needs-a-developer-platform' },
+               // { text: 'Responsibilities', link: '/docs/types/developer/responsibilities'},
+               // { text: 'Stakeholders', link: '/docs/types/developer/stakeholders' }
               ]
             },
             {
               text: 'Services Platforms',
               items: [
                 { text: 'What is a Services Platform?', link: '/docs/types/services/what-is-a-services-platform' },
-                { text: 'Who needs a Services Platform?', link: '/docs/types/services/who-needs-a-services-platform' },
-                { text: 'Responsibilities', link: '/docs/types/services/responsibilities'},
-                { text: 'Stakeholders', link: '/docs/types/services/stakeholders' }
+               // { text: 'Who needs a Services Platform?', link: '/docs/types/services/who-needs-a-services-platform' },
+               // { text: 'Responsibilities', link: '/docs/types/services/responsibilities'},
+               // { text: 'Stakeholders', link: '/docs/types/services/stakeholders' }
               ]
             }
           ]

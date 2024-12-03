@@ -18,7 +18,6 @@ In no particular order:
 * Designing the "Developer Services & Enablement" section of The Platform Spefification.
 * SDK -- Golang Platform Specification Model Library.
 * SDK -- Python Platform Specification Model Library.
-* SDK -- Java Platform Specification Model Library.
 * Example Platform definitions, with diagrams and descriptions.
 
 ## Future Priorities
