@@ -34,7 +34,7 @@ Many and much thanks for the review and feedback goes out to (alphabetical):
 
 The highlight of the changes to the specification and site are as follows:
 
-  * **Kubernetes Structure:**  Specification has been restructured into a Kubernetes API/Kind style setup (with metadtaa, apiVersion, kind, etc...)
+  * **Kubernetes Structure:**  Specification has been restructured into a Kubernetes API/Kind style setup (with metadata, apiVersion, kind, etc...)
   * **Composability:**  Components of a Platform have been made composable, by breaking them out into multiple Kinds (such as Platform, Network, Environment, etc).
   * **Documentation:**  Major updates and refinement, discussing the various types of Platforms (from Infrastructure Platforms, to Developer Platforms, to Services ie Control Plane Platforms).
 
