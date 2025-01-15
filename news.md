@@ -10,6 +10,84 @@ Stay up-to-date on all things Platform Specification.  This is where you'll find
 
 <p>&nbsp;</p>
 
+::: timeline January 15th, 2025
+::: info Progress report
+Happy 2025 platform engineers! I wanted to take opportunity to elaborate a bit on our current initiatives.
+A lot has been happening the past weeks and it's worth sharing some details. 
+
+PlatformSpec has been drafted by Josh end of November and now starts to shape. We are extending the specification draft, work on concept design and detail potential usecases. 
+
+The SDK currently just models PlatformSpec entities in it's draft stage and we realized there is need for building something more foundational for the typical uses cases to get started. This is why we now experiment with a couple of ideas that emerged from reflecting the general challenges in Platform Engineering. 
+
+<p>&nbsp;</p>
+
+***Challenges to solve***
+
+Platform engineering is an extensive discipline. How do you design a system that is prepared for everlasting change?
+As you all know it's not just starting a Backstage project.
+
+Building a platform is not easy and probably never finished. It has a lifecycle on it's own and requires endurance to maintain. Customization is costly but often the only way to make your platform align to your company needs. There is no one-size-fits-all silver bullet but maybe something that fits 60-80% to your current situation.
+
+One of our main goals is to give the community a solid and standardized codebase to start their own platform initiative with the power of Open Source. A single software tool is probably not able to cover all edge cases so we came up something more flexible.
+
+Initially PlatformSpec was the high level definition for the to-be-established platform with Blueprints and Builders executing it in detail.
+
+<p>&nbsp;</p>
+
+***Conceptual changes***
+
+We revised this concept in the following way: 
+
+* ***PlatformSpec*** is still the definition which specifies the boundary of a platform at any level. It defines high-level infrastructure, services and at the same time offers a universal domain driven specification to address e.g. CICD or policies. Generally spoken it expresses the _need_ for the assembly.
+
+* ***Blueprints*** are now configuration modules that can be of any scope, be layered and offer consistency within their scope. They contain the real definitions, e.g. Terraform scripts, helm values files, Backstage software templates and alike. They are authored, provided and shared by any party and aim to leverage community knowledge as a consumable. Blueprints are _solution  catalogs_ the PlatformSpec can _bind_ to. 
+
+* ***Builders*** are now common, reusable providers that cope with a single type of technology. They talk to cloud APIs, git repositories, skaffold templates and help the Blueprint taking _action_. 
+The SDKs will bring some common builders but rolling your own will be possible as well.
+
+All three of them make up a Platform assembly.
+
+<p>&nbsp;</p>
+
+***PlatformSpec Scope Adjustments***
+
+The scope of PlatformSpec initially was set for _building_ platforms. We now tend to additionally use it for _consuming_ an assembled platform as well in order to make PlatformSpec more holistic.
+
+This comes with a couple of new challenges like frontend/cli integration and domain specific configurations while staying vendor agnostic. 
+
+
+<p>&nbsp;</p>
+
+***Reference Architecture***
+
+How do you apply the PlaformSpec assembly with it's Builders and Blueprints? 
+This is where we currently experiment the most.  
+
+We drafted a modular reference architecture to foster extensibility by coupling all services, modules and providers in a very loosely manner. At the same time we opted for a well known lifecycle pattern going with the Operator SDK. 
+
+The idea here is to let the operator reconcile PlatformSpec CRs by executing the builders that are bound via the blueprints.
+
+
+<p>&nbsp;</p>
+
+![Reference Architecture](./public/arch8.svg)
+
+<p>&nbsp;</p>
+
+***Prototyping***
+
+
+
+The last weeks have been mostly invested in writing a Platform Operator as a proof-of-concept for the Java SDK. It consumes Blueprints and runs the Builders and works both on the assembly and consumption side for a couple of use cases with medium to higher complexity.  
+
+It is still in a very early stage but already able to shake and rattle the PlatformSpec draft and I am more than happy to release it as a preview in the next weeks to come to drive discussions. 
+
+Stay tuned!
+
+// Jens
+
+:::
+
 ::: timeline December 2nd, 2024
 ::: info Major Updates
 Much has progressed with The Platform Specification, as a result of some fantastic feedback from [Kubecon North America (Salt Lake City) 2024!](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/)
