@@ -10,14 +10,14 @@ Stay up-to-date on all things Platform Specification.  This is where you'll find
 
 <p>&nbsp;</p>
 
-::: timeline January 15th, 2025
+::: timeline January 23rd, 2025
 ::: info Progress report
 Happy 2025 platform engineers! I wanted to take opportunity to elaborate a bit on our current initiatives.
 A lot has been happening the past weeks and it's worth sharing some details. 
 
-PlatformSpec has been drafted by Josh end of November and now starts to shape. We are extending the specification draft, work on concept design and detail potential usecases. 
+PlatformSpec has been drafted by Josh end of November and now starts to take shape. We are extending the specification draft, working on concept designs and detailing potential usecases. 
 
-The SDK currently just models PlatformSpec entities in it's draft stage and we realized there is need for building something more foundational for the typical uses cases to get started. This is why we now experiment with a couple of ideas that emerged from reflecting the general challenges in Platform Engineering. 
+The SDK currently just models PlatformSpec entities in it's draft stage and we have realized there is need for building something more foundational for the typical uses cases required to get started. This is why we now are experimenting with a couple of ideas that emerged from reflecting the general challenges in Platform Engineering. 
 
 <p>&nbsp;</p>
 
@@ -70,7 +70,8 @@ The idea here is to let the operator reconcile PlatformSpec CRs by executing the
 
 <p>&nbsp;</p>
 
-![Reference Architecture](./public/arch8.svg)
+![Reference Architecture (light)](./arch8-light.png){.light-only}
+![Reference Architecture (dark)](./arch8.svg){.dark-only}
 
 <p>&nbsp;</p>
 
