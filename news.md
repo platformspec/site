@@ -70,8 +70,8 @@ The idea here is to let the operator reconcile PlatformSpec CRs by executing the
 
 <p>&nbsp;</p>
 
-![Reference Architecture (light)](./arch8-light.png){.light-only}
-![Reference Architecture (dark)](./arch8.svg){.dark-only}
+![Reference Architecture (light)](/arch8-light.png){.light-only}
+![Reference Architecture (dark)](/arch8.svg){.dark-only}
 
 <p>&nbsp;</p>
 
