@@ -97,14 +97,34 @@ export default defineConfig({
                   text: "core.platformspec.io",
                   link: "/docs/spec/groups/core.platformspec.io",
                 },
-                { text: "design.platformspec.io", link: "/" },
-                { text: "core.platformspec.io", link: "/" },
-                { text: "build.platformspec.io", link: "/" },
-                { text: "operate.platformspec.io", link: "/" },
-                { text: "workload.platformspec.io", link: "/" },
-                { text: "secure.platformspec.io", link: "/" },
-                { text: "govern.platformspec.io", link: "/" },
-                { text: "sdk.platformspec.io", link: "/" },
+                {
+                  text: "design.platformspec.io",
+                  link: "/docs/spec/groups/design.platformspec.io",
+                },
+                {
+                  text: "build.platformspec.io",
+                  link: "/docs/spec/groups/build.platformspec.io",
+                },
+                {
+                  text: "operate.platformspec.io",
+                  link: "/docs/spec/groups/operate.platformspec.io",
+                },
+                {
+                  text: "workload.platformspec.io",
+                  link: "/docs/spec/groups/workload.platformspec.io",
+                },
+                {
+                  text: "secure.platformspec.io",
+                  link: "/docs/spec/groups/secure.platformspec.io",
+                },
+                {
+                  text: "govern.platformspec.io",
+                  link: "/docs/spec/groups/govern.platformspec.io",
+                },
+                {
+                  text: "sdk.platformspec.io",
+                  link: "/docs/spec/groups/sdk.platformspec.io",
+                },
               ],
             },
             { text: "Example", link: "/docs/spec/example" },

@@ -3,30 +3,21 @@ outline: deep
 ---
 
 # API Group: core.platformspec.io
+The core.platformspec.io API Group defines the foundational constructs that serve as the backbone of the Platform Specification.  These core abstractions provide a common language and structure for all other API Groups, ensuring consistency, interoperability, and scalability.
 
- _Focus:_ Defining **core building blocks** used across all API groups.
+By centralizing fundamental concepts, `core.platformspec.io` enables platform teams to work with a well-defined set of primitives that establish the platform’s identity, organization, and metadata.  This ensures that every part of the Platform Specification operates within a cohesive and standardized framework, facilitating extensibility and long-term maintainability.
 
- _Purpose:_
-
-- Defines **foundational** constructs **used across all API groups**.
-- Contains **abstract, reusable types** that don’t map directly to infrastructure.
-- Acts as a **common schema layer** rather than an executable configuration.
-- Think of `core.platformspec.io` as the "primitives" layer -- it provides essential types that other API groups extend, reference, or implement.
+Think of `core.platformspec.io` as the "primitives" layer -- it provides essential types that other API groups extend, reference, or implement.
 
 ## Overview
-  * **Platform:** Represents the overarching blueprint for your entire platform. It encompasses high-level configurations, policies, and references to other resources like credentials, providers, and environments, and more.
-  * **Credential:** Defines reference parameters for locations to sensitive information required for connecting to various services (e.g., API keys, passwords) and interacting with Providers.
-  * **Provider:** Defines the specific provider or service used for managing parts of your Platform (e.g., AWS, Azure, GCP). Each provider configuration includes details about any specific settings required for that provider.
-  * **Environment:** Represents a distinct operational environment for your platform (e.g., development, testing, production). Environments often have unique configurations, resource constraints, or access policies.
-  * **Cluster:** Defines a cluster within your platform. Clusters can be of many orchestration engines, from Kubernetes to Fargate to Nomad, or more.  This includes details about the cluster's size, network configuration, node types, and other relevant settings.
-  * **Server:** Specifies individual servers or virtual machines deployed within your platform. Servers are associated with specific environments, providers, and software configurations.
-  * **SoftwareGroup:** Represents a collection of software packages to be installed into your cluster(s) or server(s). Software Groups define installation methods, dependencies, and configuration settings for these packages.
-  * **Image:** Defines machine or container images used within your platform, often associated with Clusters and Servers.
-  * **SoftwarePackage:** Represents a single software package to be installed as part of a SoftwareGroup. It includes details about the package name, version, source repository, dependencies, and installation instructions.
-  * **Policy:** Defines rules and constraints that apply to various aspects of your platform, such as resource usage, security configurations, or deployment workflows. Policies can enforce best practices, ensure compliance with regulations, or automate specific actions based on predefined conditions.
+| Kind | Description |
+| --- | --- |
+| [Platform](#platform) | Represents the overarching top level for your entire platform. |
+| [Credential](#credential) | Defines reference parameters for locations to sensitive information required for connecting to various services. |
+| [Provider](#provider) | Defines the specific provider or service used for managing parts of your Platform. |
+| [Environment](#environment) | Represents a distinct operational environment for your platform. |
 
-
-## Kinds
+## Definitions
 ### Platform
 
 The `Platform` CRD in The Platform Specification serves as the central entrypoint for your entire cloud platform, encompassing all its components, configurations, and policies. It provides a structured framework for defining and managing your infrastructure, services, and resources across different environments.
