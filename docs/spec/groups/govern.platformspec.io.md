@@ -7,7 +7,7 @@ The `govern.platformspec.io` API Group defines how teams, users, and organizatio
 
 By enforcing governance policies and operational constraints, `govern.platformspec.io` enables organizations to manage platform users, roles, and permissions at scale.  This ensures that platform ownership, responsibility, and resource consumption are well-defined, transparent, and aligned with business objectives.
 
-## Overview
+## Kinds
 | Kind | Description | Status |
 | --- | --- | --- |
 | [Team](#team) | Captures a group or business unit within the platform. | 📝&nbsp;Planned |

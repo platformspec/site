@@ -7,7 +7,7 @@ The `secure.platformspec.io` API Group defines the security, compliance, and gov
 
 By embedding security best practices into platform operations, `secure.platformspec.io` enables organizations to proactively mitigate risks, maintain auditability, and uphold trust.  This group ensures that security is not an afterthought but an integral part of how the platform is built, deployed, and operated.
 
-## Overview
+## Kinds
 | Kind | Description | Status |
 | --- | --- | --- |
 | [Policy](#policy) | A generic policy definition with a type field to classify policies (e.g., SecurityPolicy, AuditPolicy, IAMPolicy, DataProtectionPolicy). | 📝&nbsp;Planned |

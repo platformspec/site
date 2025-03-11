@@ -9,7 +9,7 @@ By centralizing fundamental concepts, `core.platformspec.io` enables platform te
 
 Think of `core.platformspec.io` as the "primitives" layer -- it provides essential types that other API groups extend, reference, or implement.
 
-## Overview
+## Kinds
 | Kind | Description | Status |
 | --- | --- | --- |
 | [Platform](#platform) | Represents the overarching top level for your entire platform. | ✅&nbsp;Defined |

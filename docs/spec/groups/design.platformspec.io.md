@@ -7,7 +7,7 @@ The `design.platformspec.io` API Group captures the architectural intent and hig
 
 This group ensures that platforms are designed with scalability, resilience, and security in mind by providing a declarative approach to planning infrastructure, networking, and service topologies.  By standardizing platform design at the outset, `design.platformspec.io` helps organizations build consistent, repeatable, and future-proof platforms.
 
-## Overview
+## Kinds
 | Kind | Description | Status |
 | --- | --- | --- |
 | [Blueprint](#blueprint) | Represents a high-level design document that outlines the architecture of a platform. | 🚧&nbsp;In&nbsp;Progress |

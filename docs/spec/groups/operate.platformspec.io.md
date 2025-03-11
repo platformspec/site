@@ -9,7 +9,7 @@ By standardizing scaling, upgrades, monitoring, and resilience strategies, `oper
 
 This is very much focused on defining parameters for how a Platform should behave once it is up and running.  It aims to make sure that the platform is running as expected, and that it can be maintained and upgraded in a predictable and reliable way.  And of course, to make the life easier of the people who are responsible for keeping the platform running.
 
-## Overview
+## Kinds
 | Kind | Description | Status |
 | --- | --- | --- |
 | [DeploymentPolicy](#deploymentpolicy) | Defines rules for rolling updates, blue-green deployments. | 📝&nbsp;Planned |

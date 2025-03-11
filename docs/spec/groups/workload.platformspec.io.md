@@ -9,7 +9,7 @@ The primary focus of `workload.platformspec.io` is developer enablement, offerin
 
 By defining these core services as part of the Platform Specification, workloads.platformspec.io ensures that platform teams can establish standardized, reusable, and scalable systems for managing workloads, securing applications, and enabling continuous delivery workflows.  This API Group provides the essential abstractions required to deliver a modern, developer-friendly cloud platform, empowering teams to build and deploy software without reinventing common platform capabilities.
 
-## Overview
+## Kinds
 | Kind | Description | Status |
 | --- | --- | --- |
 | [APIGateway](#apigateway) | Defines API gateway configurations, routing, and authentication. | 📝&nbsp;Planned |
