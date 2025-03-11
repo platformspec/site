@@ -1,4 +1,4 @@
-apiVersion: core.platformspec.io/v1alpha1
+apiVersion: build.platformspec.io/v1alpha1
 kind: Cluster
 metadata:
   name: dev-cluster-aws-fargate
@@ -12,4 +12,4 @@ spec:
     name: development
   version: "1.4.0"
   region: us-east-2
-  config: {} 
+  config: {}

@@ -1,4 +1,4 @@
-apiVersion: core.platformspec.io/v1alpha1
+apiVersion: build.platformspec.io/v1alpha1
 kind: Image
 metadata:
   name: custom-aws-image

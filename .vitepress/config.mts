@@ -90,7 +90,7 @@ export default defineConfig({
             { text: "Overview", link: "/docs/spec/overview" },
             { text: "Scope", link: "/docs/spec/scope" },
             {
-              text: "Specification",
+              text: "Specification v1alpha1",
               link: "/docs/spec/spec",
               items: [
                 {

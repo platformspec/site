@@ -8,14 +8,14 @@ The `secure.platformspec.io` API Group defines the security, compliance, and gov
 By embedding security best practices into platform operations, `secure.platformspec.io` enables organizations to proactively mitigate risks, maintain auditability, and uphold trust.  This group ensures that security is not an afterthought but an integral part of how the platform is built, deployed, and operated.
 
 ## Overview
-| Kind | Description |
-| --- | --- |
-| [Policy](#policy) | A generic policy definition with a type field to classify policies (e.g., SecurityPolicy, AuditPolicy, IAMPolicy, DataProtectionPolicy). |
-| [AccessControlPolicy](#accesscontrolpolicy) | Defines granular access control rules that extend beyond RBAC, such as attribute-based access control (ABAC) and custom access conditions. |
-| [NetworkPolicy](#networkpolicy) | Specifies access control rules governing traffic flow between workloads, internal services, and external endpoints. |
-| [ComplianceStandard](#compliancestandard) | Captures regulatory and compliance frameworks (e.g., SOC2, ISO27001, HIPAA, GDPR) that the platform must adhere to. |
-| [AuditPolicy](#auditpolicy) | Specifies logging, auditing, and monitoring rules for security events and compliance enforcement. |
-| [IncidentResponsePlan](#incidentresponseplan) | Outlines response steps, triggers, and responsibilities for handling security incidents and breaches. |
+| Kind | Description | Status |
+| --- | --- | --- |
+| [Policy](#policy) | A generic policy definition with a type field to classify policies (e.g., SecurityPolicy, AuditPolicy, IAMPolicy, DataProtectionPolicy). | 📝&nbsp;Planned |
+| [AccessControlPolicy](#accesscontrolpolicy) | Defines granular access control rules that extend beyond RBAC, such as attribute-based access control (ABAC) and custom access conditions. | 📝&nbsp;Planned |
+| [NetworkPolicy](#networkpolicy) | Specifies access control rules governing traffic flow between workloads, internal services, and external endpoints. | 📝&nbsp;Planned |
+| [ComplianceStandard](#compliancestandard) | Captures regulatory and compliance frameworks (e.g., SOC2, ISO27001, HIPAA, GDPR) that the platform must adhere to. | 📝&nbsp;Planned |
+| [AuditPolicy](#auditpolicy) | Specifies logging, auditing, and monitoring rules for security events and compliance enforcement. | 📝&nbsp;Planned |
+| [IncidentResponsePlan](#incidentresponseplan) | Outlines response steps, triggers, and responsibilities for handling security incidents and breaches. | 📝&nbsp;Planned |
 
 ## Upcoming/TBD
 The following is a list of Kinds that are candidates to be defined in the future.  If you have a suggestion for a Kind that should be defined, please open an issue or pull request.
