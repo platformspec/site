@@ -3,7 +3,7 @@ outline: deep
 ---
 
 # API Group: core.platformspec.io
-The core.platformspec.io API Group defines the foundational constructs that serve as the backbone of the Platform Specification.  These core abstractions provide a common language and structure for all other API Groups, ensuring consistency, interoperability, and scalability.
+The `core.platformspec.io` API Group defines the foundational constructs that serve as the backbone of the Platform Specification.  These core abstractions provide a common language and structure for all other API Groups, ensuring consistency, interoperability, and scalability.
 
 By centralizing fundamental concepts, `core.platformspec.io` enables platform teams to work with a well-defined set of primitives that establish the platform’s identity, organization, and metadata.  This ensures that every part of the Platform Specification operates within a cohesive and standardized framework, facilitating extensibility and long-term maintainability.
 
