@@ -1,4 +1,4 @@
-apiVersion: core.platformspec.io/v1alpha1
+apiVersion: build.platformspec.io/v1alpha1
 kind: Cluster
 metadata:
   name: dev-cluster-aws-kubeadm
@@ -19,6 +19,6 @@ spec:
     autoscaling: true
     controlPlane:
       instanceType: "t3.medium"
-      machineImageRef: 
+      machineImageRef:
         name: custom-aws-image
       replicas: 3

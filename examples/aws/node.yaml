@@ -1,0 +1,17 @@
+apiVersion: build.platformspec.io/v1alpha1
+kind: Node
+metadata:
+  name: dev-server-aws
+spec:
+  providerRefs:
+    - kind: Provider
+      name: aws
+  environmentRef:
+    name: development
+    kind: Environment
+  region: us-west-2
+  network: aws-vpc-us-west-2
+  config:
+    size: "t3.medium"
+    machineImageRef:
+      name: custom-aws-image
