@@ -10,14 +10,31 @@ Stay up-to-date on all things Platform Specification.  This is where you'll find
 
 <p>&nbsp;</p>
 
+::: timeline March 11th, 2025
+::: info API Groups
+We’re excited to announce a major structural enhancement to The Platform Specification: the introduction of API Groups!
+
+To improve clarity, organization, and scalability, The Platform Specification has been restructured into distinct API Groups, each focusing on a specific domain [of concern] within platform engineering.  This adjustment makes it easier to navigate the specification, adopt relevant sections, and contribute to its evolution.
+
+* **API Groups introduced:**  The specification is now segmented into structured groups, including `core`, `design`, `build`, `operate`, `workload`, `govern`, `secure`, and `sdk`.
+* **Clear separation of concerns:**  Each API Group now has a well-defined scope, ensuring a logical and manageable breakdown of the platform engineering lifecycle.
+* **Easier adoption & contribution:**  Teams can now focus on specific API Groups relevant to their use cases without unnecessary complexity.
+* **Status tracking introduced:**  Each Kind within an API Group now has a Status Level (Defined, In Progress, Planned, etc.) to indicate development progress.
+
+This restructuring ensures The Platform Specification remains modular, extensible, and easier to work with, empowering teams to design, build, and operate cloud platforms with confidence.
+
+For more details, visit the [API Groups](./docs/spec/spec#api-groups) section of the specification within the documentation.
+
+:::
+
 ::: timeline January 23rd, 2025
 ::: info Progress report
 Happy 2025 platform engineers! I wanted to take opportunity to elaborate a bit on our current initiatives.
-A lot has been happening the past weeks and it's worth sharing some details. 
+A lot has been happening the past weeks and it's worth sharing some details.
 
-PlatformSpec has been drafted by Josh end of November and now starts to take shape. We are extending the specification draft, working on concept designs and detailing potential usecases. 
+PlatformSpec has been drafted by Josh end of November and now starts to take shape. We are extending the specification draft, working on concept designs and detailing potential usecases.
 
-The SDK currently just models PlatformSpec entities in it's draft stage and we have realized there is need for building something more foundational for the typical uses cases required to get started. This is why we now are experimenting with a couple of ideas that emerged from reflecting the general challenges in Platform Engineering. 
+The SDK currently just models PlatformSpec entities in it's draft stage and we have realized there is need for building something more foundational for the typical uses cases required to get started. This is why we now are experimenting with a couple of ideas that emerged from reflecting the general challenges in Platform Engineering.
 
 <p>&nbsp;</p>
 
@@ -36,13 +53,13 @@ Initially PlatformSpec was the high level definition for the to-be-established p
 
 ***Conceptual changes***
 
-We revised this concept in the following way: 
+We revised this concept in the following way:
 
 * ***PlatformSpec*** is still the definition which specifies the boundary of a platform at any level. It defines high-level infrastructure, services and at the same time offers a universal domain driven specification to address e.g. CICD or policies. Generally spoken it expresses the _need_ for the assembly.
 
-* ***Blueprints*** are now configuration modules that can be of any scope, be layered and offer consistency within their scope. They contain the real definitions, e.g. Terraform scripts, helm values files, Backstage software templates and alike. They are authored, provided and shared by any party and aim to leverage community knowledge as a consumable. Blueprints are _solution  catalogs_ the PlatformSpec can _bind_ to. 
+* ***Blueprints*** are now configuration modules that can be of any scope, be layered and offer consistency within their scope. They contain the real definitions, e.g. Terraform scripts, helm values files, Backstage software templates and alike. They are authored, provided and shared by any party and aim to leverage community knowledge as a consumable. Blueprints are _solution  catalogs_ the PlatformSpec can _bind_ to.
 
-* ***Builders*** are now common, reusable providers that cope with a single type of technology. They talk to cloud APIs, git repositories, skaffold templates and help the Blueprint taking _action_. 
+* ***Builders*** are now common, reusable providers that cope with a single type of technology. They talk to cloud APIs, git repositories, skaffold templates and help the Blueprint taking _action_.
 The SDKs will bring some common builders but rolling your own will be possible as well.
 
 All three of them make up a Platform assembly.
@@ -53,17 +70,17 @@ All three of them make up a Platform assembly.
 
 The scope of PlatformSpec initially was set for _building_ platforms. We now tend to additionally use it for _consuming_ an assembled platform as well in order to make PlatformSpec more holistic.
 
-This comes with a couple of new challenges like frontend/cli integration and domain specific configurations while staying vendor agnostic. 
+This comes with a couple of new challenges like frontend/cli integration and domain specific configurations while staying vendor agnostic.
 
 
 <p>&nbsp;</p>
 
 ***Reference Architecture***
 
-How do you apply the PlaformSpec assembly with it's Builders and Blueprints? 
-This is where we currently experiment the most.  
+How do you apply the PlaformSpec assembly with it's Builders and Blueprints?
+This is where we currently experiment the most.
 
-We drafted a modular reference architecture to foster extensibility by coupling all services, modules and providers in a very loosely manner. At the same time we opted for a well known lifecycle pattern going with the Operator SDK. 
+We drafted a modular reference architecture to foster extensibility by coupling all services, modules and providers in a very loosely manner. At the same time we opted for a well known lifecycle pattern going with the Operator SDK.
 
 The idea here is to let the operator reconcile PlatformSpec CRs by executing the builders that are bound via the blueprints.
 
@@ -79,9 +96,9 @@ The idea here is to let the operator reconcile PlatformSpec CRs by executing the
 
 
 
-The last weeks have been mostly invested in writing a Platform Operator as a proof-of-concept for the Java SDK. It consumes Blueprints and runs the Builders and works both on the assembly and consumption side for a couple of use cases with medium to higher complexity.  
+The last weeks have been mostly invested in writing a Platform Operator as a proof-of-concept for the Java SDK. It consumes Blueprints and runs the Builders and works both on the assembly and consumption side for a couple of use cases with medium to higher complexity.
 
-It is still in a very early stage but already able to shake and rattle the PlatformSpec draft and I am more than happy to release it as a preview in the next weeks to come to drive discussions. 
+It is still in a very early stage but already able to shake and rattle the PlatformSpec draft and I am more than happy to release it as a preview in the next weeks to come to drive discussions.
 
 Stay tuned!
 
@@ -139,5 +156,5 @@ We're thrilled to announce the launch of The Platform Specification's official r
 
 ::: timeline October 28th, 2024
 ::: info The Platform Specification launched!
-We're excited to announce the launch of The Platform Specification's official website! This central hub provides a comprehensive resource for all things related to The Platform Specification, including detailed documentation, examples, and information about getting involved.  
+We're excited to announce the launch of The Platform Specification's official website! This central hub provides a comprehensive resource for all things related to The Platform Specification, including detailed documentation, examples, and information about getting involved.
 :::
