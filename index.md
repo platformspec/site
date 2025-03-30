@@ -18,18 +18,46 @@ hero:
       link: /docs/spec/spec
 
 features:
-  - title: Comprehensive Platform Coverage
-    details: From <strong>Infrastructure & Operations</strong> to <strong>Application Development</strong> and <strong>Services Control Planes</strong>, Platform Spec defines standards for all major platform types.
-  - title: Community-Driven Best Practices
-    details: Built upon a standardized, collaborative approach, ensuring best practices are shared and evolved by the cloud native community.
-  - title: Consistent Across Environments
-    details: Deploy consistent platforms seamlessly across diverse cloud providers and environments, fostering portability and efficiency.
-  - title: Flexible and Adaptable
-    details: The Platform Specification's extensible and modular design allows for easy integration of new technologies and customizations.
-  - title: Enhanced Collaboration
-    details: Streamline teamwork with a single, transparent configuration file, enabling platform engineers, developers, and operations teams to work in sync.
-  - title: Faster Time to Market
-    details: Accelerate platform deployment and reduce onboarding time with a clear, structured framework that empowers new team members quickly.
+  # - title: Comprehensive Platform Coverage
+  #   details: From <strong>Infrastructure & Operations</strong> to <strong>Application Development</strong> and <strong>Services Control Planes</strong>, Platform Spec defines standards for all major platform types.
+  # - title: Enhanced Collaboration
+  #   details: Streamline teamwork with a single, transparent configuration file, enabling platform engineers, developers, and operations teams to work in sync.
+  # - title: Faster Time to Market
+  #   details: Accelerate platform deployment and reduce onboarding time with a clear, structured framework that empowers new team members quickly.
+  # - title: Collaborative Platform Design
+  #   details: Use the spec CRDs to manifest your layout in workshops. Help other teams engage into the discussion by using a well defined catalog.  Seemlessly continue with the machine readable results.
+  # - title: Standardized Tool Integration
+  #   details: Use platformspec as a common abstraction layer between arbitraty tools of your platform. Leverage client SDKs for cleaner integrations.
+  # - title: Learn from comparable platform designs
+  #   details: Make platform topologies comparable, easier to understand and learn from other projects to improve.
+  # - title: What is it?
+  #   details: The Platform Specification is an open, YAML-based standard for defining modern cloud platforms. It lets you describe infrastructure, services, policies, and developer tools—across any cloud or Kubernetes environment.
+  # - title: Why it matters
+  #   details: <ul><li>&bullet; Inconsistent environments</li><li>&bullet; Tribal knowledge and fragile automation</li><li>&bullet; Runaway costs and misconfigured services</li></ul>
+  # - title: Comprehensive Coverage
+  #   details: From <strong>Infrastructure & Operations</strong> to <strong>Application Development</strong> and <strong>Services Control Planes</strong>, Platform Spec defines standards for all major platform types.
+  - title: 📦 Modular Structure
+    details: Define only what you need—Infrastructure, Compute, Policies, and more—in isolated, reusable sections.
+    linkText: See the API groups
+    link: /docs/spec/spec#api-groups
+  - title: ✏️ Declarative and Git-Friendly
+    details: Say what your platform should look like, not how to build it.  Store and version your platform definitions as code, perfect for GitOps workflows.
+    linkText: See the spec
+    link: /docs/spec/spec
+  - title: 🤖 Designed for Automation
+    details: Build, deploy, validate, and visualize using existing CI/CD pipelines and dashboard tools.
+    link: /docs/spec/workflow-and-usage
+    linkText: Workflow and Usage
+  - title: ☁️ Cloud Agnostic
+    details: Works with any provider -- AWS, GCP, Azure, IBM, Oracle, or any others -- as long as it's a Kubernetes environment.
+    link: /docs/spec/groups/core.platformspec.io.html#provider
+    linkText: See Providers
+  - title: 🛠️ Standardized Tool Integration
+    details: Use platformspec as a common abstraction layer between arbitraty tools of your platform. Leverage client SDKs for cleaner integrations.
+    link: /docs/spec/sdks.html
+    linkText: SDKs
+  - title: 🧠 Learn From Comparable Platform Designs
+    details: Make platform topologies comparable, easier to understand and learn from other projects to improve.
 ---
 
 <style>
@@ -51,33 +79,17 @@ features:
     --vp-home-hero-image-filter: blur(68px);
   }
 }
+/*
+:root.dark img[src$=".png"] {
+   filter: invert(1);
+}
+
+:root:not(.dark) img[src$=".png"] {
+   filter: invert(0)
+}
+*/
 </style>
 
 <p>&nbsp;</p>
-
----
-
-<h3>
-<center>
-APIs for Defining Platforms
-</center>
-</h3>
-
-The Platform Specification is a community-driven standard designed to simplify <strong>Cloud Native Platform Engineering</strong>. It provides a common set of APIs for platform engineers, developers, and operations teams, regardless of their chosen cloud provider or environment. By leveraging proven best practices and a shared configuration, Platform Spec streamlines collaboration, boosts efficiency, and accelerates time to value. Whether you're operating across multiple clouds or fine-tuning a single environment, Platform Spec ensures cross-cloud consistency and reduces the complexities of platform management. This means your team can focus on what truly matters: building innovative applications and delivering exceptional user experiences. Join the community and discover how Platform Spec can empower your team to build better platforms faster.
-
-<p>&nbsp;</p>
-
-<h3>
-<center>
-Multiple Platform Types
-</center>
-</h3>
-
-[![Platform Types](/PlatformTypes-light.drawio.png){style="display: block; margin: 0 auto" .light-only}](/docs/types/types)
-[![Platform Types](/PlatformTypes-dark.drawio.png){style="display: block; margin: 0 auto" .dark-only}](/docs/types/types)
-
-<p>&nbsp;</p>
-
-The Platform Specification understands that cloud native platforms come in many shapes and sizes—from <strong>Infrastructure Platforms</strong> to <strong>Developer Platforms</strong>, <strong>Services Platforms</strong>, and beyond.  Rather than trying to dictate a one-size-fits-all solution, Platform Spec provides a flexible framework for defining and implementing any type of platform. By recognizing the commonalities across these diverse platforms, Platform Spec leverages a modular and composable approach. This means you can reuse overlapping aspects across different platform types, streamlining the definition and description of your intended platform outcome, regardless of its specific focus. Whether you're building an Infrastructure-as-Code powerhouse or a streamlined Developer Experience, Platform Spec empowers you to build better platforms faster by focusing on what truly matters: your unique requirements and innovation.
 
 <p align="center"><b>Email:</b> <a href="mailto:contact@platformspec.io">contact@platformspec.io</a> | <b>Slack:</b> <a href="https://cloud-native.slack.com/archives/C0826E3MFFA">#platformspec</a></p>
