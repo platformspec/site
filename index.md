@@ -7,17 +7,20 @@ hero:
   # text: "Standards For Your Cloud Native Platform"
   # tagline: Capture Every Component and Configuration of Your Cloud Native Platform in One Unified Standard
   text: "Codify Your Cloud Native Platform"
-  tagline: Capture and standardize every component of your Kubernetes-powered platform—infra, policies, security, and services—using a unified set of CRDs and tools purpose-built for platform engineering.
+  tagline: Capture and standardize every component of your Kubernetes-powered platform—infra, policies, security, and services—using a unified set of CRDs and tools purpose-built for <strong>platform engineering</strong>.
   image:
     light: logo-pressedsteel-light.png
     dark: logo-pressedsteel-dark.png
   actions:
     - theme: brand
-      text: Documentation
-      link: /docs/project/preface/
+      text: Getting Started
+      link: /docs/project/getting-started/
     - theme: alt
       text: The Specification
       link: /docs/spec/spec
+    - theme: alt
+      text: Knowledge Base
+      link: /docs/types/types
 
 features:
   # - title: Comprehensive Platform Coverage
@@ -60,7 +63,8 @@ features:
     linkText: SDKs
   - title: 🧠 Learn From Comparable Platform Designs
     details: Make platform topologies comparable, easier to understand and learn from other projects to improve.
-    linkText: Reference Architectures Coming Soon
+    linkText: Learn About Platforms
+    link: /docs/types/types.html
 ---
 
 <style>
