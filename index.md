@@ -58,7 +58,7 @@ features:
     link: /docs/spec/groups/core.platformspec.io.html#provider
     linkText: See Providers
   - title: 🛠️ Standardized Tool Integration
-    details: Use platformspec as a common abstraction layer between arbitraty tools of your platform. Leverage client SDKs for cleaner integrations.
+    details: Use platformspec as a common abstraction layer between arbitrary tools of your platform. Leverage client SDKs for cleaner integrations.
     link: /docs/spec/sdks.html
     linkText: SDKs
   - title: 🧠 Learn From Comparable Platform Designs
