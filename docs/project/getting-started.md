@@ -40,7 +40,7 @@ See the [Preface](/docs/project/preface) for a more detailed explanation.
 ::: danger Not ready
 The Platform Specification is still in development and not yet ready for full use.
 
-Please follow the [News](/docs/project/news) page for updates on the project's progress.
+Please follow the [News](/news) page for updates on the project's progress.
 
 Please visit the [Roadmap](/docs/project/roadmap) for a detailed timeline of upcoming features and releases.
 
