@@ -67,15 +67,16 @@ export default defineConfig({
 
     nav: [
       { text: "Home", link: "/" },
-      { text: "Documentation", link: "/docs/project/preface/" },
+      { text: "Documentation", link: "/docs/project/getting-started/" },
       { text: "News", link: "/news" },
       { text: "Community", link: "/community" },
     ],
     sidebar: {
       "/docs/": [
         {
-          text: "Project",
+          text: "Introduction",
           items: [
+            { text: "Getting Started", link: "/docs/project/getting-started" },
             { text: "Preface", link: "/docs/project/preface" },
             { text: "About The Project", link: "/docs/project/about" },
             { text: "Contributing", link: "/docs/project/contributing" },
@@ -134,7 +135,7 @@ export default defineConfig({
           ],
         },
         {
-          text: "Platforms",
+          text: "Knowledge Base",
           items: [
             { text: "Types of Platforms", link: "/docs/types/types" },
             { text: "Helpful Resources", link: "/docs/types/resources" },
