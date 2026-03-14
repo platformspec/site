@@ -68,7 +68,8 @@ The operator is configured via Helm values. Override values at install time with
 | --- | --- | --- |
 | `operator.namespace` | `""` (all namespaces) | Kubernetes namespace to watch. Empty = cluster-wide. |
 | `operator.logLevel` | `INFO` | Log level: `DEBUG`, `INFO`, `WARNING`, `ERROR`. |
-| `operator.devMode` | `false` | Enable verbose debug logging. |
+| `operator.logFormat` | `text` | Log output format: `json` (structured) or `text` (human-readable). |
+| `operator.devMode` | `false` | Enable colored text logging with full backtraces. Overrides `logFormat`. |
 | `operator.dryRun` | `false` | Run without applying any changes to the cluster. |
 | `operator.reconcileInterval` | `300` | Seconds between full reconciliation cycles. |
 | `operator.maxWorkers` | `4` | Concurrent reconciliation workers. |
@@ -96,6 +97,7 @@ helm install platspec-operator platspec/platspec-operator \
 operator:
   namespace: platsmith-system
   logLevel: INFO
+  logFormat: json
   reconcileInterval: 60
   maxWorkers: 8
   blueprintCacheEnabled: true
