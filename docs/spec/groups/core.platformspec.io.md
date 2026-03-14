@@ -16,6 +16,8 @@ Think of `core.platformspec.io` as the "primitives" layer -- it provides essenti
 | [Credential](#credential) | Defines reference parameters for locations to sensitive information required for connecting to various services. | ✅&nbsp;Defined |
 | [Provider](#provider) | Defines the specific provider or service used for managing parts of your Platform. | ✅&nbsp;Defined |
 | [Environment](#environment) | Represents a distinct operational environment for your platform. | ✅&nbsp;Defined |
+| [BlueprintBinding](#blueprintbinding) | Associates blueprints with a Platform, controlling which capabilities are provisioned and in which environments. | ✅&nbsp;Defined |
+| [BlueprintRegistry](#blueprintregistry) | Declares an external blueprint registry the operator can pull blueprints from. | ✅&nbsp;Defined |
 
 ## Definitions
 ### Platform
@@ -41,31 +43,20 @@ spec:
     providerRef:
       name: <dns-provider-name>
     domain: <domain-name>
-  resources:
-    environments:
-      - name: <environment-name>
-        kind: Environment
-    providers:
-      - name: <provider-name>
-        kind: Provider
-    clusters:
-      - name: <cluster-name>
-        kind: Cluster
-    servers:
-      - name: <server-name>
-        kind: Server
-    images:
-      - name: <image-name>
-        kind: Image
-    softwareGroups:
-      - name: <softwaregroup-name>
-        kind: SoftwareGroup
-    credentials:
-      - name: <credential-name>
-        kind: Credential
-    networks:
-      - name: <network-name>
-        kind: Network
+  resourceSelector:
+    matchLabels:
+      <label-key>: <label-value>
+  requirements:
+    general:
+      cloudProvider: <provider>
+    capabilities:
+      - <capability-name>
+    resources:
+      - kind: Environment
+        minimum: 1
+  deletionPolicy: Delete | Orphan
+  overrides:
+    <key>: <value>
 ```
 
 <<< ../../../examples/aws/platform.yaml{yaml}[example]
@@ -83,14 +74,42 @@ spec:
 * **`dns`:** Defines the DNS provider and domain used by your platform.
    * `providerRef` *(required)*:  References a `Provider` resource defining the chosen DNS service (e.g., Route53).
    * `domain` *(required)*: Specifies the top-level domain name associated with this platform.
- * **`resources` *(required)*:** References to the various resources leveraged or managed by this platform:
-   * **`environments`:**  Defines different deployment environments (e.g., development, staging, production) for your platform's services and applications.
-   * **`providers`: ** References `Provider` resources that define the specific cloud platforms or services used within your environment (e.g., AWS, Azure, GCP).
-   * **`clusters`:**  Defines Kubernetes clusters managed by this platform (if applicable). Each cluster can have its own configuration and deployment parameters.
-   * **`servers`:**  Lists virtual machines or servers managed within your platform, specifying their configurations and roles.
-   * **`images`:** Defines container images used for deploying applications or components within your platform.
-   * **`softwareGroups`: ** Groups together related software packages or dependencies required by various services or applications within your platform.
- *  **`credentials`:** References `Credential` resources containing the necessary credentials for accessing and interacting with different cloud providers and services.
+**Operator Fields:**
+
+The following fields are read by the Platspec Operator during reconciliation:
+
+* **`resourceSelector.matchLabels` *(optional)*:** Label selector used to discover associated resources (Environments, Providers, Clusters, etc.) by their Kubernetes labels. This is the primary mechanism by which the operator finds infra resources that belong to this Platform. Resources must carry the label `platform.platformspec.io/name: <platform-name>` to be discovered — see [Resource Discovery](#resource-discovery).
+* **`requirements` *(optional)*:** Constraints on the resources and capabilities associated with this Platform.
+  * **`general.cloudProvider`:** Expected cloud provider (e.g., `aws`, `gcp`, `azure`, `none`).
+  * **`capabilities[]`:** List of capability names this Platform requires. The operator validates that all listed capabilities are satisfied by at least one `BlueprintBinding` before marking the Platform ready.
+  * **`resources[]`:** Minimum and maximum counts of associated resource kinds (e.g., at least 1 Environment).
+* **`deletionPolicy` *(optional, default: Delete)*:** Controls what happens to generated resources when this Platform is deleted. `Delete` removes all resources created by the operator; `Orphan` leaves them in place.
+* **`overrides` *(optional)*:** Free-form key-value configuration merged into every blueprint's runtime context. Use this to inject global values (e.g., a shared domain or account ID) without repeating them in each `BlueprintBinding`.
+
+**Status:**
+
+```yaml
+status:
+  phase: Progressing | Ready | Failed
+  observedGeneration: <int>
+  lastStatusUpdate: <timestamp>
+  conditions:
+    - type: Ready
+      status: "True" | "False"
+      reason: AllBindingsReady | BindingsFailed | BindingsProgressing | NoBlueprintsConfigured
+      message: <string>
+      lastTransitionTime: <timestamp>
+  capabilities:
+    <capability-name>:
+      phase: <string>
+```
+
+| Reason | Meaning |
+| --- | --- |
+| `AllBindingsReady` | All blueprint bindings completed successfully. |
+| `BindingsProgressing` | At least one binding is still being provisioned. |
+| `BindingsFailed` | At least one binding encountered an error. |
+| `NoBlueprintsConfigured` | No `BlueprintBinding` resources target this Platform. |
 
 ---
 
@@ -139,12 +158,13 @@ Credentials are stored in many types of secrets managers, or other plaintext loc
 
 |  *Source*  |  *Description*  |
 | --- | --- |
-| `static` | Hardcoded values within `fields` section; not advised for production use. |
-| `environment` | Environment variables containing the contents of the credentials, as defined in `fields`. |
+| `kubernetes-secret` | Kubernetes Secret. |
+| `configmap` | Kubernetes ConfigMap. |
+| `env` | Environment variables containing the contents of the credentials, as defined in `fields`. |
 | `file` | File path _relative to consumer of the Credential API_. |
+| `aws-secrets-manager` | AWS Secrets Manager. |
 | `vault` | Hashicorp Vault. |
 | `aws-ssm` | AWS SSM Parameter Store. |
-| `aws-secrets` | AWS Secrets Manager. |
 | `aws-s3` | AWS S3. |
 | `aws-kms` | AWS KMS. |
 | `gcp-secrets` | GCP Secrets Manager. |
@@ -157,8 +177,7 @@ Credentials are stored in many types of secrets managers, or other plaintext loc
 | `tfstate-azurerm` | Terraform (tfstate) file in AzureRM Blob storage. |
 | `tfstate-remote` | Terraform (tfstate) in Terraform Cloud / Terraform Enterprise. |
 | `gitlab` | GitLab Secrets. |
-| `kubernetes-configmap` | Kubernetes Config Map. |
-| `kubernetes-secret` | Kubernetes Secret. |
+| `static` | Hardcoded values within `fields` section; not advised for production use. |
 | `...` | |
 
 ---
@@ -267,3 +286,172 @@ spec:
 * **`providerRefs` *(required)*:**  References specific `Provider` resources that define the cloud platforms or services used within this environment. This ensures that the correct configurations and credentials are applied based on the target environment.
    * `kind`: Specifies the type of resource being referenced, which is always "Provider" in this case.
    * `name` *(required)*:  The name of the `Provider` resource being referenced, indicating the specific provider or service used within this environment.
+
+**Resource Discovery Label:**
+
+For the Platspec Operator to discover an Environment as belonging to a Platform, the Environment must carry the label `platform.platformspec.io/name: <platform-name>`. Without this label the operator cannot associate the Environment with the Platform and selector-based filtering (via `BlueprintBinding.spec.selectors`) will not apply. See [Resource Discovery](#resource-discovery).
+
+---
+
+### BlueprintBinding
+
+The `BlueprintBinding` CRD associates one or more blueprint mappings with a Platform, controlling which capabilities are provisioned and in which environments or clusters they run. Each mapping binds a named `capability` to a specific blueprint package and configuration.
+
+Multiple `BlueprintBinding` resources can target the same Platform. When two bindings claim the same `capability`, the one with the lower `precedence` value wins (lower number = higher priority).
+
+**Structure:**
+
+::: code-group
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: BlueprintBinding
+metadata:
+  name: <binding-name>
+  labels:
+    platform.platformspec.io/name: <platform-name>
+spec:
+  platformRef:
+    name: <platform-name>
+  deletionPolicy: Delete | Orphan   # default: Delete
+  precedence: 100                   # lower = higher priority
+  selectors:
+    environmentSelector:
+      matchLabels:
+        <label-key>: <label-value>
+    clusterSelector:
+      matchLabels:
+        <label-key>: <label-value>
+    locationSelector:
+      matchLabels:
+        <label-key>: <label-value>
+  blueprintMappings:
+    - capability: <capability-name>
+      blueprint:
+        name: <blueprint-name>
+        version: <version>
+        registry: <registry-name>   # optional; references a BlueprintRegistry
+        config:
+          <key>: <value>
+```
+:::
+
+**Key Fields:**
+
+* **`platformRef.name` *(required)*:** The name of the Platform this binding belongs to.
+* **`deletionPolicy` *(optional, default: Delete)*:** Controls what happens to generated resources when the binding is deleted. `Delete` removes all resources the operator created for this binding; `Orphan` leaves them in place.
+* **`precedence` *(optional, default: 100)*:** Priority used when multiple bindings claim the same capability. Lower values win.
+* **`selectors` *(optional)*:** Filters which environments or clusters this binding applies to. A binding with no selectors runs against all discovered environments.
+  * **`environmentSelector.matchLabels`:** Only applies to environments whose labels contain all specified key-value pairs.
+  * **`clusterSelector.matchLabels`:** Only applies to clusters whose labels contain all specified key-value pairs.
+  * **`locationSelector.matchLabels`:** Only applies in locations whose labels contain all specified key-value pairs.
+* **`blueprintMappings` *(required)*:** List of capability-to-blueprint assignments.
+  * **`capability` *(required)*:** The logical capability name this mapping satisfies (e.g., `namespace-bootstrap`, `vpc-baseline`).
+  * **`blueprint.name` *(required)*:** Name of the blueprint package to run.
+  * **`blueprint.version` *(optional, default: latest)*:** Version to fetch. Pinned versions are cached locally; `latest` is always re-fetched.
+  * **`blueprint.registry` *(optional)*:** Name of a `BlueprintRegistry` resource to fetch from. Omit to use the operator's local blueprint directory.
+  * **`blueprint.config` *(optional)*:** Input configuration passed to the blueprint at runtime, merged with Platform-level `overrides`.
+
+**Status:**
+
+```yaml
+status:
+  phase: Progressing | Ready | Failed
+  observedGeneration: <int>
+  lastStatusUpdate: <timestamp>
+  conditions:
+    - type: Ready
+      status: "True" | "False"
+      reason: <reason>
+      message: <string>
+      lastTransitionTime: <timestamp>
+  generatedResources:
+    - apiVersion: <api-version>
+      kind: <kind>
+      name: <resource-name>
+      namespace: <namespace>
+```
+
+The `generatedResources` list tracks every Kubernetes resource applied during the last reconciliation. It is also stored as the annotation `platspec.io/generated-resources` (JSON-encoded) on the `BlueprintBinding` object.
+
+---
+
+### BlueprintRegistry
+
+The `BlueprintRegistry` CRD declares an external source from which the Platspec Operator fetches blueprint packages. Registries are referenced by name from `BlueprintBinding.spec.blueprintMappings[*].blueprint.registry`.
+
+**Structure:**
+
+::: code-group
+```yaml [spec]
+apiVersion: core.platformspec.io/v1alpha1
+kind: BlueprintRegistry
+metadata:
+  name: <registry-name>
+spec:
+  type: oci | git | http | s3 | filesystem
+  url: <registry-url>
+  region: <aws-region>      # required for type: s3
+  auth:
+    type: secret | serviceAccount | anonymous   # default: anonymous
+    secretRef:
+      name: <secret-name>
+      namespace: <secret-namespace>
+```
+:::
+
+**Key Fields:**
+
+* **`type` *(required)*:** Backend type.
+  * `oci` — OCI-compliant container registry (e.g., ECR, GCR, Docker Hub).
+  * `git` — Git repository; use `git+ssh://` prefix for SSH, `https://` for HTTPS.
+  * `http` — HTTP/HTTPS server serving `.tar.gz` blueprint archives.
+  * `s3` — S3-compatible object storage.
+  * `filesystem` — Local filesystem path; always fetches live and bypasses the version cache.
+* **`url` *(required)*:** Registry endpoint URL.
+* **`region` *(optional)*:** AWS region. Required when `type: s3`.
+* **`auth.type` *(optional, default: anonymous)*:** Authentication method.
+  * `secret` — Reads credentials from the Kubernetes Secret named in `auth.secretRef`. For SSH git registries the Secret must contain a `ssh-privatekey` key; for HTTPS or OCI registries it must contain `username` and `password`.
+  * `serviceAccount` — Uses the operator's own service account (for IRSA / Workload Identity).
+  * `anonymous` — No authentication.
+
+**Cache Behavior:**
+
+Remote blueprints (OCI, git, HTTP, S3) are cached at `cache_dir/{registry-name}/{blueprint-name}/{version}/`. Versioned blueprints (anything except `latest`) are served from cache on subsequent reconciles without network access. The `latest` tag is always re-fetched. `filesystem` type registries bypass the cache entirely.
+
+---
+
+### Resource Discovery
+
+The Platspec Operator discovers which Environments, Providers, Clusters, and other infra resources belong to a Platform using label selectors rather than explicit name lists.
+
+**Required label on all infra resources:**
+
+```yaml
+metadata:
+  labels:
+    platform.platformspec.io/name: <platform-name>
+```
+
+Without this label, a resource is invisible to the operator — it will not be used for context assembly or `BlueprintBinding` selector matching.
+
+---
+
+### Labels and Annotations
+
+The Platspec Operator applies the following labels to every Kubernetes resource it creates or manages, and writes the following annotations to track reconciliation state.
+
+**Labels applied to generated resources:**
+
+| Label | Value | Purpose |
+| --- | --- | --- |
+| `platspec.io/platform` | Platform name | Used for discovery and bulk cleanup of all resources belonging to a Platform. |
+| `platspec.io/managed-by` | `platspec-operator` | Identifies the managing operator. |
+| `platspec.io/binding` | BlueprintBinding name | Identifies which binding produced this resource. |
+| `platspec.io/capability` | Capability name | Identifies which capability this resource satisfies. |
+
+**Annotations written to `BlueprintBinding`:**
+
+| Annotation | Format | Purpose |
+| --- | --- | --- |
+| `platspec.io/generated-resources` | JSON array of `{apiVersion, kind, name, namespace}` | Tracks every resource applied in the last reconciliation. Used for cleanup and status reporting. |
+| `platspec.io/reconcile-trigger` | ISO 8601 timestamp | Written by the operator to force re-reconciliation when config changes are detected. |

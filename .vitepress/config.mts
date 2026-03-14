@@ -79,10 +79,25 @@ export default defineConfig({
             { text: "Getting Started", link: "/docs/project/getting-started" },
             { text: "Preface", link: "/docs/project/preface" },
             { text: "About The Project", link: "/docs/project/about" },
+            { text: "Change Log", link: "/docs/project/changes" },
             { text: "Contributing", link: "/docs/project/contributing" },
             { text: "Roadmap", link: "/docs/project/roadmap" },
             { text: "Help Wanted", link: "/docs/project/help" },
             { text: "Authors", link: "/docs/project/authors" },
+          ],
+        },
+        {
+          text: "Usage",
+          items: [
+            { text: "Installing the Operator", link: "/docs/usage/operator" },
+            {
+              text: "Finding & Using Blueprints",
+              link: "/docs/usage/blueprints",
+            },
+            {
+              text: "Authoring Blueprints",
+              link: "/docs/usage/authoring-blueprints",
+            },
           ],
         },
         {
