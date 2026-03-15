@@ -4,7 +4,7 @@ outline: deep
 
 # Changes
 
-A record of significant changes to The Platform Specification.
+A record of significant changes to The Platform Specification itself (and not associated code bases, such as the operator or blueprints or helm charts).
 
 ---
 

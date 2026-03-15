@@ -21,7 +21,7 @@ The Platspec Operator is distributed as a Helm chart that installs both the CRDs
 ### 1. Add the Helm repository
 
 ```bash
-helm repo add platspec https://charts.platformspec.io
+helm repo add platspec https://platformspec.github.io/platspec-operator
 helm repo update
 ```
 

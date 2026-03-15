@@ -390,6 +390,8 @@ metadata:
 spec:
   type: oci | git | http | s3 | filesystem
   url: <registry-url>
+  path: <subdirectory>      # optional: subdirectory within the registry root
+  ref: <branch-or-tag>      # optional: git ref (git registries only)
   region: <aws-region>      # required for type: s3
   auth:
     type: secret | serviceAccount | anonymous   # default: anonymous
@@ -408,6 +410,8 @@ spec:
   * `s3` — S3-compatible object storage.
   * `filesystem` — Local filesystem path; always fetches live and bypasses the version cache.
 * **`url` *(required)*:** Registry endpoint URL.
+* **`path` *(optional)*:** Subdirectory within the registry root where blueprint packages are located (e.g. `components/general`). When set, blueprints are resolved at `<path>/<name>` rather than `<name>`. Useful for monorepo-style registries.
+* **`ref` *(optional, git only)*:** Git branch, tag, or commit SHA to clone. When set, this ref is used for all fetches from this registry and the blueprint `version` in `BlueprintBinding` is used only for cache keying. If not set, the blueprint version is used as the git ref.
 * **`region` *(optional)*:** AWS region. Required when `type: s3`.
 * **`auth.type` *(optional, default: anonymous)*:** Authentication method.
   * `secret` — Reads credentials from the Kubernetes Secret named in `auth.secretRef`. For SSH git registries the Secret must contain a `ssh-privatekey` key; for HTTPS or OCI registries it must contain `username` and `password`.

@@ -27,44 +27,44 @@ The relationship between these scopes: Platform Patterns reference Capability Bl
 
 ## Finding Blueprints
 
-### Official Blueprint Catalog
+### Bundled Blueprints
 
-The official Platsmith blueprint catalog is published at the [Platsmith Blueprint Registry](https://blueprints.platsmith.io). Blueprints are available as OCI artifacts and can be referenced directly from a `BlueprintRegistry` resource.
-
-**Cluster Capabilities**
+The Platspec Operator ships with a small set of sample blueprints baked into the container image at `/blueprints`. These are available immediately after installation with no registry configuration required — the operator resolves them from its local directory automatically.
 
 | Blueprint | Capability | Description |
 | --- | --- | --- |
-| `namespace-bootstrap` | `namespace-bootstrap` | Creates a platform Namespace and a smoke-test Deployment. No cloud dependencies — good first smoke test. |
-| `cluster-namespaces` | `cluster-namespaces` | Provisions a standard set of namespaces across a cluster. |
-| `namespace-rbac` | `namespace-rbac` | Applies RBAC roles and bindings within platform namespaces. |
+| `namespace-bootstrap` | `namespace-bootstrap` | Creates a namespace per environment with standard labels. No cloud dependencies — a good first smoke test. |
+| `namespace-rbac` | `namespace-rbac` | Applies RBAC roles and bindings within bootstrapped namespaces. |
+| `configmap-platform-metadata` | `metadata` | Publishes platform metadata as a ConfigMap. |
 
-**Cloud Resources**
+These blueprints are also available as source in the [platspec-operator repository](https://github.com/platformspec/platspec-operator/tree/main/blueprints) and can be used as reference implementations when authoring your own.
 
-| Blueprint | Capability | Description |
-| --- | --- | --- |
-| `cloud-account` | `cloud-account` | Derives a `CloudAccount` output resource from the Environment × Provider intersection, one per referenced provider. |
+### Official Blueprint Catalog — Coming Soon
 
-**Platform Patterns**
+An official, community-maintained blueprint catalog covering the full taxonomy above — Cluster Capabilities, Cloud Resources, Networking, Observability, Security, Storage, and Platform Patterns — is on the roadmap. It will be published as a versioned OCI registry and consumable directly via a `BlueprintRegistry` resource.
 
-| Blueprint | Description |
-| --- | --- |
-| `startup-saas` | Multi-environment SaaS platform with dev, staging, and production tiers. |
-| `enterprise-secure` | Compliance-ready, multi-region enterprise platform with security and governance controls. |
+Until then, you can bring your own blueprints by pointing a `BlueprintRegistry` at any Git repository, OCI registry, HTTP server, or S3 bucket that contains blueprint packages. See [Authoring Blueprints](./authoring-blueprints) to get started.
 
 ### Configuring a Blueprint Registry
 
-To fetch blueprints from a remote registry, create a `BlueprintRegistry` resource:
+To fetch blueprints from a remote source, create a `BlueprintRegistry` resource:
 
 ```yaml
 apiVersion: core.platformspec.io/v1alpha1
 kind: BlueprintRegistry
 metadata:
-  name: platsmith-catalog
+  name: my-blueprints
   namespace: platsmith-system
 spec:
-  type: oci
-  url: oci://ghcr.io/platsmith/blueprints
+  type: git
+  url: https://github.com/my-org/my-blueprints.git
+  path: blueprints       # optional subdirectory within the repo
+  ref: main              # optional branch, tag, or commit (git only)
+  auth:
+    type: secret
+    secretRef:
+      name: git-credentials
+      namespace: platsmith-system
 ```
 
 Then reference the registry by name in your `BlueprintBinding`:
@@ -75,24 +75,24 @@ blueprintMappings:
     blueprint:
       name: namespace-bootstrap
       version: "0.1.0"
-      registry: platsmith-catalog
+      registry: my-blueprints
 ```
 
 Supported registry types: `oci`, `git`, `http`, `s3`, `filesystem`. See [BlueprintRegistry](/docs/spec/groups/core.platformspec.io#blueprintregistry) for the full spec.
 
-### Using Local Blueprints
+### Using Bundled or Local Blueprints
 
-For development or air-gapped environments, mount blueprints directly into the operator pod and reference them without a registry:
+Blueprints can be referenced without a registry when they are available in the operator's local blueprint directory. The bundled blueprints work this way by default:
 
 ```yaml
 blueprintMappings:
   - capability: namespace-bootstrap
     blueprint:
-      name: namespace-bootstrap   # resolved from the operator's local blueprint directory
+      name: namespace-bootstrap   # resolved from /blueprints in the operator pod
       version: "0.1.0"
 ```
 
-The operator looks for the blueprint at `<blueprintDir>/<name>/` (default mount: `/blueprints`).
+You can also mount your own blueprints via a `PersistentVolumeClaim` — see the [operator documentation](./operator#providing-blueprints) for details.
 
 ## Using Blueprints
 

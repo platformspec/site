@@ -10,6 +10,36 @@ Stay up-to-date on all things Platform Specification.  This is where you'll find
 
 <p>&nbsp;</p>
 
+::: timeline March 15th, 2026
+::: info Platspec Operator — early preview now open source
+Today we are sharing the first public release of the **Platspec Operator** — an open-source Kubernetes operator that implements the Platform Specification processing layer.
+
+We want to be upfront: **this is an early preview, not a finished product.** The operator is a work in progress. It is functional, it runs KCL blueprints, it manages Platform resources, and we are using it ourselves — but it is not yet feature complete, and the API surface will continue to evolve. We are releasing it now because we believe in building in the open, and because early feedback from real-world use shapes better software than building in isolation.
+
+**What it does today:**
+
+* Watches `Platform`, `BlueprintBinding`, `Environment`, `Provider`, `Credential`, and related resources in your cluster
+* Resolves blueprint assignments, fetches blueprint packages, executes [KCL](https://kcl-lang.io) blueprints, and applies the resulting Kubernetes manifests
+* Supports `BlueprintRegistry` — fetch blueprints from OCI registries, Git repositories, HTTP artifact servers, S3-compatible storage, or a local filesystem
+* Aggregates per-binding status back up to the `Platform` resource
+* Ships with a Helm chart and a small set of reference blueprints to get started
+
+**What is still missing:**
+
+There is meaningful work ahead. The blueprint catalog is thin, observability and error reporting need polish, the `design` API group (Blueprints, outputs, contracts) is still taking shape, and the broader API Groups beyond `core` are not yet implemented by the operator. This is a foundation — a good one, we think — but a foundation nonetheless.
+
+**Where things go from here:**
+
+* **The Specification** continues to evolve across its API Groups (`core`, `design`, `build`, `operate`, `workload`, `govern`, `secure`, `sdk`). The `core` group is the most mature and is what the operator implements today.
+* **Blueprints** are the next major area of investment — building out the community catalog and the tooling to author, publish, and discover them.
+* **The Platsmith hosted control plane** — the commercial layer that sits above the open-source operator — is in development and not yet publicly available.
+
+The operator is available at **[github.com/platformspec/platspec-operator](https://github.com/platformspec/platspec-operator)** under the Apache 2.0 license. Documentation is at [platformspec.io/docs/usage/operator](./docs/usage/operator).
+
+If you are curious, kick the tyres, open issues, and tell us what you think. This is a beginning, and we are excited about what comes next.
+
+:::
+
 ::: timeline March 11th, 2025
 ::: info API Groups
 We’re excited to announce a major structural enhancement to The Platform Specification: the introduction of API Groups!
