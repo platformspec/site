@@ -67,6 +67,36 @@ features:
     link: /docs/types/types.html
 ---
 
+<div class="announcement-banner">
+
+🚀 &nbsp;<strong>Platspec Operator — Early Preview Released</strong><br/> The open-source Kubernetes operator that implements the Platform Specification processing layer is now publicly available.  See below links for more details!<br/>
+<a href="/news">Read the announcement →</a> &nbsp;·&nbsp; <a href="/docs/usage/operator">Documentation →</a> &nbsp;·&nbsp; <a href="https://github.com/platformspec/platspec-operator">GitHub →</a>
+
+</div>
+
+<style>
+.announcement-banner {
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-brand-soft);
+  background-color: var(--vp-c-brand-soft);
+  color: var(--vp-c-text-1);
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.8;
+}
+.announcement-banner a {
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+  text-decoration: none;
+}
+.announcement-banner a:hover {
+  text-decoration: underline;
+}
+</style>
+
 <style>
 :root {
   --vp-home-hero-name-color: transparent;

@@ -19,7 +19,7 @@ The project consists of four core parts:
 | ✏️ **Standardized API Resources (CRDs)** | A well-structured set of Custom Resource Definitions, grouped into logical API domains (e.g. `core.platformspec.io`, `design.platformspec.io`, `secure.platformspec.io`, etc.). These define all the components that make up a modern platform—from clusters and providers to policies, observability, developer services, and more. |
 | 🛠️ **SDKs for Real-World Usage** | Official SDKs in Golang, Python, Java, and KCL allow you to work with the spec programmatically. These SDKs include models for all Platform Specification resources, making it easy to generate, validate, or manipulate them in code or automation pipelines. |
 | 📜 **Blueprints and** 🏗️ **Builders (Realization Layer)** | Once you define your platform, Blueprints and Builders turn that definition into reality. These are implementation engines that translate Platform Specification resources into actual cloud infrastructure using tools like Terraform, CloudFormation, Crossplane, and others. |
-| ⚙️ **Platform Operators (Runtime Automation)** | Coming soon: Platform Operators that bridge the gap between your platform definitions and their realization. These operators manage lifecycles, dependencies, reconciliation, and binding between Platform Specification resources and their corresponding Blueprints + Builders. |
+| ⚙️ **Platform Operators (Runtime Automation)** | The [Platspec Operator](/docs/usage/operator) is an open-source Kubernetes operator that bridges the gap between your platform definitions and their realization. It manages lifecycles, dependencies, reconciliation, and binding between Platform Specification resources and their corresponding Blueprints. Early preview now available. |
 
 ## Why Does This Matter?
 
@@ -37,14 +37,10 @@ See the [Preface](/docs/project/preface) for a more detailed explanation.
 
 ## How do I use it?
 
-::: danger Not ready
-The Platform Specification is still in development and not yet ready for full use.
+::: warning Early Preview
+The Platform Specification and the Platspec Operator are in early preview. The core operator pipeline works end-to-end, but not all capabilities are complete and things may change.
 
-Please follow the [News](/news) page for updates on the project's progress.
-
-Please visit the [Roadmap](/docs/project/roadmap) for a detailed timeline of upcoming features and releases.
-
-We are actively working on this and will update this page as soon as it is ready.
+Follow the [News](/news) page for updates, and see the [Roadmap](/docs/project/roadmap) for what's coming next.
 :::
 
 ### 1. Install the CRDs
@@ -52,29 +48,29 @@ Install the Platform Specification CRDs into your Kubernetes Cluster
 
 See the [GitHub Project](https://github.com/platformspec) for the latest releases and installation instructions.
 
-::: warning Work in Progress
-Please note that the CRDs are still being developed and are not yet ready for full installation into a cluster.  We are actively working on this and will update this page as soon as they are ready.
+::: tip
+The Platform Specification CRDs are included with the [Platspec Operator](/docs/usage/operator). Install the operator via Helm and the CRDs are installed automatically.
 :::
 
 ### 2. Define your Platform
 Create a YAML structured file (e.g. `platform.yaml`) describing infrastructure, services, and policies.
 
 ::: warning Work in Progress
-This is presently a manual process.  Tooling for designing and building platforms is under active development.  Reference designs and examples will be provided as soon as they are available.
+This is currently a manual process. Reference examples are available in the [platspec-operator repository](https://github.com/platformspec/platspec-operator/tree/main/examples). A visual designer and additional tooling are on the roadmap.
 :::
 
 ### 3. Select your Operator
 Install and configure your Platform Specification operator to manage your platform.
 
-::: warning Work in Progress
-Operators written in Java and in Python are in development.  Details will be provided as soon as they are available.
+::: tip
+The [Platspec Operator](/docs/usage/operator) (Python-based) is available in early preview. See the operator documentation for installation and configuration details.
 :::
 
 ### 4. Realize your Platform
 Use Blueprints and their leveraged/dependent  Builders to turn your platform definition into real cloud infrastructure.
 
 ::: warning Work in Progress
-Blueprints and Builders are under active development.  Details will be provided as soon as they are available.
+The Platspec Operator ships with a small set of [bundled blueprints](/docs/usage/blueprints#bundled-blueprints) for bootstrapping namespaces and publishing platform metadata. A full community blueprint catalog is on the roadmap.
 :::
 
 ### 5. Manage your Platform
