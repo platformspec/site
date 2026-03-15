@@ -21,10 +21,10 @@ A `Blueprint` describes the interface and behavior of a blueprint package — a 
 
 #### Manifest Format
 
-Blueprint manifests use `apiVersion: blueprints.platsmith.io/v1alpha1` and `kind: Blueprint`.
+Blueprint manifests use `apiVersion: blueprints.platformspec.io/v1alpha1` and `kind: Blueprint`.
 
 ```yaml
-apiVersion: blueprints.platsmith.io/v1alpha1
+apiVersion: blueprints.platformspec.io/v1alpha1
 kind: Blueprint
 
 metadata:

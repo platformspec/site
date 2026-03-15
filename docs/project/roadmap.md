@@ -5,7 +5,8 @@ See where The Platform Specification is headed with our transparent roadmap.
 
 In no particular order:
 
-* Refactoring API design to Kubernetes CRD style model.
+* Expanding the Platspec Operator: additional reconciliation features, improved status reporting, and support for more registry types.
+* Growing the blueprint catalog: cloud account vending, networking, observability, and security capability blueprints.
 * Designing the "Policies" section of The Platform Specification.
 * Designing the "Monitoring & Insights" section of The Platform Specification.
 
@@ -15,9 +16,9 @@ In no particular order:
 In no particular order:
 
 * Designing the "Governance and Compliance" section of The Platform Specification.
-* Designing the "Developer Services & Enablement" section of The Platform Spefification.
-* SDK -- Golang Platform Specification Model Library.
-* SDK -- Python Platform Specification Model Library.
+* Designing the "Developer Services & Enablement" section of The Platform Specification.
+* SDK — Golang Platform Specification Model Library.
+* SDK — Python Platform Specification Model Library.
 * Example Platform definitions, with diagrams and descriptions.
 
 ## Future Priorities

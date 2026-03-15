@@ -27,11 +27,11 @@ helm repo update
 
 ### 2. Install the operator
 
-Install into the `platsmith-system` namespace (recommended):
+Install into the `platspec-system` namespace (recommended):
 
 ```bash
 helm install platspec-operator platspec/platspec-operator \
-  --namespace platsmith-system \
+  --namespace platspec-system \
   --create-namespace
 ```
 
@@ -43,8 +43,8 @@ This installs:
 Verify the operator is running:
 
 ```bash
-kubectl -n platsmith-system get pods
-kubectl -n platsmith-system logs -l app.kubernetes.io/name=platspec-operator
+kubectl -n platspec-system get pods
+kubectl -n platspec-system logs -l app.kubernetes.io/name=platspec-operator
 ```
 
 ### 3. Install CRDs only (optional)
@@ -53,7 +53,7 @@ If you want to manage the operator deployment separately from CRD installation:
 
 ```bash
 helm install platspec-crds platspec/platspec-operator \
-  --namespace platsmith-system \
+  --namespace platspec-system \
   --create-namespace \
   --set operator.enabled=false
 ```
@@ -84,9 +84,9 @@ The operator is configured via Helm values. Override values at install time with
 
 ```bash
 helm install platspec-operator platspec/platspec-operator \
-  --namespace platsmith-system \
+  --namespace platspec-system \
   --create-namespace \
-  --set operator.namespace=platsmith-system \
+  --set operator.namespace=platspec-system \
   --set operator.logLevel=DEBUG
 ```
 
@@ -95,7 +95,7 @@ helm install platspec-operator platspec/platspec-operator \
 ```yaml
 # platspec-values.yaml
 operator:
-  namespace: platsmith-system
+  namespace: platspec-system
   logLevel: INFO
   logFormat: json
   reconcileInterval: 60
@@ -113,7 +113,7 @@ resources:
 
 ```bash
 helm install platspec-operator platspec/platspec-operator \
-  --namespace platsmith-system \
+  --namespace platspec-system \
   --create-namespace \
   --values platspec-values.yaml
 ```
@@ -138,7 +138,7 @@ Alternatively, configure a `BlueprintRegistry` resource to fetch blueprints on d
 ```bash
 helm repo update
 helm upgrade platspec-operator platspec/platspec-operator \
-  --namespace platsmith-system \
+  --namespace platspec-system \
   --values platspec-values.yaml
 ```
 
@@ -147,7 +147,7 @@ CRDs are included in the chart and upgraded in-place. Review the [Changes](/docs
 ## Uninstalling
 
 ```bash
-helm uninstall platspec-operator --namespace platsmith-system
+helm uninstall platspec-operator --namespace platspec-system
 ```
 
 ::: warning CRD deletion
@@ -166,16 +166,16 @@ Check the status of a Platform after applying resources:
 
 ```bash
 # Overview
-kubectl -n platsmith-system get platforms
+kubectl -n platspec-system get platforms
 
 # Detailed status
-kubectl -n platsmith-system describe platform my-platform
+kubectl -n platspec-system describe platform my-platform
 
 # BlueprintBinding status
-kubectl -n platsmith-system get blueprintbindings
+kubectl -n platspec-system get blueprintbindings
 
 # Operator logs (follow)
-kubectl -n platsmith-system logs -l app.kubernetes.io/name=platspec-operator -f
+kubectl -n platspec-system logs -l app.kubernetes.io/name=platspec-operator -f
 ```
 
 The Platform `status.phase` progresses through `Progressing` → `Ready` (or `Failed`). The `status.conditions` field carries a `type=Ready` condition with a `reason` of `AllBindingsReady`, `BindingsProgressing`, `BindingsFailed`, or `NoBlueprintsConfigured`.
@@ -186,7 +186,7 @@ Run the operator in dry-run mode to validate blueprints and preview what would b
 
 ```bash
 helm install platspec-operator platspec/platspec-operator \
-  --namespace platsmith-system \
+  --namespace platspec-system \
   --create-namespace \
   --set operator.dryRun=true
 ```

@@ -32,7 +32,6 @@ There is meaningful work ahead. The blueprint catalog is thin, observability and
 
 * **The Specification** continues to evolve across its API Groups (`core`, `design`, `build`, `operate`, `workload`, `govern`, `secure`, `sdk`). The `core` group is the most mature and is what the operator implements today.
 * **Blueprints** are the next major area of investment — building out the community catalog and the tooling to author, publish, and discover them.
-* **The Platsmith hosted control plane** — the commercial layer that sits above the open-source operator — is in development and not yet publicly available.
 
 The operator is available at **[github.com/platformspec/platspec-operator](https://github.com/platformspec/platspec-operator)** under the Apache 2.0 license. Documentation is at [platformspec.io/docs/usage/operator](./docs/usage/operator).
 

@@ -15,7 +15,7 @@ Blueprints fall into three scopes, and within the middle tier, eight capability 
 | Domain | What it covers |
 | --- | --- |
 | Cluster Capabilities | Kubernetes-native resources: namespaces, RBAC, workload bootstrapping. No cloud credentials required — run against the management cluster. |
-| Cloud Resources | Cloud account vending, provider-level bootstrapping (accounts, projects, subscriptions). Drives cloud API calls via the Platsmith Operator. |
+| Cloud Resources | Cloud account vending, provider-level bootstrapping (accounts, projects, subscriptions). Drives cloud API calls via the Platspec Operator. |
 | Networking | VPCs, subnets, DNS zones, load balancers, network peering. |
 | Observability | Metrics, logging, and tracing stacks (Prometheus, Loki, Tempo, OpenTelemetry). |
 | Security | Policy engines, certificate management, secrets management, admission controls. |
@@ -54,7 +54,7 @@ apiVersion: core.platformspec.io/v1alpha1
 kind: BlueprintRegistry
 metadata:
   name: my-blueprints
-  namespace: platsmith-system
+  namespace: platspec-system
 spec:
   type: git
   url: https://github.com/my-org/my-blueprints.git
@@ -64,7 +64,7 @@ spec:
     type: secret
     secretRef:
       name: git-credentials
-      namespace: platsmith-system
+      namespace: platspec-system
 ```
 
 Then reference the registry by name in your `BlueprintBinding`:
@@ -105,7 +105,7 @@ apiVersion: core.platformspec.io/v1alpha1
 kind: Platform
 metadata:
   name: my-platform
-  namespace: platsmith-system
+  namespace: platspec-system
 spec:
   organization: My Org
   description: My platform
@@ -129,7 +129,7 @@ apiVersion: core.platformspec.io/v1alpha1
 kind: BlueprintBinding
 metadata:
   name: my-platform-bindings
-  namespace: platsmith-system
+  namespace: platspec-system
   labels:
     platform.platformspec.io/name: my-platform
 spec:
@@ -147,7 +147,7 @@ spec:
       blueprint:
         name: prometheus-stack
         version: "1.0.0"
-        registry: platsmith-catalog
+        registry: platspec-catalog
         config:
           retentionDays: 30
 ```
@@ -158,11 +158,11 @@ spec:
 kubectl apply -f platform.yaml
 
 # Watch the Platform reach Ready
-kubectl -n platsmith-system get platforms -w
+kubectl -n platspec-system get platforms -w
 
 # Check per-binding status
-kubectl -n platsmith-system get blueprintbindings
-kubectl -n platsmith-system describe blueprintbinding my-platform-bindings
+kubectl -n platspec-system get blueprintbindings
+kubectl -n platspec-system describe blueprintbinding my-platform-bindings
 ```
 
 ### Version pinning and `latest`
@@ -198,4 +198,4 @@ The official example platform definitions are a good starting point. They are or
 
 The `01-minimal` example is the recommended starting point. It defines a `Platform` with two capabilities (`namespace-bootstrap` and `cloud-account`), a single `BlueprintBinding`, and the supporting `Environment`, `Provider`, and `Credential` resources. It exercises the full operator pipeline with no external cluster dependencies.
 
-Find it in the [Platsmith GitHub repository](https://github.com/foundationio/platsmith/tree/main/examples/platform/01-minimal).
+Find it in the [platspec-operator repository](https://github.com/platformspec/platspec-operator/tree/main/examples/01-minimal).

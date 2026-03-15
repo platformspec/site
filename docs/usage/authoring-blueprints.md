@@ -21,7 +21,7 @@ The manifest describes the blueprint's interface. See the [Blueprint specificati
 A minimal manifest:
 
 ```yaml
-apiVersion: blueprints.platsmith.io/v1alpha1
+apiVersion: blueprints.platformspec.io/v1alpha1
 kind: Blueprint
 
 metadata:
@@ -162,7 +162,7 @@ config      = ctx.config
 
 [
     {
-        apiVersion = "platsmith.io/v1alpha1"
+        apiVersion = "example.yourproject.io/v1alpha1"
         kind       = "CloudAccount"
         metadata   = {
             name      = "${environment.metadata.name}-${ref.name}"
@@ -220,7 +220,7 @@ apiVersion: core.platformspec.io/v1alpha1
 kind: BlueprintRegistry
 metadata:
   name: local-dev
-  namespace: platsmith-system
+  namespace: platspec-system
 spec:
   type: filesystem
   path: /path/to/your/blueprints
@@ -235,7 +235,7 @@ spec:
 Force the operator to re-reconcile by touching your `BlueprintBinding`:
 
 ```bash
-kubectl -n platsmith-system annotate blueprintbinding my-platform-bindings \
+kubectl -n platspec-system annotate blueprintbinding my-platform-bindings \
   platspec.io/reconcile-trigger="$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
   --overwrite
 ```
@@ -244,11 +244,11 @@ kubectl -n platsmith-system annotate blueprintbinding my-platform-bindings \
 
 ```bash
 # See what resources were applied
-kubectl -n platsmith-system get blueprintbinding my-platform-bindings \
+kubectl -n platspec-system get blueprintbinding my-platform-bindings \
   -o jsonpath='{.metadata.annotations.platspec\.io/generated-resources}' | jq .
 
 # Tail operator logs
-kubectl -n platsmith-system logs -l app.kubernetes.io/name=platspec-operator -f
+kubectl -n platspec-system logs -l app.kubernetes.io/name=platspec-operator -f
 ```
 
 ## Publishing a Blueprint
